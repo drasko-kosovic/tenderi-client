@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {TenderRoutingModule} from './tender/tender-routing.module';
 
 
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports: [TenderRoutingModule,
     CommonModule
   ]
 })

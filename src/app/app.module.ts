@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../shared/material.module';
 import {AuthModule} from './auth/auth.module';
+import {TenderModule} from './tender/tender.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {AuthModule} from './auth/auth.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AuthModule
+    AuthModule,
+    TenderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
