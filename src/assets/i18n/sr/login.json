@@ -1,0 +1,27 @@
+{
+  "login": {
+    "login": "Prijava",
+    "logout": "Izadji",
+    "title": "Prijavi se",
+    "form": {
+      "user": "Korisnik",
+      "password": "Sifra",
+      "password.placeholder": "Vasa sifra",
+      "rememberme": "Zapamti me",
+      "button": "Prijava se",
+      "no_login": "Korisnik ili sifra nijesu prepoznati",
+      "enter_password": "Unesite sifru"
+    },
+    "navbar": {
+      "register": "Registracija",
+      "list": "Lista",
+      "form": "Forma"
+    },
+    "text ok": "Uspjesno ste se prijavili kao korisnik",
+    "text role": "Imate korisnicku dozvolu"
+  },
+  "register": {
+    "title": "Registracija",
+    "register": "Registruj se"
+  }
+}

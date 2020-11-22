@@ -5,20 +5,26 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from '../shared/material.module';
-import {AuthModule} from './auth/auth.module';
-import {TenderModule} from './tender/tender.module';
+import { TenderModule } from './tender/tender.module';
+import { HomeComponent } from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    PageNotFoundComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AuthModule,
-    TenderModule
+    TenderModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

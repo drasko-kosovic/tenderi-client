@@ -1,13 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {TenderRoutingModule} from './tender/tender-routing.module';
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
-
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: '**',
+    component: PageNotFoundComponent }
+];
 
 @NgModule({
-  declarations: [],
-  imports: [TenderRoutingModule,
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+

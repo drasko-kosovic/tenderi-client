@@ -1,0 +1,28 @@
+{
+  "login": {
+    "login": "Login",
+    "logout": "Logout",
+    "title": "Sign in",
+    "form": {
+      "user": "User name",
+      "password": "Password",
+      "password.placeholder": "Your password",
+      "rememberme": "Remember me",
+      "button": "Login ",
+      "no_login": "The username and password were not recognised",
+      "enter_password": "Enter your password"
+    },
+    "navbar": {
+      "register": "Register",
+      "list": "List",
+      "form": "Form"
+    },
+    "text ok": "You are successfully login in as user",
+    "text role": "You user role is"
+  },
+  "register":{
+  "title": "Register",
+  "register": "Register"
+}
+}
+
