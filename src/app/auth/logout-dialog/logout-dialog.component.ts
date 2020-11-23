@@ -17,6 +17,7 @@ export class LogoutDialogComponent implements OnInit, OnDestroy {
     this.router.navigate(['/']);
 
   }
+
 refresh(){
     window.location.reload();
 }

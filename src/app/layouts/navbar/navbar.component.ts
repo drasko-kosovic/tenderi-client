@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 
 import {LoginComponent} from '../../auth/login/login.component';
 import {LogoutDialogComponent} from '../../auth/logout-dialog/logout-dialog.component';
-import {RegisterComponent} from '../../auth/register/register.component';
 import {NotificationService} from '../../../shared/notification.service';
 
 
@@ -76,13 +75,7 @@ export class NavbarComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  openRegisterDialog() {
-    const dialogRef = this.dialog.open(RegisterComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
   // tslint:disable-next-line:typedef
   openLogoutDialog() {

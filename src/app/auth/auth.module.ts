@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import {LoginComponent} from './login/login.component';
+import {LogoutDialogComponent} from './logout-dialog/logout-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LogoutDialogComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MatDialogModule
   ]
 })
 export class AuthModule { }
