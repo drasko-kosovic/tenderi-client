@@ -1,0 +1,58 @@
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav #start >
+    <mat-nav-list >
+
+      <a mat-list-item routerLink="/person"  *ngIf="isLoggedIn">
+        <mat-icon>library_books</mat-icon>
+        <span>Person List</span>
+      </a>
+      <a mat-list-item routerLink="/person/person-form"  *ngIf="isLoggedIn">
+        <mat-icon>library_books</mat-icon>
+        <span>Person Form</span>
+      </a>
+
+      <a mat-list-item (click)="openRegisterDialog()">
+        <mat-icon>person_add</mat-icon>
+        <span>Register</span>
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="start.open('mouse')">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button (click)="refresh()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-icon-button (click)="poruka()">
+      Notify
+    </button>
+    <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
+    <button mat-button (click)="openLoginDialog()"  *ngIf="!isLoggedIn">
+      <mat-icon>power_settings_new</mat-icon>
+      {{'login.login'|translate}}
+    </button>
+    <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()"  >
+      <mat-icon>exit_to_app</mat-icon>
+      {{'login.logout'|translate}}
+    </button>
+    <span class = "filler"></span>
+
+    <div>
+
+      <img src="../assets/flag-monty.png" (click)="switchLang('sr')"/>
+
+
+      <img src="../assets/flag-union.png" (click)="switchLang('en')"/>
+    </div>
+
+
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+

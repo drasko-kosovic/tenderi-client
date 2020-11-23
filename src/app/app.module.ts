@@ -8,13 +8,17 @@ import {MaterialModule} from '../shared/material.module';
 import { TenderModule } from './tender/tender.module';
 import { HomeComponent } from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {NavbarComponent} from './layouts/navbar/navbar.component';
+import {FooterComponent} from './layouts/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent,
+    FooterComponent
 
   ],
   imports: [
