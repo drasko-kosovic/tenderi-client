@@ -25,8 +25,7 @@ import {FooterComponent} from './layouts/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    TenderModule,
+    MaterialModule
 
 
   ],
