@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TenderHomeComponent} from './tender-home/tender-home.component';
+
 import {PonudeComponent} from './ponude/ponude.component';
 import {BodovanjeComponent} from './bodovanje/bodovanje.component';
+import {TenderHomeComponent} from './tender-home/tender-home.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     path: 'bodovanje',
     component: BodovanjeComponent
   }
+  // ,
+  // {
+  //   path: 'home',
+  //   component: TenderHomeComponent
+  // }
 ];
 
 @NgModule({
