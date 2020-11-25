@@ -51,4 +51,16 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
+  // tslint:disable-next-line:typedef
+  calculation() {
+    let sum = 0;
+    if (this.dataSource) {
+      for (const row of this.dataSource.data) {
+        // tslint:disable-next-line:triple-equals
+        if (row.id != 0) sum += row.ponudjenaUkupnaCijena;
+      }
+    }
+    return sum;
+  }
+
 }
