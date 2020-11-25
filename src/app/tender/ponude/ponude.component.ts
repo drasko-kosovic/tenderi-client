@@ -4,6 +4,7 @@ import {Owner} from '../model/owner.model';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {TenderService} from '../tender.service';
+import {Ponude} from '../model/ponude.model';
 
 @Component({
   selector: 'app-ponude',
@@ -14,13 +15,15 @@ import {TenderService} from '../tender.service';
 })
 export class PonudeComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'dateOfBirth', 'address'];
-  public dataSource = new MatTableDataSource<Owner>();
+  public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
+  'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
+  'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera'];
+  public dataSource = new MatTableDataSource<Ponude>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private repoService: TenderService) { }
+  constructor(private tenderService: TenderService) { }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
@@ -29,9 +32,9 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   public getAllOwners()  {
-    this.repoService.getData()
+    this.tenderService.getData()
       .subscribe(res => {
-        this.dataSource.data = res as Owner[];
+        this.dataSource.data = res as Ponude[];
       });
   }
 

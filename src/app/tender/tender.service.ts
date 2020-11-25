@@ -28,7 +28,7 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData()  {
-    return this.http.get('http://localhost:8080/api/owners');
+    return this.http.get('http://localhost:8080/api/ponude/all');
   }
 
   /** CRUD METHODS */
