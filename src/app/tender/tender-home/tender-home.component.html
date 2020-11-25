@@ -6,7 +6,7 @@
         <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
     </div>
-    <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" (matSortChange)="customSort($event)">
+    <table mat-table [dataSource]="dataSource1" matSort matSortStart="desc" (matSortChange)="customSort($event)">
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
@@ -136,7 +136,7 @@
         <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
     </div>
-    <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" (matSortChange)="customSort($event)">
+    <table mat-table [dataSource]="dataSource2" matSort matSortStart="desc" (matSortChange)="customSort($event)">
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
