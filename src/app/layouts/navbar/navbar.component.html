@@ -1,22 +1,26 @@
-<mat-sidenav-container >
-<div>
-  <mat-toolbar color="primary" >
-    <div>
-      <button mat-icon-button routerLink="/tender/ponude">
-        Ponude
-      </button>
-    </div>
+<mat-toolbar color="primary">
+<mat-toolbar-row>
+  <span></span>
+  <span class="example-fill-remaining-space"></span>
+  <span class="align-center"></span>
+  <span class="example-spacer"></span>
+  <button mat-button routerLink="/">Home</button>
+<!--  <button mat-button [matMenuTriggerFor]="menu">Profil</button>-->
 
-    <div>
-      <button mat-icon-button routerLink="/tender/bodovanje" >
-           Bodovanje
-      </button>
-    </div>
-  </mat-toolbar>
+  <button mat-button routerLink="/tender/ponude"  routerLinkActive="active" >Ponude</button>
+  <button mat-button routerLink="/tender/bodovanje"  routerLinkActive="active" >Bodovanje</button>
+<!--  <button mat-button routerLink="/profil" *ngIf="isLoggedIn" routerLinkActive="active"  >Korisnik:   {{ username }}</button>-->
+<!--  <mat-menu #menu="matMenu">-->
+<!--    <button mat-menu-item routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</button>-->
+<!--    <button mat-menu-item routerLink="/register" routerLinkActive="active">Register</button>-->
+<!--    <button mat-menu-item *ngIf="isLoggedIn"  href class="nav-link" (click)="logout()">LogOut</button>-->
 
-</div>
+<!--  </mat-menu>-->
 
-  <router-outlet></router-outlet>
+</mat-toolbar-row>
 
-</mat-sidenav-container>
 
+
+
+
+</mat-toolbar>
