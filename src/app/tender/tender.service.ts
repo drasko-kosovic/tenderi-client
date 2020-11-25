@@ -30,7 +30,10 @@ export class TenderService {
   public getData()  {
     return this.http.get('http://localhost:8080/api/ponude/all');
   }
-
+  // tslint:disable-next-line:typedef
+  public getBodovanje()  {
+    return this.http.get('http://localhost:8080/api/ponude/bodovanje');
+  }
   /** CRUD METHODS */
   getAllPonude(): void {
     this.http.get<Ponude[]>(this.API_URL).subscribe(data => {

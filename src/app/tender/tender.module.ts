@@ -5,10 +5,11 @@ import { TenderRoutingModule } from './tender-routing.module';
 import { TenderHomeComponent } from './tender-home/tender-home.component';
 import { PonudeComponent } from './ponude/ponude.component';
 import {MaterialModule} from '../../shared/material.module';
+import { BodovanjeComponent } from './bodovanje/bodovanje.component';
 
 
 @NgModule({
-  declarations: [TenderHomeComponent, PonudeComponent],
+  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,
