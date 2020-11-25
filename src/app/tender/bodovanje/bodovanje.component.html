@@ -92,17 +92,17 @@
 
   <ng-container matColumnDef="bod_cijena">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Bod Cijena</th>
-    <td mat-cell *matCellDef="let element"> {{element.bod_cijena}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.bod_cijena | number : '1.2-2'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="bod_isporuka">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Bod Isporuka</th>
-    <td mat-cell *matCellDef="let element"> {{element.bod_isporuka}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.bod_isporuka | number : '1.2-2'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="bod_ukupno">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Bod Ukupno</th>
-    <td mat-cell *matCellDef="let element"> {{element.bod_ukupno}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.bod_ukupno | number : '1.2-2'}} </td>
   </ng-container>
 
 
