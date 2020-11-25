@@ -19,17 +19,21 @@ export class TenderService {
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
 
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   get data(): Ponude[] {
     return this.dataChange.value;
   }
 
+  // tslint:disable-next-line:typedef
+  public getData()  {
+    return this.http.get('http://localhost:8080/api/owners');
+  }
 
   /** CRUD METHODS */
   getAllPonude(): void {
-    this.httpClient.get<Ponude[]>(this.API_URL).subscribe(data => {
+    this.http.get<Ponude[]>(this.API_URL).subscribe(data => {
         this.dataChange.next(data);
       },
       (error: HttpErrorResponse) => {

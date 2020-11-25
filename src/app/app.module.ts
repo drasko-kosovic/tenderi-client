@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NavbarComponent} from './layouts/navbar/navbar.component';
 import {FooterComponent} from './layouts/footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {FooterComponent} from './layouts/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
 
 
   ],
