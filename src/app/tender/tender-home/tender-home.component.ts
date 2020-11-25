@@ -23,9 +23,11 @@ export class TenderHomeComponent implements OnInit, AfterViewInit {
   public dataSource1 = new MatTableDataSource<Ponude>();
   public dataSource2 = new MatTableDataSource<Bodovanje>();
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort1: MatSort;
+  @ViewChild(MatPaginator) paginator1: MatPaginator;
 
+  @ViewChild(MatSort) sort2: MatSort;
+  @ViewChild(MatPaginator) paginator2: MatPaginator;
   constructor(private tenderService: TenderService) { }
 
   // tslint:disable-next-line:typedef
@@ -49,8 +51,11 @@ export class TenderHomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.dataSource1.sort = this.sort;
-    this.dataSource1.paginator = this.paginator;
+    this.dataSource1.sort = this.sort1;
+    this.dataSource1.paginator = this.paginator1;
+
+    this.dataSource2.sort = this.sort2;
+    this.dataSource2.paginator = this.paginator2;
   }
 
   public customSort = (event) => {
@@ -59,6 +64,7 @@ export class TenderHomeComponent implements OnInit, AfterViewInit {
 
   public doFilter = (value: string) => {
     this.dataSource1.filter = value.trim().toLocaleLowerCase();
+    this.dataSource2.filter = value.trim().toLocaleLowerCase();
   }
 
 }
