@@ -21,6 +21,7 @@ export class HomeComponent  {
   ];
 
   /** Gets the total cost of all transactions. */
+  // tslint:disable-next-line:typedef
   getTotalCost() {
     return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
   }
