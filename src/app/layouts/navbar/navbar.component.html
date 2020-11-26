@@ -13,6 +13,12 @@
   <button mat-button routerLink="/tender/bodovanje"  routerLinkActive="active" >Bodovanje</button>
   <button mat-button routerLink="/tender/izvoz"  routerLinkActive="active" >Izvoz</button>
 <!--  <button mat-button routerLink="/profil" *ngIf="isLoggedIn" routerLinkActive="active"  >Korisnik:   {{ username }}</button>-->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/ponude" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Ponude</button>
+    <button mat-menu-item routerLink="/bodovanje" routerLinkActive="active">Bodovanje</button>
+
+  </mat-menu>
+
 <!--  <mat-menu #menu="matMenu">-->
 <!--    <button mat-menu-item routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</button>-->
 <!--    <button mat-menu-item routerLink="/register" routerLinkActive="active">Register</button>-->

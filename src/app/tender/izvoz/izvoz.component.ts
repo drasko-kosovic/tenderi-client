@@ -13,7 +13,7 @@ import {MatSort} from '@angular/material/sort';
 })
 export class IzvozComponent implements OnInit , AfterViewInit {
 
-  public displayedColumns = ['id', 'partija', 'ponudjac'];
+  public displayedColumns = ['id', 'partija', 'ponudjac', 'ponudjenaUkupnaCijena'];
   public dataSource = new MatTableDataSource<Ponude>();
 
   @ViewChild(MatSort) sort: MatSort;

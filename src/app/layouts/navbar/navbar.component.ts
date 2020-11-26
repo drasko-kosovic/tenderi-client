@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   durationInSeconds = 5;
   navigation: any;
   welcome: string;
+  push: any;
 
 // tslint:disable-next-line:max-line-length
   constructor(private notificationService: NotificationService, private dialog: MatDialog, private router: Router) {
