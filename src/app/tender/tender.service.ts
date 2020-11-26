@@ -34,6 +34,11 @@ export class TenderService {
   public getBodovanje()  {
     return this.http.get('http://localhost:8080/api/ponude/bodovanje');
   }
+
+  // tslint:disable-next-line:typedef
+  public getPrvorangirani()  {
+    return this.http.get('http://localhost:8080/api/ponude/prvorangirani');
+  }
   /** CRUD METHODS */
   getAllPonude(): void {
     this.http.get<Ponude[]>(this.API_URL).subscribe(data => {

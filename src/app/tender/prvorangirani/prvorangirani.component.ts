@@ -1,17 +1,16 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {Ponude} from '../model/ponude.model';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {TenderService} from '../tender.service';
 import {Bodovanje} from '../model/bodovanje.model';
+import {TenderService} from '../tender.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
-  selector: 'app-bodovanje',
-  templateUrl: './bodovanje.component.html',
-  styleUrls: ['./bodovanje.component.css']
+  selector: 'app-prvorangirani',
+  templateUrl: './prvorangirani.component.html',
+  styleUrls: ['./prvorangirani.component.css']
 })
-export class BodovanjeComponent implements OnInit, AfterViewInit {
+export class PrvorangiraniComponent implements OnInit , AfterViewInit {
 
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
@@ -30,7 +29,7 @@ export class BodovanjeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   public getAllOwners()  {
-    this.tenderService.getBodovanje()
+    this.tenderService.getPrvorangirani()
       .subscribe(res => {
         this.dataSource.data = res as Bodovanje[];
       });
@@ -48,5 +47,8 @@ export class BodovanjeComponent implements OnInit, AfterViewInit {
   public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
+
+
+
 
 }

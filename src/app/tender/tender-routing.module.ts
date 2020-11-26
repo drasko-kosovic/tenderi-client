@@ -5,6 +5,7 @@ import {PonudeComponent} from './ponude/ponude.component';
 import {BodovanjeComponent} from './bodovanje/bodovanje.component';
 import {TenderHomeComponent} from './tender-home/tender-home.component';
 import {IzvozComponent} from "./izvoz/izvoz.component";
+import {PrvorangiraniComponent} from "./prvorangirani/prvorangirani.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'bodovanje',
     component: BodovanjeComponent
+  }
+  ,
+  {
+    path: 'prvorangirani',
+    component: PrvorangiraniComponent
   }
   ,
   {

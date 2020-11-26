@@ -1,0 +1,114 @@
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+<table mat-table [dataSource]="dataSource" matSort matSortStart="desc" (matSortChange)="customSort($event)">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="partija">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
+    <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="atc">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Atc</th>
+    <td mat-cell *matCellDef="let element"> {{element.atc}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nazivProizvoda">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziv Proizvoda</th>
+    <td mat-cell *matCellDef="let element"> {{element.nazivProizvoda}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="zasticeniNaziv">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Zasticeni Naziv</th>
+    <td mat-cell *matCellDef="let element"> {{element.zasticeniNaziv}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="proizvodjac">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Proizvodjac</th>
+    <td mat-cell *matCellDef="let element"> {{element.proizvodjac}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="jedinicaMjere">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Jedinica Mjere</th>
+    <td mat-cell *matCellDef="let element"> {{element.jedinicaMjere}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="trazenaKolicina">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Trazena Kolicina</th>
+    <td mat-cell *matCellDef="let element"> {{element.trazenaKolicina}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="ponudjanaKolicina">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjana Kolicina</th>
+    <td mat-cell *matCellDef="let element"> {{element.ponudjanaKolicina}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="procijenjenaJedinicnaCijena">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Procijenjena Jed.Cijena</th>
+    <td mat-cell *matCellDef="let element"> {{element.procijenjenaJedinicnaCijena}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ponudjenaJedinicnaCijena">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Jed.Cijena</th>
+    <td mat-cell *matCellDef="let element"> {{element.ponudjenaJedinicnaCijena}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="procijenjenaUkupnaCijena">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Procijenjena Ukupna Cijena</th>
+    <td mat-cell *matCellDef="let element"> {{element.procijenjenaUkupnaCijena}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ponudjenaUkupnaCijena">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Ukupna Cijena</th>
+    <td mat-cell *matCellDef="let element"> {{element.ponudjenaUkupnaCijena}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="rokIsporuke">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Rok Isporuke</th>
+    <td mat-cell *matCellDef="let element"> {{element.rokIsporuke}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ponudjac">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Ponudjac</th>
+    <td mat-cell *matCellDef="let element"> {{element.ponudjac}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="brojTendera">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tender br.</th>
+    <td mat-cell *matCellDef="let element"> {{element.brojTendera}} </td>
+  </ng-container>
+
+
+
+
+
+  <ng-container matColumnDef="bod_cijena">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Bod Cijena</th>
+    <td mat-cell *matCellDef="let element"> {{element.bod_cijena | number : '1.2-2'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="bod_isporuka">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Bod Isporuka</th>
+    <td mat-cell *matCellDef="let element"> {{element.bod_isporuka | number : '1.2-2'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="bod_ukupno">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Bod Ukupno</th>
+    <td mat-cell *matCellDef="let element"> {{element.bod_ukupno | number : '1.2-2'}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]">
+</mat-paginator>
+

@@ -9,10 +9,11 @@ import { BodovanjeComponent } from './bodovanje/bodovanje.component';
 import { TenderHomeComponent } from './tender-home/tender-home.component';
 import {MatTableExporterModule} from 'mat-table-exporter';
 import { IzvozComponent } from './izvoz/izvoz.component';
+import { PrvorangiraniComponent } from './prvorangirani/prvorangirani.component';
 
 
 @NgModule({
-  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent],
+  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,
