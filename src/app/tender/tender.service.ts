@@ -12,7 +12,7 @@ import {Ponude} from './model/ponude.model';
 export class TenderService {
 
 
-  private readonly API_URL = 'http://localhost:8080/api/ponude';
+  private readonly API_URL = 'https://evening-everglades-02205.herokuapp.com/api/ponude';
   // private readonly API_URL_DELETE = 'http://localhost:8080/api/delete/';
   // private readonly API_URL_UPDATE = 'http://localhost:8080/api/person/update';
 
@@ -28,16 +28,16 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData()  {
-    return this.http.get('http://localhost:8080/api/ponude/all');
+    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude');
   }
   // tslint:disable-next-line:typedef
   public getBodovanje()  {
-    return this.http.get('http://localhost:8080/api/ponude/bodovanje');
+    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/bodovanje');
   }
 
   // tslint:disable-next-line:typedef
   public getPrvorangirani()  {
-    return this.http.get('http://localhost:8080/api/ponude/prvorangirani');
+    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/prvorangirani');
   }
   /** CRUD METHODS */
   getAllPonude(): void {
