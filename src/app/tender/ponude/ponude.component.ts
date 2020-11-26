@@ -22,7 +22,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+ukupno: number;
   constructor(private tenderService: TenderService) { }
 
   // tslint:disable-next-line:typedef
@@ -47,8 +47,10 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     console.log(event);
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  // tslint:disable-next-line:typedef
+  doFilter(fitlervalue: string) {
+    this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
+    this.ukupno = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
   // tslint:disable-next-line:typedef
@@ -57,7 +59,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     if (this.dataSource) {
       for (const row of this.dataSource.data) {
         // tslint:disable-next-line:triple-equals
-        if (row.id != 0) sum += row.ponudjenaUkupnaCijena;
+        if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
       }
     }
     return sum;
