@@ -11,6 +11,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NavbarComponent} from './layouts/navbar/navbar.component';
 import {FooterComponent} from './layouts/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import {MatTableExporterModule} from 'mat-table-exporter';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableExporterModule,
 
 
   ],

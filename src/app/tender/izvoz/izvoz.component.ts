@@ -1,24 +1,19 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {Owner} from '../model/owner.model';
-import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
-import {TenderService} from '../tender.service';
+import {MatTableDataSource} from '@angular/material/table';
 import {Ponude} from '../model/ponude.model';
-import {MatTableExporterModule} from 'mat-table-exporter';
+import {TenderService} from '../tender.service';
+import {MatSort} from '@angular/material/sort';
+
 
 @Component({
-  selector: 'app-ponude',
-
-  templateUrl: './ponude.component.html',
-
-  styleUrls: ['./ponude.component.css']
+  selector: 'app-izvoz',
+  templateUrl: './izvoz.component.html',
+  styleUrls: ['./izvoz.component.css']
 })
-export class PonudeComponent implements OnInit, AfterViewInit {
+export class IzvozComponent implements OnInit , AfterViewInit {
 
-  public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
-  'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-  'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'actions'];
+  public displayedColumns = ['id', 'partija', 'ponudjac'];
   public dataSource = new MatTableDataSource<Ponude>();
 
   @ViewChild(MatSort) sort: MatSort;
