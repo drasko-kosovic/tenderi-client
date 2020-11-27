@@ -10,15 +10,21 @@ import { TenderHomeComponent } from './tender-home/tender-home.component';
 import {MatTableExporterModule} from 'mat-table-exporter';
 import { IzvozComponent } from './izvoz/izvoz.component';
 import { PrvorangiraniComponent } from './prvorangirani/prvorangirani.component';
+import {DeleteDialogComponent} from './dialog/delete/delete.dialog.component';
+import {AddDialogComponent} from './dialog/add/add.dialog.component';
+import {FormsModule} from "@angular/forms";
+
 
 
 @NgModule({
-  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent],
+  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent, DeleteDialogComponent,
+    AddDialogComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,
     MaterialModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    FormsModule
   ]
 })
 export class TenderModule { }
