@@ -28,7 +28,7 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData()  {
-    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude');
+    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/all');
   }
   // tslint:disable-next-line:typedef
   public getBodovanje()  {
