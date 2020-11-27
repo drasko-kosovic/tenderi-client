@@ -12,12 +12,12 @@ import {Ponude} from './model/ponude.model';
 export class TenderService {
 
 
-  private readonly API_URL = 'https://evening-everglades-02205.herokuapp.com/api/ponude';
-  // private readonly API_URL_DELETE = 'http://localhost:8080/api/delete/';
+  private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
+  private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
   // private readonly API_URL_UPDATE = 'http://localhost:8080/api/person/update';
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
-
+  dialogData: any;
 
   constructor(private http: HttpClient) {
   }
@@ -28,24 +28,42 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData()  {
-    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/all');
+    return this.http.get('http://localhost:8080/api/ponude/sve');
   }
   // tslint:disable-next-line:typedef
   public getBodovanje()  {
-    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/bodovanje');
+    return this.http.get('http://localhost:8080/api/ponude/bodovanje');
   }
 
   // tslint:disable-next-line:typedef
-  public getPrvorangirani()  {
-    return this.http.get('https://evening-everglades-02205.herokuapp.com/api/ponude/prvorangirani');
+  public getPrvorangirani() {
+    return this.http.get('http://localhost:8080/api/ponude/prvorangirani');
   }
-  /** CRUD METHODS */
-  getAllPonude(): void {
-    this.http.get<Ponude[]>(this.API_URL).subscribe(data => {
-        this.dataChange.next(data);
+
+  deletePonuda(id: number): void {
+    this.http.delete(this.API_URL_DELETE + id).subscribe(data => {
+        console.log('obrisano');
+        // this.toasterService.showToaster('Successfully deleted', 3000);
       },
-      (error: HttpErrorResponse) => {
-        console.log(error.name + ' ' + error.message);
+      (err: HttpErrorResponse) => {
+        // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
+      }
+    );
+  }
+  // tslint:disable-next-line:typedef
+  getDialogData() {
+    return this.dialogData;
+  }
+  addPonude(ponude: Ponude): void {
+    this.http.post(this.API_URL, ponude).subscribe(data => {
+        this.dialogData = ponude;
+        // this.notificationService.success( this.translate.get(['login.login']));
+        // this.toasterService.success('Successfully added');
+        console.log('dodato');
+      },
+      (err: HttpErrorResponse) => {
+
+        console.log('nije dodato');
       });
   }
 
