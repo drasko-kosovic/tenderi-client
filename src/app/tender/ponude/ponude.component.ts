@@ -133,5 +133,13 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  updateSelected(id:number){
 
+    this.tenderService.updatePersonSelected( id);
+  }
+  deleteSelected(): void {
+    this.tenderService.deleteSelected();
+    // this.refreshTable();
+    // this.refresh();
+  }
 }

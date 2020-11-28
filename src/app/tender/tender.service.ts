@@ -15,7 +15,7 @@ export class TenderService {
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
   private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
-  private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected';
+  private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected/';
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
