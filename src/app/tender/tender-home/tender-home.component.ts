@@ -8,6 +8,7 @@ import {Bodovanje} from '../model/bodovanje.model';
 
 @Component({
   selector: 'app-tender-home',
+
   templateUrl: './tender-home.component.html',
   styleUrls: ['./tender-home.component.css']
 })
