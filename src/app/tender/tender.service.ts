@@ -12,10 +12,10 @@ import {Student} from "./model/student.model";
 })
 export class TenderService {
 
-  private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
+  private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
-  private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
-  private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected/';
+  private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
+  private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
@@ -29,17 +29,17 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData() {
-    return this.http.get('http://localhost:8080/api/ponude/sve');
+    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/sve');
   }
 
   // tslint:disable-next-line:typedef
   public getBodovanje() {
-    return this.http.get('http://localhost:8080/api/ponude/bodovanje');
+    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje');
   }
 
   // tslint:disable-next-line:typedef
   public getPrvorangirani() {
-    return this.http.get('http://localhost:8080/api/ponude/prvorangirani');
+    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani');
   }
 
   deletePonuda(id: number): void {
@@ -59,7 +59,7 @@ export class TenderService {
   }
 
   addPonude(ponude: Ponude): void {
-    this.http.post('http://localhost:8080/api/ponude/add', ponude).subscribe(data => {
+    this.http.post('https://tenderi-montefarm.herokuapp.com/api/ponude/add', ponude).subscribe(data => {
         this.dialogData = ponude;
         // this.notificationService.success( this.translate.get(['login.login']));
         // this.toasterService.success('Successfully added');
@@ -72,7 +72,7 @@ export class TenderService {
   }
 
    updatePonude(ponude: Ponude): void {
-    this.http.put('http://localhost:8080/api/ponude/update', ponude).subscribe(data => {
+    this.http.put('https://tenderi-montefarm.herokuapp.com/api/ponude/update', ponude).subscribe(data => {
         this.dialogData = ponude;
         // this.toasterService.showToaster('Successfully edited', 3000);
         console.log('updated');
