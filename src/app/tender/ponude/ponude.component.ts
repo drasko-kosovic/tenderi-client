@@ -91,7 +91,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   // tslint:disable-next-line:typedef
   addNew() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      data: {Ponude: {} }
+      data: {Ponude: {}}
     });
 
     // dialogRef.afterClosed().subscribe(result => {
@@ -106,22 +106,29 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     // });
   }
 
-  startEdit(i: number, id: number, name: string, price: number) {
+  startEdit(i: number, id: number, partija: string, atc: string, nazivProizvoda: string, zasticeniNaziv: string, proizvodjac:
+    string, jedinicaMjere: string, trazenaKolicina: string, ponudjanaKolicina: number, procijenjenaJedinicnaCijena:
+              number, ponudjenaJedinicnaCijena: number, procijenjenaUkupnaCijena: number, ponudjenaUkupnaCijena: number, rokIsporuke:
+              number, ponudjac: string, brojTendera: string
+  ) {
     this.id = id;
+    this.index = i;
     console.log(this.index);
     const dialogRef = this.dialog.open(EditComponent, {
-      data: {id, name, price}
+      data: {id, partija, atc,nazivProizvoda,zasticeniNaziv,proizvodjac,jedinicaMjere,trazenaKolicina,ponudjanaKolicina,procijenjenaJedinicnaCijena,ponudjenaJedinicnaCijena,
+        procijenjenaUkupnaCijena,ponudjenaUkupnaCijena,rokIsporuke,ponudjac,brojTendera }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
-        // When using an edit things are little different, firstly we find record inside DataService by id
-        const foundIndex = this.exampleDatabase.dataChange.value.findIndex(x => x.id === this.id);
-        // Then you update that record using data from dialogData (values you enetered)
-        this.exampleDatabase.dataChange.value[foundIndex] = this.tenderService.getDialogData();
-        // And lastly refresh table
-        // this.refreshTable();
-        // this.refresh();
+        // // When using an edit things are little different, firstly we find record inside DataService by id
+        // const foundIndex = this.exampleDatabase.dataChange.value.findIndex(x => x.id === this.id);
+        // // Then you update that record using data from dialogData (values you enetered)
+        // this.exampleDatabase.dataChange.value[foundIndex] = this.tenderService.getDialogData();
+        // // And lastly refresh table
+        // // this.refreshTable();
+        // // this.refresh();
+        console.log('Updated podaci');
       }
     });
   }

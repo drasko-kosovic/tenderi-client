@@ -12,10 +12,10 @@ import {Student} from "./model/student.model";
 })
 export class TenderService {
 
-
+  private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
   private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
-  // private readonly API_URL_UPDATE = 'http://localhost:8080/api/person/update';
+  private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected';
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
@@ -85,4 +85,30 @@ export class TenderService {
 
 
   }
+
+  updatePersonSelected(id: number): void {
+    this.http.put( this.API_URL_UPDATE_SELECTED + id, null).subscribe(data => {
+        // this.dialogData = person;
+        // this.toasterService.showToaster('Successfully edited', 3000);
+        console.log('updated');
+      },
+      (err: HttpErrorResponse) => {
+        // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
+        console.log(' no updated');
+      }
+    );
+  }
+
+  deleteSelected(): void {
+    this.http.delete(this.API_URL_DELETE_SELECTED).subscribe(data => {
+        console.log('obrisano');
+        // this.toasterService.showToaster('Successfully deleted', 3000);
+      },
+      (err: HttpErrorResponse) => {
+        // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
+      }
+    );
+  }
+
+
 }
