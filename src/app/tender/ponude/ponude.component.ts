@@ -8,11 +8,12 @@ import {Ponude} from '../model/ponude.model';
 import {DeleteDialogComponent} from '../dialog/delete/delete.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {AddDialogComponent} from '../dialog/add/add.dialog.component';
-
+import {EditComponent} from "../dialog/edit/edit.component";
 
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
+
   styleUrls: ['./ponude.component.css']
 })
 export class PonudeComponent implements OnInit, AfterViewInit {
@@ -93,16 +94,37 @@ export class PonudeComponent implements OnInit, AfterViewInit {
       data: {Ponude: {} }
     });
 
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if (result === 1) {
+    //     // After dialog is closed we're doing frontend updates
+    //     // For add we're just pushing a new row inside DataService
+    //
+    //     this.exampleDatabase.dataChange.value.push(this.tenderService.getDialogData());
+    //     // this.refreshTable();
+    //     // this.refresh();
+    //   }
+    // });
+  }
+
+  startEdit(i: number, id: number, name: string, price: number) {
+    this.id = id;
+    console.log(this.index);
+    const dialogRef = this.dialog.open(EditComponent, {
+      data: {id, name, price}
+    });
+
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
-        // After dialog is closed we're doing frontend updates
-        // For add we're just pushing a new row inside DataService
-
-        this.exampleDatabase.dataChange.value.push(this.tenderService.getDialogData());
+        // When using an edit things are little different, firstly we find record inside DataService by id
+        const foundIndex = this.exampleDatabase.dataChange.value.findIndex(x => x.id === this.id);
+        // Then you update that record using data from dialogData (values you enetered)
+        this.exampleDatabase.dataChange.value[foundIndex] = this.tenderService.getDialogData();
+        // And lastly refresh table
         // this.refreshTable();
         // this.refresh();
       }
     });
   }
+
 
 }

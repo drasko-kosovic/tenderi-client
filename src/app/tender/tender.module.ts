@@ -13,12 +13,15 @@ import { PrvorangiraniComponent } from './prvorangirani/prvorangirani.component'
 import {DeleteDialogComponent} from './dialog/delete/delete.dialog.component';
 import {AddDialogComponent} from './dialog/add/add.dialog.component';
 import {FormsModule} from "@angular/forms";
+import {EditComponent} from "./dialog/edit/edit.component";
+
 
 
 
 @NgModule({
   declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent, DeleteDialogComponent,
-    AddDialogComponent],
+    AddDialogComponent,
+   EditComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,

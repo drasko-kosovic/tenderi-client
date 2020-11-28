@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'tender',
     loadChildren: () => import('./tender/tender.module').then(m => m.TenderModule)
   },
+  {
+    path: 'student',
+    loadChildren: () => import('./student/student.module').then(m => m.StudentModule)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: '**',

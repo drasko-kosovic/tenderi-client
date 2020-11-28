@@ -14,13 +14,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatTableExporterModule} from 'mat-table-exporter';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+
 
   ],
   imports: [

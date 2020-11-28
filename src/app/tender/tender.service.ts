@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {Ponude} from './model/ponude.model';
+import {Student} from "./model/student.model";
 
 
 @Injectable({
@@ -27,11 +28,12 @@ export class TenderService {
   }
 
   // tslint:disable-next-line:typedef
-  public getData()  {
+  public getData() {
     return this.http.get('http://localhost:8080/api/ponude/sve');
   }
+
   // tslint:disable-next-line:typedef
-  public getBodovanje()  {
+  public getBodovanje() {
     return this.http.get('http://localhost:8080/api/ponude/bodovanje');
   }
 
@@ -50,12 +52,14 @@ export class TenderService {
       }
     );
   }
+
   // tslint:disable-next-line:typedef
   getDialogData() {
     return this.dialogData;
   }
+
   addPonude(ponude: Ponude): void {
-    this.http.post(this.API_URL, ponude).subscribe(data => {
+    this.http.post('http://localhost:8080/api/ponude/add', ponude).subscribe(data => {
         this.dialogData = ponude;
         // this.notificationService.success( this.translate.get(['login.login']));
         // this.toasterService.success('Successfully added');
@@ -67,4 +71,18 @@ export class TenderService {
       });
   }
 
+   updatePonude(ponude: Ponude): void {
+    this.http.put('http://localhost:8080/api/ponude/update', ponude).subscribe(data => {
+        this.dialogData = ponude;
+        // this.toasterService.showToaster('Successfully edited', 3000);
+        console.log('updated');
+      },
+      (err: HttpErrorResponse) => {
+        // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
+        console.log(' no updated');
+      }
+    );
+
+
+  }
 }

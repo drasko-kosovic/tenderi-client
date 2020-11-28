@@ -104,14 +104,19 @@
       <button mat-icon-button color="accent" >
         <mat-icon class="mat-18">edit</mat-icon>
       </button>
-      <button mat-icon-button color="accent" >
-        <mat-icon class="mat-18">system_update</mat-icon>
-      </button>
+<!--      <button mat-icon-button color="accent" >-->
+<!--        <mat-icon class="mat-18">system_update</mat-icon>-->
+<!--      </button>-->
 
       <button mat-icon-button color="warn" >
         <mat-icon class="mat-18" (click)="deleteItem(i, row.id)">delete</mat-icon>
       </button>
 
+        <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac
+        ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,
+        row.procijenjenaJedinicnaCijena, row.procijenjenaUkupnaCijena, row.ponudjenaUkupnaCijena, row.rokIsporuke, row.ponudjac,row.brojTendera)">
+          <mat-icon class="mat-18">system_update</mat-icon>
+        </button>
       <section class="example-section">
         <mat-checkbox class="example-margin"></mat-checkbox>
 
