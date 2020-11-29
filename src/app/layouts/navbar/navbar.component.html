@@ -1,37 +1,45 @@
-<mat-toolbar color="primary">
-<mat-toolbar-row class="position-fixed">
-  <span></span>
-  <span class="example-fill-remaining-space"></span>
-  <span class="align-center"></span>
-  <span class="example-spacer"></span>
-  <button mat-button routerLink="/tender">
-  <mat-icon>home</mat-icon>
-  </button>
-<!--  <button mat-button [matMenuTriggerFor]="menu">Profil</button>-->
+<mat-sidenav-container fullscreen>
 
-<!--  <button mat-button routerLink="/tender/ponude"  routerLinkActive="active" >Ponude</button>-->
-<!--  <button mat-button routerLink="/tender/bodovanje"  routerLinkActive="active" >Bodovanje</button>-->
-<!--  <button mat-button routerLink="/tender/prvorangirani"  routerLinkActive="active" >Prvorangirani</button>-->
-<!--  <button mat-button routerLink="/tender/izvoz"  routerLinkActive="active" >Izvoz</button>-->
-<!--  <button mat-button routerLink="/student"  routerLinkActive="active" >Student</button>-->
-<!--&lt;!&ndash;  <button mat-button routerLink="/profil" *ngIf="isLoggedIn" routerLinkActive="active"  >Korisnik:   {{ username }}</button>&ndash;&gt;-->
-<!--  <mat-menu #menu="matMenu">-->
-<!--    <button mat-menu-item routerLink="/ponude" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Ponude</button>-->
-<!--    <button mat-menu-item routerLink="/bodovanje" routerLinkActive="active">Bodovanje</button>-->
+  <mat-sidenav #start >
+    <mat-nav-list >
 
-<!--  </mat-menu>-->
+<!--      <a mat-list-item routerLink="/person"  *ngIf="isLoggedIn">-->
+<!--        <mat-icon>library_books</mat-icon>-->
+<!--        <span>Person List</span>-->
+<!--      </a>-->
+<!--      <a mat-list-item routerLink="/person/person-form"  *ngIf="isLoggedIn">-->
+<!--        <mat-icon>library_books</mat-icon>-->
+<!--        <span>Person Form</span>-->
+<!--      </a>-->
 
-<!--  <mat-menu #menu="matMenu">-->
-<!--    <button mat-menu-item routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</button>-->
-<!--    <button mat-menu-item routerLink="/register" routerLinkActive="active">Register</button>-->
-<!--    <button mat-menu-item *ngIf="isLoggedIn"  href class="nav-link" (click)="logout()">LogOut</button>-->
+      <a mat-list-item (click)="openRegisterDialog()">
+        <mat-icon>person_add</mat-icon>
+        <span>Register</span>
+      </a>
+    </mat-nav-list>
 
-<!--  </mat-menu>-->
+  </mat-sidenav>
 
-</mat-toolbar-row>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="start.open('mouse')">
+      <mat-icon>menu</mat-icon>
+    </button>
+<!--    <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>-->
 
+    <span class = "filler"></span>
 
+    <button mat-button (click)="openLoginDialog()"  *ngIf="!isLoggedIn">
+      <mat-icon>power_settings_new</mat-icon>
+      Prijavi se
+    </button>
+    <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()"  >
+      <mat-icon>exit_to_app</mat-icon>
+      Izalaz
+    </button>
 
+  </mat-toolbar>
 
+  <router-outlet></router-outlet>
 
-</mat-toolbar>
+</mat-sidenav-container>
+

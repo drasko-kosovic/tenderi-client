@@ -14,6 +14,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatTableExporterModule} from 'mat-table-exporter';
 import { LoginComponent } from './auth/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { RegisterComponent } from './auth/register/register.component';
+import {LogoutDialogComponent} from "./auth/logout-dialog/logout-dialog.component";
+import {AuthService} from "./auth/login/_services/auth.service";
+import {NotificationService} from "../shared/notification.service";
+import {authInterceptorProviders} from "./auth/login/_helpers/auth.interceptor";
+import {TokenStorageService} from "./auth/login/_services/token-storage.service";
 
 
 
@@ -25,6 +31,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     NavbarComponent,
     FooterComponent,
     LoginComponent,
+    RegisterComponent,
+    LogoutDialogComponent
 
 
   ],
@@ -39,7 +47,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 
   ],
-  providers: [],
+  providers: [AuthService, TokenStorageService,  authInterceptorProviders,NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
