@@ -142,4 +142,8 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     // this.refreshTable();
     // this.refresh();
   }
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
 }

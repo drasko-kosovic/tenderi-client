@@ -12,6 +12,8 @@ import {NavbarComponent} from './layouts/navbar/navbar.component';
 import {FooterComponent} from './layouts/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatTableExporterModule} from 'mat-table-exporter';
+import { LoginComponent } from './auth/login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -22,6 +24,7 @@ import {MatTableExporterModule} from 'mat-table-exporter';
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent,
+    LoginComponent,
 
 
   ],
@@ -32,6 +35,7 @@ import {MatTableExporterModule} from 'mat-table-exporter';
     MaterialModule,
     HttpClientModule,
     MatTableExporterModule,
+    ReactiveFormsModule,
 
 
   ],

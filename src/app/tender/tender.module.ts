@@ -14,14 +14,17 @@ import {DeleteDialogComponent} from './dialog/delete/delete.dialog.component';
 import {AddDialogComponent} from './dialog/add/add.dialog.component';
 import {FormsModule} from "@angular/forms";
 import {EditComponent} from "./dialog/edit/edit.component";
+import { HvalePartijeComponent } from './hvale-partije/hvale-partije.component';
+import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenjene.component';
 
 
 
 
 @NgModule({
-  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent, DeleteDialogComponent,
-    AddDialogComponent,
-   EditComponent],
+  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent, DeleteDialogComponent, AddDialogComponent,
+   EditComponent,
+   HvalePartijeComponent,
+   PerkoProcijenjeneComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,

@@ -12,8 +12,10 @@ import {Student} from "./model/student.model";
 })
 export class TenderService {
 
+  readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
+  readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene';
   private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
-  private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
+  private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/api/ponude/sve';
   private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
   private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
 
@@ -31,6 +33,15 @@ export class TenderService {
   public getData() {
     return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/sve');
   }
+
+  public getPrekoProcijenjene() {
+    return this.http.get(this.API_URL_PREKO_PROCIJENJE);
+  }
+
+  public getHvalePartije() {
+    return this.http.get(this.API_URL_HVALE_PARTIJE);
+  }
+
 
   // tslint:disable-next-line:typedef
   public getBodovanje() {
