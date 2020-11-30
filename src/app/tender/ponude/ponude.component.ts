@@ -13,7 +13,6 @@ import {EditComponent} from "../dialog/edit/edit.component";
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
-
   styleUrls: ['./ponude.component.css']
 })
 export class PonudeComponent implements OnInit, AfterViewInit {
@@ -28,6 +27,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   checked = false;
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
+  brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('filter', {static: true}) filter: ElementRef;
@@ -38,16 +38,18 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllOwners();
+    // this.getAllOwners();
+
   }
 
   // tslint:disable-next-line:typedef
   public getAllOwners() {
     // @ts-ignore
-    this.tenderService.getFindByTenderi()
+    this.tenderService.getFindByTenderi(this.brojTendera)
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
         console.log(res);
+        console.log(this.brojTendera);
       });
 
 
@@ -146,9 +148,6 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     // this.refresh();
   }
 
-brojTendera(){
-    this.tenderService.getFindByTenderi();
-}
 
   doFilter(fitlervalue: string) {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
