@@ -12,13 +12,29 @@ import {Student} from "./model/student.model";
 })
 export class TenderService {
 
-  readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
-  readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene';
-  private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
-  private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/api/ponude/sve';
-  private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
-  private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
 
+
+  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvale';
+  readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene';
+  private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
+  private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
+  private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
+  private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected/';
+  private readonly API_URL_BODOVANJE= 'http://localhost:8080/api/ponude/bodovanje/';
+  private readonly API_URL_PRVORANGIRANI= 'http://localhost:8080/api/ponude/prvorangirani/';
+  readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
+  readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
+
+  // readonly API_URL_UPDATE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update';
+  // readonly API_URL_ADD = 'https://tenderi-montefarm.herokuapp.com/api/ponude/add';
+  // readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
+  // readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene';
+  // private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
+  // private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/api/ponude/sve';
+  // private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
+  // private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
+  // private readonly API_URL_BODOVANJE= 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje/';
+  // private readonly API_URL_PRVORANGIRANI= 'https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani/';
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
 
@@ -31,7 +47,7 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getData() {
-    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/sve');
+    return this.http.get(this.API_URL);
   }
 
   public getPrekoProcijenjene() {
@@ -45,12 +61,12 @@ export class TenderService {
 
   // tslint:disable-next-line:typedef
   public getBodovanje() {
-    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje');
+    return this.http.get(this.API_URL_BODOVANJE);
   }
 
   // tslint:disable-next-line:typedef
   public getPrvorangirani() {
-    return this.http.get('https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani');
+    return this.http.get(this.API_URL_PRVORANGIRANI);
   }
 
   deletePonuda(id: number): void {
@@ -70,7 +86,7 @@ export class TenderService {
   }
 
   addPonude(ponude: Ponude): void {
-    this.http.post('https://tenderi-montefarm.herokuapp.com/api/ponude/add', ponude).subscribe(data => {
+    this.http.post(this.API_URL_ADD, ponude).subscribe(data => {
         this.dialogData = ponude;
         // this.notificationService.success( this.translate.get(['login.login']));
         // this.toasterService.success('Successfully added');
@@ -83,7 +99,7 @@ export class TenderService {
   }
 
    updatePonude(ponude: Ponude): void {
-    this.http.put('https://tenderi-montefarm.herokuapp.com/api/ponude/update', ponude).subscribe(data => {
+    this.http.put(this.API_URL_UPDATE, ponude).subscribe(data => {
         this.dialogData = ponude;
         // this.toasterService.showToaster('Successfully edited', 3000);
         console.log('updated');
