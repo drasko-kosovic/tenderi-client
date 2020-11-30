@@ -26,6 +26,8 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   index: number;
   id: number;
   checked = false;
+  ukupnoProcijenjena:number;
+  ukupnaPonudjena:number;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('filter', {static: true}) filter: ElementRef;
@@ -143,7 +145,11 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     // this.refresh();
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+
+
+  doFilter(fitlervalue: string) {
+    this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 }
