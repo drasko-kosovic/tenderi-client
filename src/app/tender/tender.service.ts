@@ -17,7 +17,7 @@ export class TenderService {
   readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvale';
   readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
-  private readonly API_URL = 'http://localhost:8080/api/ponude/api/ponude/sve';
+  private readonly API_URL = 'http://localhost:8080/api/ponude/sve';
   private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
   private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected/';
   private readonly API_URL_BODOVANJE= 'http://localhost:8080/api/ponude/bodovanje/';
@@ -30,7 +30,7 @@ export class TenderService {
   // readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
   // readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene';
   // private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
-  // private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/api/ponude/sve';
+  // private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/sve';
   // private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
   // private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
   // private readonly API_URL_BODOVANJE= 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje/';
@@ -53,6 +53,8 @@ export class TenderService {
   public getPrekoProcijenjene() {
     return this.http.get(this.API_URL_PREKO_PROCIJENJE);
   }
+
+
 
   public getHvalePartije() {
     return this.http.get(this.API_URL_HVALE_PARTIJE);
