@@ -24,7 +24,9 @@ export class TenderService {
   private readonly API_URL_PRVORANGIRANI= 'http://localhost:8080/api/ponude/prvorangirani/';
   readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
+  readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/1120';
 
+  // readonly API_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/tender';
   // readonly API_URL_UPDATE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update';
   // readonly API_URL_ADD = 'https://tenderi-montefarm.herokuapp.com/api/ponude/add';
   // readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
@@ -69,6 +71,10 @@ export class TenderService {
   // tslint:disable-next-line:typedef
   public getPrvorangirani() {
     return this.http.get(this.API_URL_PRVORANGIRANI);
+  }
+
+  public getFindByTenderi() {
+    return this.http.get(this.API_URL_FIND_BY_TENDER );
   }
 
   deletePonuda(id: number): void {

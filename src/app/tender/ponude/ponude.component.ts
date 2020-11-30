@@ -43,7 +43,8 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   public getAllOwners() {
-    this.tenderService.getData()
+    // @ts-ignore
+    this.tenderService.getFindByTenderi()
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
         console.log(res);
@@ -145,7 +146,9 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     // this.refresh();
   }
 
-
+brojTendera(){
+    this.tenderService.getFindByTenderi();
+}
 
   doFilter(fitlervalue: string) {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
