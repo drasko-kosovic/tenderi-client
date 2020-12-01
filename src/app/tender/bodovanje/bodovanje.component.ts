@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Ponude} from '../model/ponude.model';
 import {MatSort} from '@angular/material/sort';
@@ -12,7 +12,7 @@ import {Bodovanje} from '../model/bodovanje.model';
   styleUrls: ['./bodovanje.component.css']
 })
 export class BodovanjeComponent implements OnInit, AfterViewInit {
-
+  @Input() tender: string;
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];

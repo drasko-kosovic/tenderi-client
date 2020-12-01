@@ -13,7 +13,7 @@ import {Bodovanje} from '../model/bodovanje.model';
   styleUrls: ['./tender-home.component.css']
 })
 export class TenderHomeComponent implements OnInit, AfterViewInit {
-
+  brojTendera = '1020';
   public displayedColumnsBodovanje = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];

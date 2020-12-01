@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Owner} from '../model/owner.model';
 import {MatSort} from '@angular/material/sort';
@@ -13,12 +13,13 @@ import {EditComponent} from "../dialog/edit/edit.component";
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
+
   styleUrls: ['./ponude.component.css']
 })
 export class PonudeComponent implements OnInit, AfterViewInit {
 
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
-    'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
+    'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera', 'actions'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
@@ -27,6 +28,8 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   checked = false;
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
+  @Input() tender: string;
+
   // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -34,20 +37,19 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
 
   constructor(private tenderService: TenderService, public dialog: MatDialog) {
-    let brojTendera;
-    brojTendera='';
+
   }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    // this.getAllOwners();
+    this.getAllOwners();
 
   }
 
   // tslint:disable-next-line:typedef
   public getAllOwners() {
     // @ts-ignore
-    this.tenderService.getFindByTenderi(this.brojTendera)
+    this.tenderService.getFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
         console.log(res);

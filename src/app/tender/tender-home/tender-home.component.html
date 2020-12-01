@@ -1,9 +1,13 @@
+<div>
+  <input type="text">
+</div>
+
 <mat-tab-group mat-align-tabs="start">
   <mat-tab label="Ponude">
-    <app-ponude></app-ponude>
+    <app-ponude [tender]="brojTendera"></app-ponude>
   </mat-tab>
   <mat-tab label="Bodovanje">
-    <app-bodovanje></app-bodovanje>
+    <app-bodovanje [tender]="brojTendera"></app-bodovanje>
   </mat-tab>
   <mat-tab label="Prvorangirani">
     <app-prvorangirani></app-prvorangirani>

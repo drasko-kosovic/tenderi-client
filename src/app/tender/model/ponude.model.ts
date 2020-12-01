@@ -1,26 +1,27 @@
 export interface Ponude {
   id: number;
-  partija: number ;
+  partija: number;
 
   atc: number;
 
   nazivProizvoda: string;
 
- zasticeniNaziv: string;
+  zasticeniNaziv: string;
 
- proizvodjac: string;
+  proizvodjac: string;
 
- jedinicaMjere: number;
+  farmaceutskiOblik: string;
+  pakovanje: string;
 
- trazenaKolicina: number;
+  trazenaKolicina: number;
 
- ponudjanaKolicina: number;
+  ponudjanaKolicina: number;
 
   procijenjenaJedinicnaCijena: number;
 
   ponudjenaJedinicnaCijena: number;
 
- procijenjenaUkupnaCijena: number;
+  procijenjenaUkupnaCijena: number;
 
   ponudjenaUkupnaCijena: number;
 
