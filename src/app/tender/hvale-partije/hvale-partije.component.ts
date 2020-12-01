@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {PrekoProcijenjene} from "../model/PrekoProcijenjene.model";
 import {MatPaginator} from "@angular/material/paginator";
@@ -13,13 +13,13 @@ import {HvalePartije} from "../model/HvalePartije";
 })
 export class HvalePartijeComponent implements OnInit {
 
-  public displayedColumns = ['id', 'partija', 'brojTendera'];
+  public displayedColumns = ['id', 'partija','atc','nazivProizvoda','farmaceutskiOblik','pakovanje','trazena_kolicina','procijenjenaJedinicnaCijena','procijenjenaUkupnaCijena', 'brojTendera'];
 
   public dataSource = new MatTableDataSource<HvalePartije>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  @Input() tender: string;
   constructor(private tenderService: TenderService) { }
 
   // tslint:disable-next-line:typedef

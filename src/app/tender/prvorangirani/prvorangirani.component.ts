@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Bodovanje} from '../model/bodovanje.model';
 import {TenderService} from '../tender.service';
 import {MatPaginator} from '@angular/material/paginator';
@@ -16,7 +16,7 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
     'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
   public dataSource = new MatTableDataSource<Bodovanje>();
-
+  @Input() tender: string;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -24,12 +24,12 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllOwners();
+    this.getAllPrvorangirani();
   }
 
   // tslint:disable-next-line:typedef
-  public getAllOwners()  {
-    this.tenderService.getPrvorangirani()
+  public getAllPrvorangirani()  {
+    this.tenderService.getPrvorangiraniFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as Bodovanje[];
       });

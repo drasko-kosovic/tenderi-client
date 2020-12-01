@@ -42,12 +42,12 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllOwners();
+    this.getAllPonude();
 
   }
 
   // tslint:disable-next-line:typedef
-  public getAllOwners() {
+  public getAllPonude() {
     // @ts-ignore
     this.tenderService.getFindByTenderi(this.tender)
       .subscribe(res => {

@@ -25,12 +25,12 @@ export class BodovanjeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllOwners();
+    this.getAllBodovanje();
   }
 
   // tslint:disable-next-line:typedef
-  public getAllOwners()  {
-    this.tenderService.getBodovanje()
+  public getAllBodovanje()  {
+    this.tenderService.getBodovanjeFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as Bodovanje[];
       });

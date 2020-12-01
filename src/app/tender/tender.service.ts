@@ -26,6 +26,14 @@ export class TenderService {
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
   readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
 
+  readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
+  readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/prvorangirani/';
+  readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/preko_procijenjene/';
+
+
+  // readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
+  // readonly BODOVANJE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovnaje/';
+  // readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani/';
   // readonly API_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/tender';
   // readonly API_URL_UPDATE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update';
   // readonly API_URL_ADD = 'https://tenderi-montefarm.herokuapp.com/api/ponude/add';
@@ -37,6 +45,9 @@ export class TenderService {
   // private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
   // private readonly API_URL_BODOVANJE= 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje/';
   // private readonly API_URL_PRVORANGIRANI= 'https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani/';
+
+
+
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
 
@@ -75,6 +86,20 @@ export class TenderService {
 
   public getFindByTenderi(broj:String) {
     return this.http.get(this.API_URL_FIND_BY_TENDER + broj );
+  }
+
+
+
+  public getBodovanjeFindByTenderi(broj:String) {
+    return this.http.get(this.BODOVANJE_URL_FIND_BY_TENDER + broj );
+  }
+
+  public getPrvorangiraniFindByTenderi(broj:String) {
+    return this.http.get(this.PRVORANIRANI_URL_FIND_BY_TENDER + broj );
+  }
+
+  public getPrekoProcijenjeneFindByTenderi(broj:String) {
+    return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj );
   }
 
   deletePonuda(id: number): void {

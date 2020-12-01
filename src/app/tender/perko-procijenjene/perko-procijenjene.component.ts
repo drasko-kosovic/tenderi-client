@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {PrekoProcijenjene} from "../model/PrekoProcijenjene.model";
 import {MatPaginator} from "@angular/material/paginator";
@@ -19,7 +19,7 @@ export class PerkoProcijenjeneComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  @Input() tender: string;
   constructor(private tenderService: TenderService) { }
 
   // tslint:disable-next-line:typedef
@@ -29,7 +29,7 @@ export class PerkoProcijenjeneComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   public getAllPrekoProcijenjene()  {
-    this.tenderService.getPrekoProcijenjene()
+    this.tenderService.getPrekoProcijenjeneFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as PrekoProcijenjene[];
       });
