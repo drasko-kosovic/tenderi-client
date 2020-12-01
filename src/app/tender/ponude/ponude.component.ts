@@ -27,13 +27,15 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   checked = false;
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
-  brojTendera:string ='1120';
+  // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('filter', {static: true}) filter: ElementRef;
 
 
   constructor(private tenderService: TenderService, public dialog: MatDialog) {
+    let brojTendera;
+    brojTendera='';
   }
 
   // tslint:disable-next-line:typedef
@@ -49,7 +51,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
         console.log(res);
-        console.log(this.brojTendera);
+        // console.log(this.brojTendera);
       });
 
 
