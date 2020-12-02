@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Owner} from '../model/owner.model';
 import {MatSort} from '@angular/material/sort';
@@ -16,7 +16,7 @@ import {EditComponent} from "../dialog/edit/edit.component";
 
   styleUrls: ['./ponude.component.css']
 })
-export class PonudeComponent implements OnInit, AfterViewInit {
+export class PonudeComponent implements OnInit, AfterViewInit,OnChanges {
 
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
@@ -60,6 +60,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -157,5 +158,9 @@ export class PonudeComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
     this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
     this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAllPonude();
   }
 }
