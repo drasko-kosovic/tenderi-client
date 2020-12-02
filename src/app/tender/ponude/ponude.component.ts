@@ -16,11 +16,11 @@ import {EditComponent} from "../dialog/edit/edit.component";
 
   styleUrls: ['./ponude.component.css']
 })
-export class PonudeComponent implements OnInit, AfterViewInit,OnChanges {
+export class PonudeComponent implements OnInit, OnChanges {
 
-  public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
+  public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera', 'actions'];
+    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
   index: number;
@@ -152,7 +152,16 @@ export class PonudeComponent implements OnInit, AfterViewInit,OnChanges {
     // this.refreshTable();
     // this.refresh();
   }
-
+  calculation() {
+    let sum = 0;
+    if (this.dataSource) {
+      for (const row of this.dataSource.data) {
+        // tslint:disable-next-line:triple-equals
+        if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
+      }
+    }
+    return sum;
+  }
 
   doFilter(fitlervalue: string) {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();

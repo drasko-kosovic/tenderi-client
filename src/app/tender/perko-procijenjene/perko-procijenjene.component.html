@@ -1,8 +1,9 @@
 <div fxLayout fxLayoutAlign="center center">
   <mat-form-field fxFlex="40%">
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+    <p>{{tender}}</p>
   </mat-form-field>
-  <p>{{tender}}</p>
+
 </div>
 <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" (matSortChange)="customSort($event)">
 

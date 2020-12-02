@@ -8,6 +8,7 @@ import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-izvoz',
+
   templateUrl: './izvoz.component.html',
   styleUrls: ['./izvoz.component.css']
 })
