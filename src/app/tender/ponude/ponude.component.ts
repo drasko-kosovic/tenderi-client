@@ -152,16 +152,16 @@ export class PonudeComponent implements OnInit, OnChanges {
     // this.refreshTable();
     // this.refresh();
   }
-  calculation() {
-    let sum = 0;
-    if (this.dataSource) {
-      for (const row of this.dataSource.data) {
-        // tslint:disable-next-line:triple-equals
-        if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
-      }
-    }
-    return sum;
-  }
+  // calculation() {
+  //   let sum = 0;
+  //   if (this.dataSource) {
+  //     for (const row of this.dataSource.data) {
+  //       // tslint:disable-next-line:triple-equals
+  //       if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
+  //     }
+  //   }
+  //   return sum;
+  // }
 
   doFilter(fitlervalue: string) {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();

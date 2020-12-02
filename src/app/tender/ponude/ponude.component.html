@@ -6,9 +6,6 @@
     <p> Ukupno procijenjena:  {{ ukupnoProcijenjena }}</p>
     <p> Ukupno ponudjena:  {{ ukupnaPonudjena }}</p>
   </div>
-  <div>
-    <button (click)="getAllPonude()"></button>
-  </div>
 <div class="example-container mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" (matSortChange)="customSort($event)">
     <ng-container matColumnDef="partija">
@@ -81,7 +78,7 @@
     <ng-container matColumnDef="ponudjenaUkupnaCijena">
       <th mat-header-cell *matHeaderCellDef> ponudjenaUkupnaCijena</th>
       <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjenaUkupnaCijena | currency}} </td>
-      <td mat-footer-cell *matFooterCellDef> {{calculation()| currency}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
     </ng-container>
     <ng-container matColumnDef="procijenjenaUkupnaCijena">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Procijenejna Ukupna</th>

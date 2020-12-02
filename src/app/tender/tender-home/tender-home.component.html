@@ -1,8 +1,11 @@
 <div *ngIf="isLoggedIn">
-  <div>
-    <input type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
-  </div>
-
+  <mat-form-field class="example-form-field">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
+    <button mat-button *ngIf="brojTendera" matSuffix mat-icon-button aria-label="Clear" (click)="brojTendera=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
   <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Ponude">
       <app-ponude [tender]="brojTendera"></app-ponude>
