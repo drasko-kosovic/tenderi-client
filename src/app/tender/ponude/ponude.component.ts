@@ -166,7 +166,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   doFilter(fitlervalue: string) {
     this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
     this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
