@@ -24,12 +24,12 @@ export class HvalePartijeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllPrekoProcijenjene();
+    this.getAllHvalePartije();
   }
 
   // tslint:disable-next-line:typedef
-  public getAllPrekoProcijenjene()  {
-    this.tenderService.getHvalePartije()
+  public getAllHvalePartije()  {
+    this.tenderService.getHvalePartijeFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as HvalePartije[];
       });

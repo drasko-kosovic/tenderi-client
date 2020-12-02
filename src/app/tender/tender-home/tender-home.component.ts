@@ -1,10 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {Ponude} from '../model/ponude.model';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {TenderService} from '../tender.service';
-import {Bodovanje} from '../model/bodovanje.model';
+
+import {TokenStorageService} from "../../auth/login/_services/token-storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tender-home',
@@ -12,7 +9,24 @@ import {Bodovanje} from '../model/bodovanje.model';
   templateUrl: './tender-home.component.html',
   styleUrls: ['./tender-home.component.css']
 })
-export class TenderHomeComponent  {
-  brojTendera = '1020';
+export class TenderHomeComponent implements OnInit {
+  isLoggedIn = false;
+  private roles: string[];
+  brojTendera = '1120';
+  constructor( private tokenStorageService: TokenStorageService, private router: Router) {
+
+  }
+  ngOnInit(): void {
+
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+
+
+    }
+  }
 
 }

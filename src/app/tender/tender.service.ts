@@ -14,7 +14,7 @@ export class TenderService {
 
 
 
-  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvale';
+  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvale/';
   readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude/sve';
@@ -26,11 +26,12 @@ export class TenderService {
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
   readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
 
+  readonly HVALE_URL_FINR_BY_TENDER = 'http://localhost:8080/api/ponude/hvale/';
   readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
   readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/prvorangirani/';
   readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/preko_procijenjene/';
 
-
+  // readonly HVALE_URL_FINR_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale/';
   // readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
   // readonly BODOVANJE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovnaje/';
   // readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani/';
@@ -84,6 +85,15 @@ export class TenderService {
     return this.http.get(this.API_URL_PRVORANGIRANI);
   }
 
+
+
+
+
+
+
+  //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
   public getFindByTenderi(broj:String) {
     return this.http.get(this.API_URL_FIND_BY_TENDER + broj );
   }
@@ -98,9 +108,21 @@ export class TenderService {
     return this.http.get(this.PRVORANIRANI_URL_FIND_BY_TENDER + broj );
   }
 
-  public getPrekoProcijenjeneFindByTenderi(broj:String) {
-    return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj );
+
+
+  public getHvalePartijeFindByTenderi(broj:String) {
+    return this.http.get(this.HVALE_URL_FINR_BY_TENDER + broj );
   }
+
+
+
+  public getPrekoProcijenjeneFindByTenderi(broj:String) {
+    return this.http.get(this.HVALE_URL_FINR_BY_TENDER + broj );
+  }
+
+
+
+
 
   deletePonuda(id: number): void {
     this.http.delete(this.API_URL_DELETE + id).subscribe(data => {
