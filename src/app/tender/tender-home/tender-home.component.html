@@ -1,6 +1,6 @@
 <div *ngIf="isLoggedIn">
   <div>
-    <input type="text">
+    <input type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
   </div>
 
   <mat-tab-group mat-align-tabs="start">

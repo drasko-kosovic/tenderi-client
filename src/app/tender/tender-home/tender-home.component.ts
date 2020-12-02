@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
   private roles: string[];
-  brojTendera = '1120';
+  private brojTendera='';
   constructor( private tokenStorageService: TokenStorageService, private router: Router) {
 
   }
@@ -27,6 +27,10 @@ export class TenderHomeComponent implements OnInit {
 
 
     }
+  }
+
+  OnKeyUp(){
+    console.log('to je     ' +this.brojTendera);
   }
 
 }
