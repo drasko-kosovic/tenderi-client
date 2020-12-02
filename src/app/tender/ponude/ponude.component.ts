@@ -42,7 +42,7 @@ export class PonudeComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllPonude();
+    // this.getAllPonude();
 
   }
 
