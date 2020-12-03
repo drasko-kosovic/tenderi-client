@@ -28,6 +28,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   checked = false;
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
+   ponude?: Ponude[];
   @Input() tender: string;
 
   // brojTendera:string ='1120';

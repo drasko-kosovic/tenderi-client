@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {TokenStorageService} from "../../auth/login/_services/token-storage.service";
 import {Router} from "@angular/router";
@@ -12,10 +12,12 @@ import {Router} from "@angular/router";
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
   private roles: string[];
-  private brojTendera='';
-  constructor( private tokenStorageService: TokenStorageService, private router: Router) {
+  private brojTendera = '';
+
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
 
   }
+
   ngOnInit(): void {
 
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -26,11 +28,15 @@ export class TenderHomeComponent implements OnInit {
 
     }
 
-
   }
 
-  OnKeyUp(){
-    console.log('to je     ' +this.brojTendera);
+  OnKeyUp() {
+    console.log('to je     ' + this.brojTendera);
+  }
+
+  onClean(){
+    this.brojTendera='';
+    window.location.reload();
   }
 
 }
