@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {PrekoProcijenjene} from "../model/PrekoProcijenjene.model";
 import {MatPaginator} from "@angular/material/paginator";
@@ -10,7 +10,7 @@ import {TenderService} from "../tender.service";
   templateUrl: './perko-procijenjene.component.html',
   styleUrls: ['./perko-procijenjene.component.css']
 })
-export class PerkoProcijenjeneComponent implements OnInit {
+export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
 
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'ponudjac', 'brojTendera'];
@@ -19,12 +19,12 @@ export class PerkoProcijenjeneComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @Input() tender: string;
-  constructor(private tenderService: TenderService) { }
 
+  constructor(private tenderService: TenderService) { }
+  @Input() tender: string;
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllPrekoProcijenjene();
+    // this.getAllPrekoProcijenjene();
   }
 
   // tslint:disable-next-line:typedef
@@ -46,6 +46,9 @@ export class PerkoProcijenjeneComponent implements OnInit {
 
   public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAllPrekoProcijenjene();
   }
 
 }

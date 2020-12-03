@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {Owner} from '../model/owner.model';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {TenderService} from '../tender.service';
@@ -28,7 +27,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   checked = false;
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
-   ponude?: Ponude[];
+
   @Input() tender: string;
 
   // brojTendera:string ='1120';

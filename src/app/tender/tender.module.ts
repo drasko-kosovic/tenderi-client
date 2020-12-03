@@ -8,7 +8,6 @@ import {MaterialModule} from '../../shared/material.module';
 import { BodovanjeComponent } from './bodovanje/bodovanje.component';
 import { TenderHomeComponent } from './tender-home/tender-home.component';
 import {MatTableExporterModule} from 'mat-table-exporter';
-import { IzvozComponent } from './izvoz/izvoz.component';
 import { PrvorangiraniComponent } from './prvorangirani/prvorangirani.component';
 import {DeleteDialogComponent} from './dialog/delete/delete.dialog.component';
 import {AddDialogComponent} from './dialog/add/add.dialog.component';
@@ -21,7 +20,7 @@ import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenj
 
 
 @NgModule({
-  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent, IzvozComponent, PrvorangiraniComponent, DeleteDialogComponent, AddDialogComponent,
+  declarations: [TenderHomeComponent, PonudeComponent, BodovanjeComponent, TenderHomeComponent,  PrvorangiraniComponent, DeleteDialogComponent, AddDialogComponent,
    EditComponent,
    HvalePartijeComponent,
    PerkoProcijenjeneComponent],
