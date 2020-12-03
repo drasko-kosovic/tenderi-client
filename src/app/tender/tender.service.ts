@@ -39,7 +39,7 @@ export class TenderService {
   readonly API_URL_UPDATE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update';
   readonly API_URL_ADD = 'https://tenderi-montefarm.herokuapp.com/api/ponude/add';
   readonly API_URL_HVALE_PARTIJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale';
-  readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene';
+  readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
   private readonly API_URL = 'https://tenderi-montefarm.herokuapp.com/api/ponude/sve';
   private readonly API_URL_DELETE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/';
@@ -117,7 +117,7 @@ export class TenderService {
 
 
   public getPrekoProcijenjeneFindByTenderi(broj:String) {
-    return this.http.get(this.HVALE_URL_FINR_BY_TENDER + broj );
+    return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj );
   }
 
 
