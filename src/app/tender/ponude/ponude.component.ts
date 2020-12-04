@@ -12,14 +12,13 @@ import {EditComponent} from "../dialog/edit/edit.component";
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
-
   styleUrls: ['./ponude.component.css']
 })
 export class PonudeComponent implements OnInit {
 
   public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera','dodaj','delete sve','edit','delete','selected'];
+    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera','edit','delete','selected'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
   index: number;
@@ -46,13 +45,13 @@ export class PonudeComponent implements OnInit {
 
   }
 
-  // tslint:disable-next-line:typedef
+
   public getAllPonude() {
-    // @ts-ignore
+
     this.tenderService.getFindByTenderi(this.tender)
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
-        console.log(res);
+        console.log('to je   ' + res);
         // console.log(this.brojTendera);
       });
 

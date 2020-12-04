@@ -1,4 +1,4 @@
-<div fxLayout fxLayoutAlign="center center" *ngIf="dataSource.data.length > 0">
+<div fxLayout fxLayoutAlign="center center" *ngIf="dataSource.data?.length > 0">
   <div>
     <mat-form-field fxFlex="40%">
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
@@ -109,29 +109,31 @@
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="dodaj">
-        <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button color="primary">
-            <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()">add</mat-icon>
-          </button>
-        </th>
-        <td mat-cell *matCellDef="let element"></td>
-        <td mat-footer-cell *matFooterCellDef></td>
-      </ng-container>
-      <ng-container matColumnDef="delete sve">
-        <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button color="primary">
-            <mat-icon aria-label="Example icon-button with a heart icon" (click)="deleteSelected()">delete</mat-icon>
-          </button>
-        </th>
-        <td mat-cell *matCellDef="let element"></td>
-        <td mat-footer-cell *matFooterCellDef></td>
-      </ng-container>
+<!--      <ng-container matColumnDef="dodaj">-->
+<!--        <th mat-header-cell *matHeaderCellDef>-->
+<!--          <button mat-icon-button color="primary">-->
+<!--            <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()">add</mat-icon>-->
+<!--          </button>-->
+<!--        </th>-->
+<!--        <td mat-cell *matCellDef="let element"></td>-->
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+<!--      </ng-container>-->
+<!--      <ng-container matColumnDef="delete sve">-->
+<!--        <th mat-header-cell *matHeaderCellDef>-->
+<!--          <button mat-icon-button color="primary">-->
+<!--            <mat-icon aria-label="Example icon-button with a heart icon" (click)="deleteSelected()">delete</mat-icon>-->
+<!--          </button>-->
+<!--        </th>-->
+<!--        <td mat-cell *matCellDef="let element"></td>-->
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+<!--      </ng-container>-->
 
 
 
       <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">
+          <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()">add</mat-icon>
+        </button></th>
         <td mat-cell *matCellDef="let row; let i=index;">
           <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac
         ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,
@@ -143,7 +145,9 @@
       </ng-container>
 
       <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">
+          <mat-icon aria-label="Example icon-button with a heart icon" (click)="deleteSelected()">delete</mat-icon>
+        </button></th>
         <td mat-cell *matCellDef="let row; let i=index;">
           <button mat-icon-button color="warn">
             <mat-icon class="mat-18" (click)="deleteItem(i, row.id)">delete</mat-icon>
