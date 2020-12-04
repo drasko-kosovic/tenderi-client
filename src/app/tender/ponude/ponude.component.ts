@@ -15,11 +15,11 @@ import {EditComponent} from "../dialog/edit/edit.component";
 
   styleUrls: ['./ponude.component.css']
 })
-export class PonudeComponent implements OnInit, OnChanges {
+export class PonudeComponent implements OnInit {
 
   public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera','actions','edit','selected'];
+    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera','dodaj','delete sve','edit','delete','selected'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
   index: number;
@@ -42,7 +42,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    // this.getAllPonude();
+    this.getAllPonude();
 
   }
 
@@ -68,6 +68,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   public customSort = (event) => {
     console.log(event);
   }
+
 
   // tslint:disable-next-line:typedef
   // doFilter(fitlervalue: string) {
@@ -169,7 +170,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getAllPonude();
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.getAllPonude();
+  // }
 }
