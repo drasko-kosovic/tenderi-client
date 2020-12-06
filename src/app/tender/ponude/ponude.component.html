@@ -112,12 +112,15 @@
       <ng-container matColumnDef="dodaj">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button color="primary">
+
             <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()">add</mat-icon>
           </button>
         </th>
-        <td mat-cell *matCellDef="let element"></td>
+        <td mat-cell *matCellDef="let element"><td mat-cell *matCellDef="let row; let i=index;"><mat-icon class="mat-18" (click)="deleteItem(i, row.id)"></mat-icon></td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
+
+
       <ng-container matColumnDef="delete sve">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button color="primary">
@@ -130,30 +133,30 @@
 
 
 
-      <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">
-          <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()"></mat-icon>
-        </button></th>
-        <td mat-cell *matCellDef="let row; let i=index;">
-          <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac
-        ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,
-        row.procijenjenaJedinicnaCijena, row.procijenjenaUkupnaCijena, row.ponudjenaUkupnaCijena, row.rokIsporuke, row.ponudjac,row.brojTendera)">
-            <mat-icon class="mat-18"></mat-icon>
-          </button>
-        </td>
-        <td mat-footer-cell *matFooterCellDef></td>
-      </ng-container>
+<!--      <ng-container matColumnDef="edit">-->
+<!--        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">-->
+<!--          <mat-icon aria-label="Example icon-button with a heart icon" (click)="addNew()"></mat-icon>-->
+<!--        </button></th>-->
+<!--        <td mat-cell *matCellDef="let row; let i=index;">-->
+<!--          <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac-->
+<!--        ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,-->
+<!--        row.procijenjenaJedinicnaCijena, row.procijenjenaUkupnaCijena, row.ponudjenaUkupnaCijena, row.rokIsporuke, row.ponudjac,row.brojTendera)">-->
+<!--            <mat-icon class="mat-18"></mat-icon>-->
+<!--          </button>-->
+<!--        </td>-->
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+<!--      </ng-container>-->
 
-      <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">
-          <mat-icon aria-label="Example icon-button with a heart icon" (click)="deleteSelected()"></mat-icon>
-        </button></th>
-        <td mat-cell *matCellDef="let row; let i=index;">
-          <button mat-icon-button color="warn">
-            <mat-icon class="mat-18" (click)="deleteItem(i, row.id)"></mat-icon>
-          </button>
-        <td mat-footer-cell *matFooterCellDef></td>
-      </ng-container>
+<!--      <ng-container matColumnDef="delete">-->
+<!--        <th mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary">-->
+<!--          <mat-icon aria-label="Example icon-button with a heart icon" (click)="deleteSelected()"></mat-icon>-->
+<!--        </button></th>-->
+<!--        <td mat-cell *matCellDef="let row; let i=index;">-->
+<!--          <button mat-icon-button color="warn">-->
+<!--            <mat-icon class="mat-18" (click)="deleteItem(i, row.id)"></mat-icon>-->
+<!--          </button>-->
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+<!--      </ng-container>-->
 
       <ng-container matColumnDef="selected">
         <th mat-header-cell *matHeaderCellDef></th>
