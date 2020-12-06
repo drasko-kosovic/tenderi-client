@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Bodovanje} from '../model/bodovanje.model';
 import {TenderService} from '../tender.service';
 import {MatPaginator} from '@angular/material/paginator';
@@ -17,6 +17,10 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
   public dataSource = new MatTableDataSource<Bodovanje>();
   @Input() tender: string;
+  @Input() ponnudjac:string;
+
+  ukupnoProcijenjena:number;
+  ukupnaPonudjena:number;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -44,10 +48,17 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
     console.log(event);
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  doFilter() {
+    this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAllPrvorangirani();
+    // @ts-ignore;
+    this.doFilter();
+  }
 
 
 

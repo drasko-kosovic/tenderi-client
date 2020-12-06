@@ -21,7 +21,11 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private tenderService: TenderService) { }
+  ukupnoProcijenjena:number;
+  ukupnaPonudjena:number;
+
   @Input() tender: string;
+  @Input() ponnudjac:string;
   // tslint:disable-next-line:typedef
   ngOnInit() {
     // this.getAllPrekoProcijenjene();
@@ -44,11 +48,15 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
     console.log(event);
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getAllPrekoProcijenjene();
+  doFilter() {
+    this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAllPrekoProcijenjene()
+    // @ts-ignore
+    this.doFilter();
+  }
 }
