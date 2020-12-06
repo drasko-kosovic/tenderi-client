@@ -41,4 +41,7 @@ export class TenderHomeComponent implements OnInit {
     window.location.reload();
   }
 
+  onCleanPonudjaci() {
+    this.imePonudjaca='';
+  }
 }
