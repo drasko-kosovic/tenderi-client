@@ -13,6 +13,10 @@ import {Bodovanje} from '../model/bodovanje.model';
 })
 export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
   @Input() tender: string;
+  @Input() ponnudjac:string;
+
+  ukupnoProcijenjena:number;
+  ukupnaPonudjena:number;
   public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'jedinicaMjere', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
     'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke' , 'ponudjac', 'brojTendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
@@ -45,12 +49,16 @@ export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
     console.log(event);
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  doFilter() {
+    this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getAllBodovanje();
+    // @ts-ignore
+    this.doFilter();
   }
 
 }

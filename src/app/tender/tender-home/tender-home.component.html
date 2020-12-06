@@ -1,17 +1,24 @@
 <div *ngIf="isLoggedIn">
   <mat-form-field class="example-form-field">
-    <mat-label>Clearable input</mat-label>
+    <mat-label>Tender</mat-label>
     <input matInput type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
     <button mat-button *ngIf="brojTendera" matSuffix mat-icon-button aria-label="Clear" (click)="onClean()">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+  <mat-form-field class="example-form-field">
+    <mat-label>Ponudjac</mat-label>
+    <input matInput type="text" [(ngModel)]="imePonudjaca" (click)="OnKeyUp()">
+    <button mat-button *ngIf="imePonudjaca" matSuffix mat-icon-button aria-label="Clear" (click)="onClean()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
   <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Ponude">
-      <app-ponude [tender]="brojTendera"></app-ponude>
+      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
     </mat-tab>
     <mat-tab label="Bodovanje">
-      <app-bodovanje [tender]="brojTendera"></app-bodovanje>
+      <app-bodovanje [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-bodovanje>
     </mat-tab>
     <mat-tab label="Prvorangirani">
       <app-prvorangirani [tender]="brojTendera"></app-prvorangirani>

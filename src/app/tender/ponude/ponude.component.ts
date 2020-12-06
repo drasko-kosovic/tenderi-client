@@ -9,12 +9,14 @@ import {MatDialog} from '@angular/material/dialog';
 import {AddDialogComponent} from '../dialog/add/add.dialog.component';
 import {EditComponent} from "../dialog/edit/edit.component";
 
+
+
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
   styleUrls: ['./ponude.component.css']
 })
-export class PonudeComponent implements OnInit {
+export class PonudeComponent implements OnInit, OnChanges {
 
   public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
     'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
@@ -28,6 +30,7 @@ export class PonudeComponent implements OnInit {
   ukupnaPonudjena:number;
 
   @Input() tender: string;
+  @Input() ponnudjac:string;
 
   // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
@@ -41,7 +44,7 @@ export class PonudeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getAllPonude();
+    // this.getAllPonude();
 
   }
 
@@ -163,13 +166,17 @@ export class PonudeComponent implements OnInit {
   //   return sum;
   // }
 
-  doFilter(fitlervalue: string) {
-    this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
+  doFilter() {
+    this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
     this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
     this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   this.getAllPonude();
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAllPonude();
+    // @ts-ignore
+    this.doFilter();
+  }
+
+
 }
