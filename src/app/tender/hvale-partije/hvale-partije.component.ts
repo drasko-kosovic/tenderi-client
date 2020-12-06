@@ -48,16 +48,18 @@ export class HvalePartijeComponent implements OnInit {
     console.log(event);
   }
 
-  // doFilter() {
-  //   this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
-  //   this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-  //   this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-  // }
+  doFilter() {
+    this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
+    // this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    // this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    //
+  }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getAllHvalePartije();
     // @ts-ignore
-    this.doFilter();
+    // this.doFilter();
   }
 
 }
