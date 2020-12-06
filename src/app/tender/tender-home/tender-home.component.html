@@ -1,24 +1,27 @@
 <div *ngIf="isLoggedIn">
-  <div class="row">
-<div class="column">
-  <mat-form-field class="example-form-field">
-    <mat-label>Tender</mat-label>
-    <input matInput type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
-    <button mat-button *ngIf="brojTendera" matSuffix mat-icon-button aria-label="Clear" (click)="onClean()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
+  <div >
+    <div class="form">
+      <mat-form-field class="example-form-field">
+        <mat-label>Tender</mat-label>
+        <input matInput type="text" [(ngModel)]="brojTendera" (click)="OnKeyUp()">
+        <button mat-button *ngIf="brojTendera" matSuffix mat-icon-button aria-label="Clear" (click)="onClean()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field class="example-form-field">
+        <mat-label>Ponudjac</mat-label>
+        <input matInput type="text" [(ngModel)]="imePonudjaca" (click)="OnKeyUp()">
+        <button mat-button *ngIf="imePonudjaca" matSuffix mat-icon-button aria-label="Clear"
+                (click)="onCleanPonudjaci()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
 
-<div class="column" >
-  <mat-form-field class="example-form-field">
-    <mat-label>Ponudjac</mat-label>
-    <input matInput type="text" [(ngModel)]="imePonudjaca" (click)="OnKeyUp()">
-    <button mat-button *ngIf="imePonudjaca" matSuffix mat-icon-button aria-label="Clear"
-            (click)="onCleanPonudjaci()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+
+
 </div>
 
 
@@ -40,9 +43,9 @@
       <app-perko-procijenjene [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-perko-procijenjene>
     </mat-tab>
     <mat-tab label="Nema ponuda">
-      <app-hvale-partije [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-hvale-partije>
+      <app-hvale-partije [tender]="brojTendera"></app-hvale-partije>
     </mat-tab>
   </mat-tab-group>
 
 
-</div>
+
