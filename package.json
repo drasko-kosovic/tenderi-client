@@ -23,6 +23,7 @@
     "@angular/router": "~10.2.0",
     "jspdf": "^2.1.1",
     "mat-table-exporter": "^9.0.2",
+    "pdfmake": "^0.1.68",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

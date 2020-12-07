@@ -8,9 +8,11 @@ import {DeleteDialogComponent} from '../dialog/delete/delete.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {AddDialogComponent} from '../dialog/add/add.dialog.component';
 import {EditComponent} from "../dialog/edit/edit.component";
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 
-
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
@@ -176,6 +178,12 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.getAllPonude();
     // @ts-ignore
     this.doFilter();
+  }
+
+  generatePdf(){
+    const documentDefinition = { content: 'This is for testing.' };
+    pdfMake.createPdf(documentDefinition).print();
+    // pdfMake.createPdf(docDefinition).print();
   }
 
 
