@@ -11,10 +11,15 @@
     </button>
         <button mat-raised-button (click)="exportTable()">PDF</button>
   </div>
+  <div #reportContent>
+
+
+  </div>
   <div class="example-container mat-elevation-z8">
     <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
            (matSortChange)="customSort($event)" #exporter="matTableExporter">
    <table class="table table-bordered">
+     <div #reportContent>
        <ng-container matColumnDef="partija">
          <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
          <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
@@ -109,6 +114,9 @@
          <td mat-cell *matCellDef="let element"> {{element.brojTendera}} </td>
          <td mat-footer-cell *matFooterCellDef></td>
        </ng-container>
+
+
+     </div>
 
      </table>
 

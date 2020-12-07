@@ -8,7 +8,7 @@ export class TableUtil {
     popupWin.document.write(`
   <html>
     <head>
-      <title>Print tab</title>
+      <title>Bodovanje</title>
      
     </head>
 <body onload="window.print();window.close()"><table class="table table-bordered">${printContents}</table></body>

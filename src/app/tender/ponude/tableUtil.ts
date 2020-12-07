@@ -1,4 +1,7 @@
+import {ElementRef, ViewChild} from '@angular/core';
+
 export class TableUtil {
+  @ViewChild('reportContent') reportContent: ElementRef;
   static exportToPdf(tableId: string, name?: string) {
     let printContents, popupWin;
     printContents = document.getElementById(tableId).innerHTML;
