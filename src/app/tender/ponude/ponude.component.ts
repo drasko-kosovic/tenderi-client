@@ -10,6 +10,7 @@ import {AddDialogComponent} from '../dialog/add/add.dialog.component';
 import {EditComponent} from "../dialog/edit/edit.component";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import {TableUtil} from './tableUtil';
 
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -182,9 +183,12 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   generatePdf(){
     const documentDefinition = { content: 'This is for testing.' };
-    pdfMake.createPdf(documentDefinition).print();
+    // pdfMake.createPdf(documentDefinition).print();
     // pdfMake.createPdf(docDefinition).print();
+    pdfMake.createPdf(documentDefinition).open({}, window);
   }
-
+  exportTable(){
+    TableUtil.exportToPdf("ExampleTable");
+  }
 
 }

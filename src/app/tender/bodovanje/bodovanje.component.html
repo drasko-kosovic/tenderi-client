@@ -16,10 +16,10 @@
             (click)="exporter.exportTable('xlsx', {fileName:'Bodovanje', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
       Excel
     </button>
-    <!--    <button mat-raised-button (click)="exporter.exportTable('txt')">Txt</button>-->
+    <button mat-raised-button (click)="exportTable()">PDF</button>
   </div>
   <div class="example-container mat-elevation-z8">
-    <table mat-table matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
+    <table id="ExampleTable" mat-table matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
            (matSortChange)="customSort($event)" #exporter="matTableExporter">
       <ng-container matColumnDef="partija">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
