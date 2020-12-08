@@ -5,6 +5,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {TenderService} from "../tender.service";
 import {HvalePartije} from "../model/HvalePartije";
+import {TableUtilPrekoprocijenjene} from '../perko-procijenjene/table-util-prekoprocijenjene';
+import {TableUtilHvale} from './table-util-hvale';
 
 @Component({
   selector: 'app-hvale-partije',
@@ -60,6 +62,12 @@ export class HvalePartijeComponent implements OnInit {
     this.getAllHvalePartije();
     // @ts-ignore
     // this.doFilter();
+  }
+
+  exportTableHvale() {
+
+
+    TableUtilHvale.exportToPdf('ExampleTable');
   }
 
 }
