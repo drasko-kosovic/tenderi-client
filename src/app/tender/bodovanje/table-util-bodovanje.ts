@@ -1,6 +1,6 @@
 import {ElementRef, Injectable, ViewChild} from "@angular/core";
 @Injectable()
-export class TableUtilPonude {
+export class TableUtilBodovanje {
 
   @ViewChild('reportContent') reportContent: ElementRef;
   static exportToPdf(tableId: string, name?: string) {
@@ -12,12 +12,12 @@ export class TableUtilPonude {
     popupWin.document.write(`
   <html>
     <head>
-      <title>Ponude</title>
+      <title>Bodovanje</title>
      
     </head>
 <body onload="window.print();window.close()"><table id="moj" class="table table-bordered">${printContents}</table></body>
   </html>`
     );
-    popupWin.document.close();window.location.reload();
+    popupWin.document.close();
   }
 }

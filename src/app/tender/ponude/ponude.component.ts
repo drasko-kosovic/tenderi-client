@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
@@ -7,16 +7,14 @@ import {Ponude} from '../model/ponude.model';
 import {DeleteDialogComponent} from '../dialog/delete/delete.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {AddDialogComponent} from '../dialog/add/add.dialog.component';
-import {EditComponent} from "../dialog/edit/edit.component";
+import {EditComponent} from '../dialog/edit/edit.component';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import {TableUtilPonude} from "./table-util-ponude";
-
-
-
+import {TableUtilPonude} from './table-util-ponude';
 
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
@@ -25,18 +23,18 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class PonudeComponent implements OnInit, OnChanges {
 
   public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
-    'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera','dodaj','delete sve','selected'];
+    'farmaceutskiOblik', 'pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
+    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke', 'ponudjac', 'brojTendera', 'dodaj', 'delete sve', 'selected'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
   index: number;
   id: number;
   checked = false;
-  ukupnoProcijenjena:number;
-  ukupnaPonudjena:number;
-
+  ukupnoProcijenjena: number;
+  ukupnaPonudjena: number;
+  show = true;
   @Input() tender: string;
-  @Input() ponnudjac:string;
+  @Input() ponnudjac: string;
 
   // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
@@ -75,7 +73,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   public customSort = (event) => {
     console.log(event);
-  }
+  };
 
 
   // tslint:disable-next-line:typedef
@@ -134,8 +132,24 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.index = i;
     console.log(this.index);
     const dialogRef = this.dialog.open(EditComponent, {
-      data: {id, partija, atc,nazivProizvoda,zasticeniNaziv,proizvodjac,jedinicaMjere,trazenaKolicina,ponudjanaKolicina,procijenjenaJedinicnaCijena,ponudjenaJedinicnaCijena,
-        procijenjenaUkupnaCijena,ponudjenaUkupnaCijena,rokIsporuke,ponudjac,brojTendera }
+      data: {
+        id,
+        partija,
+        atc,
+        nazivProizvoda,
+        zasticeniNaziv,
+        proizvodjac,
+        jedinicaMjere,
+        trazenaKolicina,
+        ponudjanaKolicina,
+        procijenjenaJedinicnaCijena,
+        ponudjenaJedinicnaCijena,
+        procijenjenaUkupnaCijena,
+        ponudjenaUkupnaCijena,
+        rokIsporuke,
+        ponudjac,
+        brojTendera
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -152,15 +166,17 @@ export class PonudeComponent implements OnInit, OnChanges {
     });
   }
 
-  updateSelected(id:number){
+  updateSelected(id: number) {
 
-    this.tenderService.updatePersonSelected( id);
+    this.tenderService.updatePersonSelected(id);
   }
+
   deleteSelected(): void {
     this.tenderService.deleteSelected();
     // this.refreshTable();
     // this.refresh();
   }
+
   // calculation() {
   //   let sum = 0;
   //   if (this.dataSource) {
@@ -184,14 +200,21 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.doFilter();
   }
 
-  generatePdf(){
-    const documentDefinition = { content: 'This is for testing.' };
+  generatePdf() {
+    const documentDefinition = {content: 'This is for testing.'};
     // pdfMake.createPdf(documentDefinition).print();
     // pdfMake.createPdf(docDefinition).print();
     pdfMake.createPdf(documentDefinition).open({}, window);
   }
-  exportTable(){
-    TableUtilPonude.exportToPdf("ExampleTable");
+
+  hide(){
+    this.show = false;
+  }
+  exportTable() {
+
+
+
+    TableUtilPonude.exportToPdf('ExampleTable');
   }
 
 }

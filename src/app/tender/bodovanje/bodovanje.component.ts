@@ -5,6 +5,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {TenderService} from '../tender.service';
 import {Bodovanje} from '../model/bodovanje.model';
+import {TableUtilBodovanje} from './table-util-bodovanje';
 // import {TableUtilBodovanje} from "./tableUtilBodovanje";
 
 
@@ -62,8 +63,8 @@ export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
     // @ts-ignore
     this.doFilter();
   }
-  exportTable(){
-    // TableUtilBodovanje.exportToPdf("ExampleTable");
+  exportTableBodovanje(){
+    TableUtilBodovanje.exportToPdf("ExampleTable");
   }
 
 }
