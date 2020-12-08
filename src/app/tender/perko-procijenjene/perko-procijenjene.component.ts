@@ -4,6 +4,8 @@ import {PrekoProcijenjene} from "../model/PrekoProcijenjene.model";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {TenderService} from "../tender.service";
+import {TableUtilPrvorangirani} from '../prvorangirani/table-util-prvorangirani';
+import {TableUtilPrekoprocijenjene} from './table-util-prekoprocijenjene';
 
 @Component({
   selector: 'app-perko-procijenjene',
@@ -58,5 +60,11 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
     this.getAllPrekoProcijenjene()
     // @ts-ignore
     this.doFilter();
+  }
+
+  exportTablePrekoProcijenjene() {
+
+
+    TableUtilPrekoprocijenjene.exportToPdf('ExampleTable');
   }
 }

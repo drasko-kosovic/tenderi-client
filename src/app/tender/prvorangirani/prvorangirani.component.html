@@ -16,7 +16,7 @@
             (click)="exporter.exportTable('xlsx', {fileName:'Prvorangirani', sheet: 'prvorangiranie', Props: {Author: 'Talha'}})">
       Excel
     </button>
-    <!--    <button mat-raised-button (click)="exporter.exportTable('txt')">Txt</button>-->
+    <button mat-raised-button (click)="exportTablePrvorangirani()">PDF</button>
   </div>
   <div class="example-container mat-elevation-z8">
     <table mat-table matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"

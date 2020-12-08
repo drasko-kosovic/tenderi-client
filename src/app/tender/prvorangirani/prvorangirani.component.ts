@@ -4,6 +4,8 @@ import {TenderService} from '../tender.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {TableUtilPonude} from '../ponude/table-util-ponude';
+import {TableUtilPrvorangirani} from './table-util-prvorangirani';
 
 @Component({
   selector: 'app-prvorangirani',
@@ -60,6 +62,10 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
     this.doFilter();
   }
 
+  exportTablePrvorangirani() {
 
+
+    TableUtilPrvorangirani.exportToPdf('ExampleTable');
+  }
 
 }

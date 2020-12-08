@@ -207,11 +207,11 @@ export class PonudeComponent implements OnInit, OnChanges {
     pdfMake.createPdf(documentDefinition).open({}, window);
   }
 
-  hide(){
+  hide() {
     this.show = false;
   }
-  exportTable() {
 
+  exportTable() {
 
 
     TableUtilPonude.exportToPdf('ExampleTable');
