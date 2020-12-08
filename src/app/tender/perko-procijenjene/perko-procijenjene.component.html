@@ -8,7 +8,7 @@
   </button>
   <button mat-raised-button (click)="exportTablePrekoProcijenjene()">PDF</button>
 </div>
-  <table mat-table matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
+  <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
          (matSortChange)="customSort($event)" #exporter="matTableExporter">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>

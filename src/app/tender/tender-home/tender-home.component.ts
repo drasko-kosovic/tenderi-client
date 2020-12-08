@@ -12,8 +12,8 @@ import {Router} from "@angular/router";
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
   private roles: string[];
-  public brojTendera = '1020';
-  public imePonudjaca = 'Pontera';
+  public brojTendera = '';
+  public imePonudjaca = '';
 
   constructor(private tokenStorageService: TokenStorageService, private router: Router) {
 
