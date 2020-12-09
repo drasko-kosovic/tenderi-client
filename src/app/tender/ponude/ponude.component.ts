@@ -33,6 +33,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
+  broj_tendera=false;
 
   timeLeft: number = 1;
   interval;

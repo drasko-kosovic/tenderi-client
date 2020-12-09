@@ -110,9 +110,9 @@
           </ng-container>
 
           <ng-container  matColumnDef="brojTendera">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tender br.</th>
-            <td mat-cell *matCellDef="let element"> {{element.brojTendera}} </td>
-            <td mat-footer-cell *matFooterCellDef></td>
+            <th mat-header-cell [hidden]="!broj_tendera"*matHeaderCellDef mat-sort-header>Tender br.</th>
+            <td mat-cell [hidden]="!broj_tendera" *matCellDef="let element"> {{element.brojTendera}} </td>
+            <td mat-footer-cell [hidden]="!broj_tendera" *matFooterCellDef></td>
           </ng-container>
 
 

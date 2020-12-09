@@ -5,6 +5,7 @@
 
 table {
   width: 100%;
+
 }
 
 tr.mat-footer-row {
@@ -26,3 +27,13 @@ tr.mat-footer-row {
     visibility: hidden;
   }
 }
+/*table, th, td {*/
+/*  border: 1px solid black;*/
+/*  border-collapse: collapse;*/
+/*}*/
+td mat-footer-cell,th mat-header-cell {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
