@@ -14,13 +14,13 @@ export class TenderHomeComponent implements OnInit {
   private roles: string[];
   public brojTendera = '1020';
   public imePonudjaca = '';
-
+  currentUser: any;
   constructor(private tokenStorageService: TokenStorageService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-
+    this.currentUser = this.tokenStorageService.getUser();
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -30,6 +30,7 @@ export class TenderHomeComponent implements OnInit {
     }
 
   }
+
 
   OnKeyUp() {
     console.log('to je     ' + this.brojTendera);

@@ -18,8 +18,23 @@
       </button>
     </mat-form-field>
   </div>
+  <div>
+
+  </div>
+
+  <div class="container" >
+
+      <h3>
+        <p> Prijavljeni ste kao:   {{ currentUser.username }}</p>
+      </h3>
 
 
+    <ul>
+      <li *ngFor="let role of currentUser.roles">
+       <p>{{ role }}</p>
+      </li>
+    </ul>
+  </div>
 
 
 
