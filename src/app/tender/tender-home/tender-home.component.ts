@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
-import {TokenStorageService} from "../../auth/login/_services/token-storage.service";
-import {Router} from "@angular/router";
+import {TokenStorageService} from '../../auth/login/_services/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tender-home',
@@ -12,8 +12,8 @@ import {Router} from "@angular/router";
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
   private roles: string[];
-  public brojTendera = '';
-  public imePonudjaca = '';
+  public brojTendera = '1020';
+  public imePonudjaca = 'Pontera';
 
   constructor(private tokenStorageService: TokenStorageService, private router: Router) {
 
@@ -37,11 +37,11 @@ export class TenderHomeComponent implements OnInit {
   }
 
   onClean(){
-    this.brojTendera='';
+    this.brojTendera = '';
     window.location.reload();
   }
 
   onCleanPonudjaci() {
-    this.imePonudjaca='';
+    this.imePonudjaca = '';
   }
 }

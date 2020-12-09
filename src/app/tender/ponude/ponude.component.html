@@ -7,9 +7,11 @@
     <!--    <p> Ukupno ponudjena:  {{ ukupnaPonudjena }}</p>-->
     <button mat-raised-button
             (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
-      Exel
-    </button>
-    <button mat-raised-button (focus)="hide()" (click)="exportTable()">PDF</button>
+
+      <img src="../../../assets/icons/icons8-microsoft-excel-30.png"/></button>
+    <button mat-raised-button (focus)="hide()" (click)="exportTable()">
+
+      <img src="../../../assets/icons/icons8-pdf-30.png"/></button>
   </div>
 
   <div class="example-container mat-elevation-z8">
