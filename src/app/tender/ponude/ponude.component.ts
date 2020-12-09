@@ -225,7 +225,6 @@ export class PonudeComponent implements OnInit, OnChanges {
   }
   exportTable() {
 
-
     TableUtilPonude.exportToPdf('ExampleTable');
     this.startTimer();
   }

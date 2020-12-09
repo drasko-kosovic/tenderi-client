@@ -3,10 +3,14 @@
 <!--    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">-->
 <!--  </mat-form-field>-->
   <button mat-raised-button
-          (click)="exporter.exportTable('xlsx', {fileName:'Prvorangirani', sheet: 'prvorangiranie', Props: {Author: 'Talha'}})">
-    Excel
+          (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
+
+    <img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
+  <button mat-raised-button (click)="exportTablePrekoProcijenjene()">
+
+    <img src="../../../assets/icons/icons8-pdf-48.png"/>
   </button>
-  <button mat-raised-button (click)="exportTablePrekoProcijenjene()">PDF</button>
+
 </div>
   <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
          (matSortChange)="customSort($event)" #exporter="matTableExporter">

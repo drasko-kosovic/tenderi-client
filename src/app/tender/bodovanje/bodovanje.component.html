@@ -11,12 +11,15 @@
     <!--      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">-->
     <!--    </mat-form-field>-->
     <!--    <p> Ukupno procijenjena:  {{ ukupnoProcijenjena }}</p>-->
-    <!--    <p> Ukupno ponudjena:  {{ ukupnaPonudjena }}</p>-->
     <button mat-raised-button
-            (click)="exporter.exportTable('xlsx', {fileName:'Bodovanje', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
-      Excel
+            (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
+
+      <img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
+    <button mat-raised-button (click)="exportTableBodovanje()">
+
+      <img src="../../../assets/icons/icons8-pdf-48.png"/>
     </button>
-    <button mat-raised-button (click)="exportTableBodovanje()">PDF</button>
+
   </div>
   <div class="example-container mat-elevation-z8">
     <table id="ExampleTable" mat-table matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
