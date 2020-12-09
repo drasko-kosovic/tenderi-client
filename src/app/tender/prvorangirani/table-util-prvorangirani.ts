@@ -13,7 +13,7 @@ export class TableUtilPrvorangirani {
   <html>
     <head>
       <title>Prvorangirani</title>
-     
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
 <body onload="window.print();window.close()"><table id="moj" class="table table-bordered">${printContents}</table></body>
   </html>`

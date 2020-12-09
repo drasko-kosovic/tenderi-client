@@ -13,9 +13,11 @@ export class TableUtilPonude {
   <html>
     <head>
       <title>Ponude</title>
-
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        </head>
     </head>
 <body onload="window.print();window.close()"><table id="moj" class="table table-bordered">${printContents}</table></body>
+$("#tablerecords th:last-child, #tablerecords td:last-child").hide();
   </html>`
     );
     popupWin.document.close();
