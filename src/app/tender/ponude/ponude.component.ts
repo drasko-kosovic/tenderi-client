@@ -33,6 +33,9 @@ export class PonudeComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
+
+  timeLeft: number = 1;
+  interval;
   @Input() tender: string;
   @Input() ponnudjac: string;
 
@@ -211,10 +214,20 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.show = false;
   }
 
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft = 2) {
+     this.show=true;
+      } else {
+        console.log("nije isteklo");
+      }
+    },1000)
+  }
   exportTable() {
 
 
     TableUtilPonude.exportToPdf('ExampleTable');
+    this.startTimer();
   }
 
 }
