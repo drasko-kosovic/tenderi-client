@@ -9,11 +9,9 @@ import {MatDialog} from '@angular/material/dialog';
 import {AddDialogComponent} from '../dialog/add/add.dialog.component';
 import {EditComponent} from '../dialog/edit/edit.component';
 import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
 import {TableUtilPonude} from './table-util-ponude';
 
 
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-ponude',
