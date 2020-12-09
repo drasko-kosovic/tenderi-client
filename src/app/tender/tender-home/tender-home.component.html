@@ -16,6 +16,7 @@
               (click)="onCleanPonudjaci()">
         <mat-icon>close</mat-icon>
       </button>
+
     </mat-form-field>
     <p> Prijavljeni ste kao korisnik :   {{ currentUser.username }}</p>
 
@@ -40,8 +41,8 @@
 
 
 
-  <mat-tab-group mat-align-tabs="start">
-    <mat-tab *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
+  <mat-tab-group *ngFor="let role of currentUser.roles" mat-align-tabs="start">
+    <mat-tab  *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
       <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
     </mat-tab>
 <!--    <mat-tab  label="Ponude Admin">-->
