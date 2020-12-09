@@ -4,7 +4,7 @@ import {TenderService} from '../tender.service';
 import {Ponude} from '../model/ponude.model';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
-import {TableUtilPonude} from './table-util-ponude-user';
+import {TableUtilPonudeUser} from './table-util-ponude-user';
 
 @Component({
   selector: 'app-ponude-user',
@@ -112,7 +112,7 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   }
   exportTable() {
 
-    TableUtilPonude.exportToPdf('ExampleTable');
+    TableUtilPonudeUser.exportToPdf('ExampleTable');
     this.startTimer();
   }
 }

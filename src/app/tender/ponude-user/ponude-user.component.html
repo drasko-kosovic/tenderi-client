@@ -1,17 +1,18 @@
-<div fxLayout fxLayoutAlign="center center" *ngIf="dataSource.data?.length > 0">
+<div table-layout:fixed *ngIf="dataSource.data?.length > 0" xmlns:table-layout="http://www.w3.org/1999/xhtml"
+     xmlns:white-space="http://java.sun.com/xml/ns/persistence/orm">
   <div>
 
     <button mat-raised-button
             (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
 
-      ><img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
+     <img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
     <button mat-raised-button (focus)="hide()" (click)="exportTable()">
 
       <img src="../../../assets/icons/icons8-pdf-48.png"/></button>
   </div>
 
   <div class="example-container mat-elevation-z8">
-    <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
+    <table  mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
            (matSortChange)="customSort($event)" #exporter="matTableExporter">
       <table id="moj" class="table table-bordered">
         <div [hidden]="checked">

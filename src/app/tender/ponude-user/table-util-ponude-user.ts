@@ -1,6 +1,6 @@
 import {ElementRef, Injectable, ViewChild} from '@angular/core';
 @Injectable()
-export class TableUtilPonude {
+export class TableUtilPonudeUser {
 
   @ViewChild('reportContent') reportContent: ElementRef;
   static exportToPdf(tableId: string, name?: string) {
