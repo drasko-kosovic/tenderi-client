@@ -17,6 +17,8 @@
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
+    <p> Prijavljeni ste kao korisnik :   {{ currentUser.username }}</p>
+
   </div>
   <div>
 
@@ -25,23 +27,26 @@
   <div class="container" >
 
       <h3>
-        <p> Prijavljeni ste kao:   {{ currentUser.username }}</p>
+
       </h3>
 
 
-    <ul>
-      <li *ngFor="let role of currentUser.roles">
-       <p>{{ role }}</p>
-      </li>
-    </ul>
+<!--    <ul>-->
+<!--      <li *ngFor="let role of currentUser.roles">-->
+<!--       <p>{{ role }}</p>-->
+<!--      </li>-->
+<!--    </ul>-->
   </div>
 
 
 
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Ponude Admin">
+    <mat-tab *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
       <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
     </mat-tab>
+<!--    <mat-tab  label="Ponude Admin">-->
+<!--      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>-->
+<!--    </mat-tab>-->
     <mat-tab label="Ponude">
       <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
     </mat-tab>

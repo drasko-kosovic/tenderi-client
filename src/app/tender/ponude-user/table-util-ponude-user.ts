@@ -17,7 +17,7 @@ export class TableUtilPonude {
         </head>
     </head>
 <body onload="window.print();window.close()"><table id="moj" class="table table-bordered">${printContents}</table></body>
-$("#tablerecords th:last-child, #tablerecords td:last-child").hide();
+
   </html>`
     );
     popupWin.document.close();
