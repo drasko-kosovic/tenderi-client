@@ -71,24 +71,24 @@
 
       <ng-container matColumnDef="procijenjenaJedinicnaCijena">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr Jed Cijena</th>
-        <td mat-cell *matCellDef="let element"> {{element.procijenjenaJedinicnaCijena}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.procijenjenaJedinicnaCijena|currency:'EUR':true}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
       <ng-container matColumnDef="ponudjenaJedinicnaCijena">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Pon Jed Cijena</th>
-        <td mat-cell *matCellDef="let element"> {{element.ponudjenaJedinicnaCijena}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.ponudjenaJedinicnaCijena|currency:'EUR':true}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
       <!-- Cost Column -->
       <ng-container matColumnDef="ponudjenaUkupnaCijena">
-        <th mat-header-cell *matHeaderCellDef> UkupnaCijena</th>
-        <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjenaUkupnaCijena }} </td>
+        <th mat-header-cell *matHeaderCellDef> Ukupna Cijena</th>
+        <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjenaUkupnaCijena |currency:'EUR':true }} </td>
         <td mat-footer-cell *matFooterCellDef>{{ ukupnaPonudjena }}</td>
       </ng-container>
       <ng-container matColumnDef="procijenjenaUkupnaCijena">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Ukupna</th>
-        <td mat-cell *matCellDef="let element"> {{element.procijenjenaUkupnaCijena}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.procijenjenaUkupnaCijena | currency:'EUR':true}} </td>
         <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
       </ng-container>
       <ng-container class="rok" matColumnDef="rokIsporuke">

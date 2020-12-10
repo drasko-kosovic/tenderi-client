@@ -27,15 +27,21 @@
 <!--    <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>-->
 
     <span class = "filler"></span>
-<!--    <p> Prijavljeni ste kao korisnik :   {{ currentUser.username }}</p>-->
-    <button mat-button (click)="openLoginDialog()"  *ngIf="!isLoggedIn">
-      <mat-icon>power_settings_new</mat-icon>
-      Prijavi se
-    </button>
-    <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()"  >
-      <mat-icon>exit_to_app</mat-icon>
-      Izalaz
-    </button>
+
+      <p class="user"> Prijavljeni ste kao korisnik:  {{ currentUser.username }} </p>
+     <div class="izlaz">
+       <button mat-button (click)="openLoginDialog()"  *ngIf="!isLoggedIn">
+         <mat-icon>power_settings_new</mat-icon>
+         Prijavi se
+       </button>
+       <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()"  >
+         <mat-icon>exit_to_app</mat-icon>
+         Izalaz
+       </button>
+
+     </div>
+
+
 
   </mat-toolbar>
 
