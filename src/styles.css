@@ -28,7 +28,7 @@ body {
 }
 
 .left-align-cell.mat-cell{
-  text-align: left;
+  text-align: center;
 }
 
 .left-align-header>.mat-sort-header-container{

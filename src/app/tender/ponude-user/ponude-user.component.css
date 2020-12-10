@@ -23,3 +23,6 @@ table{
 .mat-cell{
   border-right: solid 0.5px black;
 }
+.w-75{
+  max-width: 250px;
+}

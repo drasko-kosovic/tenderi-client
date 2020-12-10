@@ -23,3 +23,16 @@ table{
 .mat-cell{
   border-right: solid 0.5px black;
 }
+.mat-column-nazivProizvoda {
+  flex: 0 0 50%;
+}
+.mat-column-zasticeniNaziv {
+  flex: 0 0 10%;
+}
+.w-75{
+  max-width: 250px;
+}
+
+.w-100{
+  max-width: 100px;
+}
