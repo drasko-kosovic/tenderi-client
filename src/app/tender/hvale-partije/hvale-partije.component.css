@@ -3,9 +3,7 @@
   overflow: auto;
 }
 
-table {
-  width: 100%;
-}
+
 
 tr.mat-footer-row {
   font-weight: bold;
@@ -13,4 +11,29 @@ tr.mat-footer-row {
 
 .mat-table-sticky {
   border-top: 1px solid #e0e0e0;
+}
+table{
+  width:100%;
+}
+.mat-header-row {
+  background-color: #3F51B5;
+  color: white;
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  color: white;
+  font-weight: bold;
+  border-right: solid 0.5px white;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: white;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #D3D3D3;
+}
+.mat-cell{
+  border-right: solid 0.5px black;
 }

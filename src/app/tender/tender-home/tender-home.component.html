@@ -48,9 +48,12 @@
 <!--    <mat-tab  label="Ponude Admin">-->
 <!--      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>-->
 <!--    </mat-tab>-->
-    <mat-tab label="Ponude">
-      <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
-    </mat-tab>
+   <div class="naslovi">
+     <mat-tab label="Ponude">
+       <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
+     </mat-tab>
+   </div>
+
     <mat-tab label="Bodovanje">
       <app-bodovanje [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-bodovanje>
     </mat-tab>
