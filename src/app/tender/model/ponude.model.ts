@@ -4,31 +4,31 @@ export interface Ponude {
 
   atc: number;
 
-  nazivProizvoda: string;
+  naziv_proizvoda: string;
 
-  zasticeniNaziv: string;
+  zasticeni_naziv: string;
 
   proizvodjac: string;
 
-  farmaceutskiOblik: string;
+  farmaceutski_oblik: string;
   pakovanje: string;
 
-  trazenaKolicina: number;
+  trazena_kolicina: number;
 
-  ponudjanaKolicina: number;
+  ponudjana_kolicina: number;
 
-  procijenjenaJedinicnaCijena: number;
+  procijenjena_jedinicna_cijena: number;
 
-  ponudjenaJedinicnaCijena: number;
+  ponudjena_jedinicna_cijena: number;
 
-  procijenjenaUkupnaCijena: number;
+  procijenjena_ukupna_cijena: number;
 
-  ponudjenaUkupnaCijena: number;
+  ponudjena_ukupna_cijena: number;
 
-  rokIsporuke: number;
+  rok_isporuke: number;
 
   ponudjac: string;
 
-  brojTendera: string;
+  broj_tendera: string;
 
 }

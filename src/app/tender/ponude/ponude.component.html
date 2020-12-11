@@ -8,7 +8,7 @@
     <button mat-raised-button
             (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
 
-     ><img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
+    <img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
     <button mat-raised-button (focus)="hide()" (click)="exportTable()">
 
     <img src="../../../assets/icons/icons8-pdf-48.png"/></button>
@@ -32,15 +32,15 @@
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="nazivProizvoda">
+          <ng-container matColumnDef="naziv_proizvoda">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziva</th>
-            <td mat-cell *matCellDef="let element"> {{element.nazivProizvoda}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.naziv_proizvoda}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="zasticeniNaziv">
+          <ng-container matColumnDef="zasticeni_naziv">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Zaštićeni</th>
-            <td mat-cell *matCellDef="let element"> {{element.zasticeniNaziv}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.zasticeni_naziv}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
@@ -50,9 +50,9 @@
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="farmaceutskiOblik">
+          <ng-container matColumnDef="farmaceutski_oblik">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Oblik</th>
-            <td mat-cell *matCellDef="let element"> {{element.farmaceutskiOblik}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.farmaceutski_oblik}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
@@ -62,44 +62,44 @@
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="trazenaKolicina">
+          <ng-container matColumnDef="trazena_kolicina">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Tr.Kol.</th>
-            <td mat-cell *matCellDef="let element"> {{element.trazenaKolicina}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.trazena_kolicina}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
 
-          <ng-container matColumnDef="ponudjanaKolicina">
+          <ng-container matColumnDef="ponudjana_kolicina">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Pon.Kol.</th>
-            <td mat-cell *matCellDef="let element"> {{element.ponudjanaKolicina}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.ponudjana_kolicina}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="procijenjenaJedinicnaCijena">
+          <ng-container matColumnDef="procijenjena_jedinicna_cijena">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Jed.Cijena</th>
-            <td mat-cell *matCellDef="let element"> {{element.procijenjenaJedinicnaCijena}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.procijenjena_jedinicna_cijena}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container matColumnDef="ponudjenaJedinicnaCijena">
+          <ng-container matColumnDef="ponudjena_jedinicna_cijena">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Pon.Jed.Cijena</th>
-            <td mat-cell *matCellDef="let element"> {{element.ponudjenaJedinicnaCijena}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.ponudjena_jedinicna_cijena}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
           <!-- Cost Column -->
-          <ng-container matColumnDef="ponudjenaUkupnaCijena">
+          <ng-container matColumnDef="ponudjena_ukupna_cijena">
             <th mat-header-cell *matHeaderCellDef> Ukupna Cijena</th>
-            <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjenaUkupnaCijena }} </td>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjena_ukupna_cijena}} </td>
             <td mat-footer-cell *matFooterCellDef>{{ ukupnaPonudjena }}</td>
           </ng-container>
-          <ng-container matColumnDef="procijenjenaUkupnaCijena">
+          <ng-container matColumnDef="procijenjena_ukupna_cijena">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Ukupna</th>
-            <td mat-cell *matCellDef="let element"> {{element.procijenjenaUkupnaCijena}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.procijenjena_ukupna_cijena}} </td>
             <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
           </ng-container>
-          <ng-container matColumnDef="rokIsporuke">
+          <ng-container matColumnDef="rok_isporuke">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Rok Isporuke</th>
-            <td mat-cell *matCellDef="let element"> {{element.rokIsporuke}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.rok_isporuke}} </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
@@ -109,9 +109,9 @@
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
 
-          <ng-container  matColumnDef="brojTendera">
+          <ng-container  matColumnDef="broj_tendera">
             <th mat-header-cell [hidden]="!broj_tendera"*matHeaderCellDef mat-sort-header>Tender br.</th>
-            <td mat-cell [hidden]="!broj_tendera" *matCellDef="let element"> {{element.brojTendera}} </td>
+            <td mat-cell [hidden]="!broj_tendera" *matCellDef="let element"> {{element.broj_tendera}} </td>
             <td mat-footer-cell [hidden]="!broj_tendera" *matFooterCellDef></td>
           </ng-container>
 
@@ -126,11 +126,11 @@
         </th>
         <td mat-cell [hidden]="!show" *matCellDef="let row; let i=index;">
 
-          <button mat-icon-button color="accent">
-            <mat-icon aria-label="Example icon-button with a heart icon"  (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac
-        ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,
-        row.procijenjenaJedinicnaCijena, row.procijenjenaUkupnaCijena, row.ponudjenaUkupnaCijena, row.rokIsporuke, row.ponudjac,row.brojTendera)">edit</mat-icon>
-          </button>
+<!--          <button mat-icon-button color="accent">-->
+<!--            <mat-icon aria-label="Example icon-button with a heart icon"  (click)="startEdit(i, row.id, row.partija,row.atc,row.nazivProizvoda, row.zasticeniNaziv,row.proizvodjac-->
+<!--        ,row.jedinicaMjere,row.trazenaKolicina,row.ponudjanaKolicina,row.procijenjenaJedinicnaCijena,-->
+<!--        row.procijenjenaJedinicnaCijena, row.procijenjenaUkupnaCijena, row.ponudjenaUkupnaCijena, row.rokIsporuke, row.ponudjac,row.brojTendera)">edit</mat-icon>-->
+<!--          </button>-->
 
         </td>
         <td mat-footer-cell *matFooterCellDef></td>
