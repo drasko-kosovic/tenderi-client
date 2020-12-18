@@ -25,7 +25,7 @@ export class TenderService {
   readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
   readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
-  readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/preko_procijenjene/';
+  readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/preko_procijenjene/';
   readonly HVALE_URL_FINR_BY_TENDER = 'http://localhost:8080/api/ponude/hvale/';
   readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
   readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/prvorangirani/';
