@@ -1,15 +1,15 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {TenderService} from '../tender.service';
-import {Ponude} from '../model/ponude.model';
-import {DeleteDialogComponent} from '../dialog/delete/delete.dialog.component';
-import {MatDialog} from '@angular/material/dialog';
-import {AddDialogComponent} from '../dialog/add/add.dialog.component';
-import {EditComponent} from '../dialog/edit/edit.component';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { TenderService } from '../tender.service';
+import { Ponude } from '../model/ponude.model';
+import { DeleteDialogComponent } from '../dialog/delete/delete.dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDialogComponent } from '../dialog/add/add.dialog.component';
+import { EditComponent } from '../dialog/edit/edit.component';
 import pdfMake from 'pdfmake/build/pdfmake';
-import {TableUtilPonude} from './table-util-ponude';
+import { TableUtilPonude } from './table-util-ponude';
 
 
 
@@ -31,7 +31,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
-  broj_tendera=false;
+  broj_tendera = false;
 
   timeLeft: number = 1;
   interval;
@@ -41,7 +41,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild('filter', {static: true}) filter: ElementRef;
+  @ViewChild('filter', { static: true }) filter: ElementRef;
 
 
   constructor(private tenderService: TenderService, public dialog: MatDialog) {
@@ -101,7 +101,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.index = i;
     this.id = id;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: {id}
+      data: { id }
     });
 
   }
@@ -110,7 +110,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   // tslint:disable-next-line:typedef
   addNew() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      data: {Ponude: {}}
+      data: { Ponude: {} }
     });
 
     // dialogRef.afterClosed().subscribe(result => {
@@ -127,8 +127,8 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   startEdit(i: number, id: number, partija: string, atc: string, nazivProizvoda: string, zasticeniNaziv: string, proizvodjac:
     string, jedinicaMjere: string, trazenaKolicina: string, ponudjanaKolicina: number, procijenjenaJedinicnaCijena:
-              number, ponudjenaJedinicnaCijena: number, procijenjenaUkupnaCijena: number, ponudjenaUkupnaCijena: number, rokIsporuke:
-              number, ponudjac: string, brojTendera: string
+      number, ponudjenaJedinicnaCijena: number, procijenjenaUkupnaCijena: number, ponudjenaUkupnaCijena: number, rokIsporuke:
+      number, ponudjac: string, brojTendera: string
   ) {
     this.id = id;
     this.index = i;
@@ -203,7 +203,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   }
 
   generatePdf() {
-    const documentDefinition = {content: 'This is for testing.'};
+    const documentDefinition = { content: 'This is for testing.' };
     // pdfMake.createPdf(documentDefinition).print();
     // pdfMake.createPdf(docDefinition).print();
     pdfMake.createPdf(documentDefinition).open({}, window);
@@ -215,12 +215,12 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   startTimer() {
     this.interval = setInterval(() => {
-      if(this.timeLeft = 2) {
-     this.show=true;
+      if (this.timeLeft = 2) {
+        this.show = true;
       } else {
         console.log("nije isteklo");
       }
-    },1000)
+    }, 1000)
   }
   exportTable() {
 
