@@ -20,11 +20,6 @@
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="partija">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
-        <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
-        <td mat-footer-cell *matFooterCellDef></td>
-      </ng-container>
 
       <ng-container matColumnDef="atc">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Atc</th>
@@ -125,7 +120,7 @@
 
       <ng-container matColumnDef="bod_isporuka">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Bod Isporuka</th>
-        <td mat-cell *matCellDef="let element"> {{element.bod_isporuka | number : '1.2-2'}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.bod_rok | number : '1.2-2'}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 

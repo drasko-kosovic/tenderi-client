@@ -35,7 +35,7 @@ export interface Bodovanje {
 
   bod_cijena: number;
 
-  bod_isporuka: number;
+  bod_rok: number;
 
   bod_ukupno: number;
 
