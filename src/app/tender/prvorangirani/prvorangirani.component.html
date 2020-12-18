@@ -13,18 +13,18 @@
     <!--    <p> Ukupno procijenjena:  {{ ukupnoProcijenjena }}</p>-->
     <!--    <p> Ukupno ponudjena:  {{ ukupnaPonudjena }}</p>-->
     <button mat-raised-button
-            (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
+      (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
 
-      <img src="../../../assets/icons/icons8-microsoft-excel-48.png"/></button>
+      <img src="../../../assets/icons/icons8-microsoft-excel-48.png" /></button>
     <button mat-raised-button (click)="exportTablePrvorangirani()">
 
-      <img src="../../../assets/icons/icons8-pdf-48.png"/>
+      <img src="../../../assets/icons/icons8-pdf-48.png" />
     </button>
 
   </div>
   <div class="example-container mat-elevation-z8">
-    <table mat-table  id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
-           (matSortChange)="customSort($event)" #exporter="matTableExporter">
+    <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
+      (matSortChange)="customSort($event)" #exporter="matTableExporter">
       <ng-container matColumnDef="partija">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
         <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
@@ -37,27 +37,27 @@
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="nazivProizvoda">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziv</th>
-        <td mat-cell *matCellDef="let element"> {{element.nazivProizvoda}} </td>
+      <ng-container matColumnDef="naziv_proizvoda">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziva</th>
+        <td mat-cell *matCellDef="let element"> {{element.naziv_proizvoda}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="zasticeniNaziv">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Zasticeni</th>
-        <td mat-cell *matCellDef="let element"> {{element.zasticeniNaziv}} </td>
+      <ng-container matColumnDef="zasticeni_naziv">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Zaštićeni</th>
+        <td mat-cell *matCellDef="let element"> {{element.zasticeni_naziv}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
       <ng-container matColumnDef="proizvodjac">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Proizvodjac</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Proizvodjač</th>
         <td mat-cell *matCellDef="let element"> {{element.proizvodjac}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="farmaceutskiOblik">
+      <ng-container matColumnDef="farmaceutski_oblik">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Oblik</th>
-        <td mat-cell *matCellDef="let element"> {{element.farmaceutskiOblik}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.farmaceutski_oblik}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
@@ -67,60 +67,58 @@
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="trazenaKolicina">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Trazena Kol.</th>
-        <td mat-cell *matCellDef="let element"> {{element.trazenaKolicina}} </td>
+      <ng-container matColumnDef="trazena_kolicina">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tr.Kol.</th>
+        <td mat-cell *matCellDef="let element"> {{element.trazena_kolicina}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
 
-      <ng-container matColumnDef="ponudjanaKolicina">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjana Kol.</th>
-        <td mat-cell *matCellDef="let element"> {{element.ponudjanaKolicina}} </td>
+      <ng-container matColumnDef="ponudjana_kolicina">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pon.Kol.</th>
+        <td mat-cell *matCellDef="let element"> {{element.ponudjana_kolicina}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="procijenjenaJedinicnaCijena">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Proc Jed Cijena</th>
-        <td mat-cell *matCellDef="let element"> {{element.procijenjenaJedinicnaCijena|currency:'EUR':true}} </td>
+      <ng-container matColumnDef="procijenjena_jedinicna_cijena">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Jed.Cijena</th>
+        <td mat-cell *matCellDef="let element"> {{element.procijenjena_jedinicna_cijena}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="ponudjenaJedinicnaCijena">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Jed Cijena</th>
-        <td mat-cell *matCellDef="let element"> {{element.ponudjenaJedinicnaCijena|currency:'EUR':true}} </td>
+      <ng-container matColumnDef="ponudjena_jedinicna_cijena">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pon.Jed.Cijena</th>
+        <td mat-cell *matCellDef="let element"> {{element.ponudjena_jedinicna_cijena}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
       <!-- Cost Column -->
-      <ng-container matColumnDef="ponudjenaUkupnaCijena">
-        <th mat-header-cell *matHeaderCellDef> UkupnaCijena</th>
-        <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjenaUkupnaCijena |currency:'EUR':true }} </td>
+      <ng-container matColumnDef="ponudjena_ukupna_cijena">
+        <th mat-header-cell *matHeaderCellDef> Ukupna Cijena</th>
+        <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjena_ukupna_cijena}} </td>
         <td mat-footer-cell *matFooterCellDef>{{ ukupnaPonudjena }}</td>
       </ng-container>
-      <ng-container matColumnDef="procijenjenaUkupnaCijena">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Proc. Ukupna</th>
-        <td mat-cell *matCellDef="let element"> {{element.procijenjenaUkupnaCijena |currency:'EUR':true}} </td>
+      <ng-container matColumnDef="procijenjena_ukupna_cijena">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Ukupna</th>
+        <td mat-cell *matCellDef="let element"> {{element.procijenjena_ukupna_cijena}} </td>
         <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
       </ng-container>
-      <ng-container matColumnDef="rokIsporuke">
+      <ng-container matColumnDef="rok_isporuke">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Rok Isporuke</th>
-        <td mat-cell *matCellDef="let element"> {{element.rokIsporuke}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.rok_isporuke}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
       <ng-container matColumnDef="ponudjac">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ponudjac</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ponudjač</th>
         <td mat-cell *matCellDef="let element"> {{element.ponudjac}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
-      <ng-container matColumnDef="brojTendera">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tender br.</th>
-        <td mat-cell *matCellDef="let element"> {{element.brojTendera}} </td>
-        <td mat-footer-cell *matFooterCellDef></td>
+      <ng-container matColumnDef="broj_tendera">
+        <th mat-header-cell [hidden]="!broj_tendera" *matHeaderCellDef mat-sort-header>Tender br.</th>
+        <td mat-cell [hidden]="!broj_tendera" *matCellDef="let element"> {{element.broj_tendera}} </td>
+        <td mat-footer-cell [hidden]="!broj_tendera" *matFooterCellDef></td>
       </ng-container>
-
-
 
 
 
