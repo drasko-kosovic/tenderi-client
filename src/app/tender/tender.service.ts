@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {Ponude} from './model/ponude.model';
-import {Student} from "./model/student.model";
+
 
 
 @Injectable({

@@ -14,8 +14,8 @@ import {TableUtilPrekoprocijenjene} from './table-util-prekoprocijenjene';
 })
 export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
 
-  public displayedColumns = ['id', 'partija', 'atc', 'nazivProizvoda', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'ponudjac', 'brojTendera'];
+  public displayedColumns = ['id', 'partija', 'atc', 'naziv_proizvoda', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
+    'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'ponudjac', 'broj_tendera'];
 
   public dataSource = new MatTableDataSource<PrekoProcijenjene>();
 
@@ -52,8 +52,8 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
 
   doFilter() {
     this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
-    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

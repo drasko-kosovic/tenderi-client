@@ -1,19 +1,19 @@
 export interface PrekoProcijenjene {
   id: number;
-  partija: number ;
+  partija: number;
 
   atc: number;
 
-  nazivProizvoda: string;
+  naziv_proizvoda: string;
 
 
-  procijenjenaJedinicnaCijena: number;
+  procijenjena_jedinicna_cijena: number;
 
-  ponudjenaJedinicnaCijena: number;
+  ponudjena_jedinicna_cijena: number;
 
- procijenjenaUkupnaCijena: number;
+  procijenjena_ukupna_cijena: number;
 
-  ponudjenaUkupnaCijena: number;
+  ponudjena_ukupna_cijena: number;
 
   ponudjac: string;
 

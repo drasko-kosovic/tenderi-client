@@ -1,9 +1,7 @@
 export interface HvalePartije {
   id: number;
-  partija: number ;
-
-
-  brojTendera: string;
+  partija: number;
+  broj_tendera: number;
 
 
 

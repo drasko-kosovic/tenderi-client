@@ -29,6 +29,6 @@ export interface Ponude {
 
   ponudjac: string;
 
-  broj_tendera: string;
+  broj_tendera: number;
 
 }

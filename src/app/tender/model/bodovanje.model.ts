@@ -1,34 +1,37 @@
 export interface Bodovanje {
   id: number;
-  partija: number ;
+  
+  partija: number;
 
   atc: number;
 
-  nazivProizvoda: string;
+  naziv_proizvoda: string;
 
- zasticeniNaziv: string;
+  zasticeni_naziv: string;
 
- proizvodjac: string;
+  proizvodjac: string;
 
- jedinicaMjere: number;
+  farmaceutski_oblik: string;
 
- trazenaKolicina: number;
+  pakovanje: string;
 
- ponudjanaKolicina: number;
+  trazena_kolicina: number;
 
-  procijenjenaJedinicnaCijena: number;
+  ponudjana_kolicina: number;
 
-  ponudjenaJedinicnaCijena: number;
+  procijenjena_jedinicna_cijena: number;
 
- procijenjenaUkupnaCijena: number;
+  ponudjena_jedinicna_cijena: number;
 
-  ponudjenaUkupnaCijena: number;
+  procijenjena_ukupna_cijena: number;
 
-  rokIsporuke: number;
+  ponudjena_ukupna_cijena: number;
+
+  rok_isporuke: number;
 
   ponudjac: string;
 
-  brojTendera: string;
+  broj_tendera: number;
 
   bod_cijena: number;
 

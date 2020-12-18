@@ -10,10 +10,7 @@ const routes: Routes = [
     path: 'tender',
     loadChildren: () => import('./tender/tender.module').then(m => m.TenderModule)
   },
-  {
-    path: 'student',
-    loadChildren: () => import('./student/student.module').then(m => m.StudentModule)
-  },
+  
   { path: 'login', component:LoginComponent},
   { path: 'register', component:RegisterComponent},
   { path: '', redirectTo: '/tender', pathMatch: 'full'},
