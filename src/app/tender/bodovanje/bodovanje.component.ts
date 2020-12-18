@@ -20,9 +20,9 @@ export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
 
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
-  public displayedColumns = ['partija', 'atc', 'nazivProizvoda', 'zasticeniNaziv', 'proizvodjac',
-    'farmaceutskiOblik','pakovanje', 'trazenaKolicina', 'ponudjanaKolicina', 'procijenjenaJedinicnaCijena', 'ponudjenaJedinicnaCijena',
-    'procijenjenaUkupnaCijena', 'ponudjenaUkupnaCijena', 'rokIsporuke',  'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
+  public displayedColumns = ['partija', 'atc', 'naziv_proizvoda', 'zasticeni_naziv', 'proizvodjac',
+  'farmaceutski_oblik', 'pakovanje', 'trazena_kolicina', 'ponudjana_kolicina', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
+  'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
   public dataSource = new MatTableDataSource<Bodovanje>();
 
   @ViewChild(MatSort) sort: MatSort;
@@ -54,8 +54,8 @@ export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
 
   doFilter() {
     this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
-    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
+    this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
