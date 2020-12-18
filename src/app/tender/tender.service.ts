@@ -28,7 +28,7 @@ export class TenderService {
   readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/preko_procijenjene/';
   readonly HVALE_URL_FINR_BY_TENDER = 'http://localhost:8080/api/ponude/hvale/';
   readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
-  readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/prvorangirani/';
+  readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/prvorangirani/';
 
   //
   // readonly HVALE_URL_FINR_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale/';
