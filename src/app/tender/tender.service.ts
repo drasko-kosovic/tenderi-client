@@ -14,7 +14,7 @@ export class TenderService {
 
 
 
-  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvale/';
+  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvali/';
   readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude';
