@@ -5,6 +5,7 @@ import {PonudeComponent} from './ponude/ponude.component';
 import {BodovanjeComponent} from './bodovanje/bodovanje.component';
 import {TenderHomeComponent} from './tender-home/tender-home.component';
 import {PrvorangiraniComponent} from "./prvorangirani/prvorangirani.component";
+import { UserBodovanjeComponent } from './user-bodovanje/user-bodovanje.component';
 
 const routes: Routes = [
   {
@@ -19,10 +20,11 @@ const routes: Routes = [
     path: 'bodovanje',
     component: BodovanjeComponent
   }
+  
   ,
   {
-    path: 'prvorangirani',
-    component: PrvorangiraniComponent
+    path: 'user-bodovanje',
+    component: UserBodovanjeComponent
   }
 
 ];
