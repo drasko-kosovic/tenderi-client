@@ -15,7 +15,7 @@ import {TableUtilHvale} from './table-util-hvale';
 })
 export class HvalePartijeComponent implements OnInit {
 
-  public displayedColumns = ['id', 'partija','atc','naziv_proizvoda','farmaceutski_oblik','pakovanje','trazena_kolicina','procijenjena_jedinicna_cijena','procijenjena_ukupna_cijena', 'broj_tendera'];
+  public displayedColumns = ['id', 'partija','atc','nazivProizvoda','farmaceutskiOblik','pakovanje','trazena_kolicina','procijenjenaJedinicnaCijena','procijenjenaUkupnaCijena', 'brojTendera'];
 
   public dataSource = new MatTableDataSource<HvalePartije>();
 

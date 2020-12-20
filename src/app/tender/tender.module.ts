@@ -16,7 +16,6 @@ import {EditComponent} from "./dialog/edit/edit.component";
 import { HvalePartijeComponent } from './hvale-partije/hvale-partije.component';
 import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenjene.component';
 import { PonudeUserComponent } from './ponude-user/ponude-user.component';
-import { UserBodovanjeComponent } from './user-bodovanje/user-bodovanje.component';
 
 
 
@@ -26,8 +25,7 @@ import { UserBodovanjeComponent } from './user-bodovanje/user-bodovanje.componen
    EditComponent,
    HvalePartijeComponent,
    PerkoProcijenjeneComponent,
-   PonudeUserComponent,
-   UserBodovanjeComponent],
+   PonudeUserComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,

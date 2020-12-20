@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs';
-import {Ponude} from './model/ponude.model';
-
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import { Ponude } from './model/ponude.model';
+import { Student } from "./model/student.model";
 
 
 @Injectable({
@@ -12,25 +12,23 @@ import {Ponude} from './model/ponude.model';
 })
 export class TenderService {
 
-
-
-  readonly API_URL_HVALE_PARTIJE = 'http://localhost:8080/api/ponude/hvali/';
+  
   readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude';
   private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
   private readonly API_URL_UPDATE_SELECTED = 'http://localhost:8080/api/ponude/update/selected/';
-  private readonly API_URL_BODOVANJE= 'http://localhost:8080/api/ponude/bodovanje/';
-  private readonly API_URL_PRVORANGIRANI= 'http://localhost:8080/api/ponude/prvorangirani/';
+  private readonly API_URL_BODOVANJE = 'http://localhost:8080/api/ponude/bodovanje/';
+  private readonly API_URL_PRVORANGIRANI = 'http://localhost:8080/api/ponude/prvorangirani/';
   readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
   readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
   readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/preko_procijenjene/';
-  readonly HVALE_URL_FINR_BY_TENDER = 'http://localhost:8080/api/ponude/hvale/';
+  readonly API_URL_HVALE_PARTIJE_BY_TENDER = 'http://localhost:8080/api/ponude/hvali/';
   readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
   readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/prvorangirani/';
 
-  //
+
   // readonly HVALE_URL_FINR_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/hvale/';
   // readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
   // readonly BODOVANJE_URL_FIND_BY_TENDER = 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje/';
@@ -46,7 +44,7 @@ export class TenderService {
   // private readonly API_URL_UPDATE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/update/selected/';
   // private readonly API_URL_BODOVANJE= 'https://tenderi-montefarm.herokuapp.com/api/ponude/bodovanje/';
   // private readonly API_URL_PRVORANGIRANI= 'https://tenderi-montefarm.herokuapp.com/api/ponude/prvorangirani/';
-  //
+
 
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
@@ -71,7 +69,7 @@ export class TenderService {
 
 
   public getHvalePartije() {
-    return this.http.get(this.API_URL_HVALE_PARTIJE);
+    return this.http.get(this.API_URL_HVALE_PARTIJE_BY_TENDER);
   }
 
 
@@ -94,30 +92,31 @@ export class TenderService {
   //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
-  public getFindByTenderi(broj:String) {
-    return this.http.get(this.API_URL_FIND_BY_TENDER + broj );
+  public getFindByTenderi(broj: String) {
+    return this.http.get(this.API_URL_FIND_BY_TENDER + broj);
+  }
+
+  
+
+
+  public getBodovanjeFindByTenderi(broj: String) {
+    return this.http.get(this.BODOVANJE_URL_FIND_BY_TENDER + broj);
+  }
+
+  public getPrvorangiraniFindByTenderi(broj: String) {
+    return this.http.get(this.PRVORANIRANI_URL_FIND_BY_TENDER + broj);
   }
 
 
 
-  public getBodovanjeFindByTenderi(broj:String) {
-    return this.http.get(this.BODOVANJE_URL_FIND_BY_TENDER + broj );
-  }
-
-  public getPrvorangiraniFindByTenderi(broj:String) {
-    return this.http.get(this.PRVORANIRANI_URL_FIND_BY_TENDER + broj );
+  public getHvalePartijeFindByTenderi(broj: String) {
+    return this.http.get(this.API_URL_HVALE_PARTIJE_BY_TENDER + broj);
   }
 
 
 
-  public getHvalePartijeFindByTenderi(broj:String) {
-    return this.http.get(this.HVALE_URL_FINR_BY_TENDER + broj );
-  }
-
-
-
-  public getPrekoProcijenjeneFindByTenderi(broj:String) {
-    return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj );
+  public getPrekoProcijenjeneFindByTenderi(broj: String) {
+    return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj);
   }
 
 
@@ -126,9 +125,9 @@ export class TenderService {
 
   deletePonuda(id: number): void {
     this.http.delete(this.API_URL_DELETE + id).subscribe(data => {
-        console.log('obrisano');
-        // this.toasterService.showToaster('Successfully deleted', 3000);
-      },
+      console.log('obrisano');
+      // this.toasterService.showToaster('Successfully deleted', 3000);
+    },
       (err: HttpErrorResponse) => {
         // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
       }
@@ -142,23 +141,23 @@ export class TenderService {
 
   addPonude(ponude: Ponude): void {
     this.http.post(this.API_URL_ADD, ponude).subscribe(data => {
-        this.dialogData = ponude;
-        // this.notificationService.success( this.translate.get(['login.login']));
-        // this.toasterService.success('Successfully added');
-        console.log('dodato');
-      },
+      this.dialogData = ponude;
+      // this.notificationService.success( this.translate.get(['login.login']));
+      // this.toasterService.success('Successfully added');
+      console.log('dodato');
+    },
       (err: HttpErrorResponse) => {
 
         console.log('nije dodato');
       });
   }
 
-   updatePonude(ponude: Ponude): void {
+  updatePonude(ponude: Ponude): void {
     this.http.put(this.API_URL_UPDATE, ponude).subscribe(data => {
-        this.dialogData = ponude;
-        // this.toasterService.showToaster('Successfully edited', 3000);
-        console.log('updated');
-      },
+      this.dialogData = ponude;
+      // this.toasterService.showToaster('Successfully edited', 3000);
+      console.log('updated');
+    },
       (err: HttpErrorResponse) => {
         // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
         console.log(' no updated');
@@ -169,11 +168,11 @@ export class TenderService {
   }
 
   updatePersonSelected(id: number): void {
-    this.http.put( this.API_URL_UPDATE_SELECTED + id, null).subscribe(data => {
-        // this.dialogData = person;
-        // this.toasterService.showToaster('Successfully edited', 3000);
-        console.log('updated');
-      },
+    this.http.put(this.API_URL_UPDATE_SELECTED + id, null).subscribe(data => {
+      // this.dialogData = person;
+      // this.toasterService.showToaster('Successfully edited', 3000);
+      console.log('updated');
+    },
       (err: HttpErrorResponse) => {
         // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
         console.log(' no updated');
@@ -183,9 +182,9 @@ export class TenderService {
 
   deleteSelected(): void {
     this.http.delete(this.API_URL_DELETE_SELECTED).subscribe(data => {
-        console.log('obrisano');
-        // this.toasterService.showToaster('Successfully deleted', 3000);
-      },
+      console.log('obrisano');
+      // this.toasterService.showToaster('Successfully deleted', 3000);
+    },
       (err: HttpErrorResponse) => {
         // this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
       }
