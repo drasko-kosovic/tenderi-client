@@ -15,7 +15,7 @@ import {TableUtilHvale} from './table-util-hvale';
 })
 export class HvalePartijeComponent implements OnInit {
 
-  public displayedColumns = ['id', 'partija','atc','nazivProizvoda','farmaceutskiOblik','pakovanje','trazena_kolicina','procijenjenaJedinicnaCijena','procijenjenaUkupnaCijena', 'brojTendera'];
+  public displayedColumns = ['id', 'partija','naziv_proizvoda','farmaceutski_oblik','pakovanje','trazena_kolicina','procijenjena_jedinicna_cijena','procijenjena_ukupna_cijena', 'brojTendera'];
 
   public dataSource = new MatTableDataSource<HvalePartije>();
 
@@ -50,12 +50,11 @@ export class HvalePartijeComponent implements OnInit {
     console.log(event);
   }
 
-  // doFilter() {
-    // this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
-    // this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-    // this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
-    //
-  // }
+  doFilter() {
+    this.dataSource.filter = this.tender.trim().toLocaleLowerCase();
+    this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
+   
+  }
 
 
   ngOnChanges(changes: SimpleChanges): void {
