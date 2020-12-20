@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
   private roles: string[];
-  public brojTendera = '1020';
+  public brojTendera = '';
   public imePonudjaca = '';
   currentUser: any;
   constructor(private tokenStorageService: TokenStorageService, private router: Router) {
