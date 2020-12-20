@@ -5,6 +5,7 @@
 
 table {
   width: 100%;
+
 }
 
 tr.mat-footer-row {
@@ -13,4 +14,55 @@ tr.mat-footer-row {
 
 .mat-table-sticky {
   border-top: 1px solid #e0e0e0;
+}
+/*@media print*/
+/*{*/
+/*  .no-print, .no-print **/
+/*  {*/
+/*    display: none !important;*/
+/*  }*/
+/*}*/
+@media print {
+  .noprint {
+    visibility: hidden;
+  }
+}
+/*table, th, td {*/
+/*  border: 1px solid black;*/
+/*  border-collapse: collapse;*/
+/*}*/
+td mat-footer-cell,th mat-header-cell {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  background-color:darkblue;
+  Color:white;
+}
+th, td {
+  width:150px;
+  text-align:center;
+  border:1px solid black;
+  padding:5px
+
+}
+
+.geeks {
+  border-right:hidden;
+}
+.gfg {
+  border-collapse:separate;
+  border-spacing:0 15px;
+}
+h1 {
+  color:green;
+}
+@media print {
+  #exporter {
+    background-color: #999;
+  }
 }
