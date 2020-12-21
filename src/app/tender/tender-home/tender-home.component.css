@@ -6,8 +6,15 @@ table {
 }
 .example-container{
   margin-left: 155px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between  ;
 }
 .user{
   margin-left: 1125px;
   margin-top: fill;
+}
+.username{
+  float: right;
 }

@@ -12,42 +12,22 @@
     <mat-form-field class="example-form-field">
       <mat-label>Ponudjac</mat-label>
       <input matInput type="text" [(ngModel)]="imePonudjaca" (click)="OnKeyUp()">
-      <button mat-button *ngIf="imePonudjaca" matSuffix mat-icon-button aria-label="Clear"
-              (click)="onCleanPonudjaci()">
+      <button mat-button *ngIf="imePonudjaca" matSuffix mat-icon-button aria-label="Clear" (click)="onCleanPonudjaci()">
         <mat-icon>close</mat-icon>
       </button>
-
     </mat-form-field>
-    <p> Prijavljeni ste kao korisnik :   {{ currentUser.username }}</p>
-
+    <p> Prijavljeni ste kao korisnik : {{ currentUser.username }}</p>
+    
   </div>
-  <div>
-
-  </div>
-
-  <div class="container" >
-
-      <h3>
-
-      </h3>
-
-
-<!--    <ul>-->
-<!--      <li *ngFor="let role of currentUser.roles">-->
-<!--       <p>{{ role }}</p>-->
-<!--      </li>-->
-<!--    </ul>-->
-  </div>
-
-
+  
 
   <mat-tab-group *ngFor="let role of currentUser.roles" mat-align-tabs="start">
-    <mat-tab  *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
+    <mat-tab *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
       <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
     </mat-tab>
-<!--    <mat-tab  label="Ponude Admin">-->
-<!--      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>-->
-<!--    </mat-tab>-->
+    <!--    <mat-tab  label="Ponude Admin">-->
+    <!--      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>-->
+    <!--    </mat-tab>-->
     <mat-tab label="Ponude">
       <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
     </mat-tab>
@@ -66,5 +46,3 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-
-
