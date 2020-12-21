@@ -18,3 +18,13 @@ table {
 .username{
   float: right;
 }
+.example-form-field{
+font-size: 15px;
+
+}
+.korisnik{
+  font-size: 14px;
+}
+mat-label{
+  font-size: 14px;
+}
