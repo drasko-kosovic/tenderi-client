@@ -126,9 +126,9 @@ export class PonudeComponent implements OnInit, OnChanges {
   }
 
   startEdit(i: number, id: number, partija: string, atc: string, naziv_proizvoda: string, zasticeni_naziv: string, proizvodjac:
-    string,farmaceutski_oblik: string,trazena_kolicina: string,ponudjana_kolicina: number,procijenjena_jedinicna_cijena:
+    string, farmaceutski_oblik: string, trazena_kolicina: string, ponudjana_kolicina: number, procijenjena_jedinicna_cijena:
       number, ponudjena_jedinicna_cijena: number, procijenjena_ukupna_cijena: number, ponudjena_ukupna_cijena: number, rok_isporuke:
-      number, ponudjac: string,broj_tendera: string
+      number, ponudjac: string, broj_tendera: string
   ) {
     this.id = id;
     this.index = i;
@@ -202,7 +202,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.doFilter();
   }
 
- 
+
   hide() {
     this.show = false;
   }
