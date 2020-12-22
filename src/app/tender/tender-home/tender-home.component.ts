@@ -6,8 +6,9 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-tender-home',
   templateUrl: './tender-home.component.html',
-  styleUrls: ['./tender-home.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./tender-home.component.css']
+  // ,
+  // encapsulation: ViewEncapsulation.None
 })
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;

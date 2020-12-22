@@ -29,24 +29,35 @@ font-size: 15px;
   padding-left: 170px;
   
 }
-.mat-tab-label {
+.mat-tab-label.first{
+  min-width: 25px !important;
+  padding: 5px;
+  background-color: blue;
+  color: red;
+  font-weight: 700;
+}
+/* .mat-tab-label {
   min-width: 25px !important;
   padding: 5px;
   background-color: transparent;
   color: red;
   font-weight: 700;
-}
+} */
 
 /* Styles for the active tab label */
-.mat-tab-label.mat-tab-label-active {
+/* .mat-tab-label.mat-tab-label-active {
   min-width: 25px !important;
   padding: 5px;
   background-color: transparent;
   color: red;
   font-weight: 700;
-}
+} */
 
 /* Styles for the ink bar */
 .mat-ink-bar {
   background-color: green;
+}
+.mat-tab-label-active{
+  background-color: red ;
+  opacity: 1 !important;
 }
