@@ -2,3 +2,34 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+
+
+/*!* notification *!*/
+snack-bar-container.success {
+  background-color: #19b83b;
+  color : #fff;
+}
+
+snack-bar-container.warn {
+  background-color: #f99157;
+  color : #fff;
+}
+.mat-snack-bar-container {
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: block;
+  margin: 24px;
+  max-width: 568px;
+  min-width: 288px;
+  padding: 14px 24px;
+  transform: translateY(100%) translateY(24px);
+}
+
+/*snack-bar-container.notification simple-snack-bar{*/
+/*  font-size: 18px !important;*/
+/*  font-weight: bold;*/
+/*}*/
+
