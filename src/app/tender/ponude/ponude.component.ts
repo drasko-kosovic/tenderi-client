@@ -202,13 +202,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.doFilter();
   }
 
-  generatePdf() {
-    const documentDefinition = { content: 'This is for testing.' };
-    // pdfMake.createPdf(documentDefinition).print();
-    // pdfMake.createPdf(docDefinition).print();
-    pdfMake.createPdf(documentDefinition).open({}, window);
-  }
-
+ 
   hide() {
     this.show = false;
   }
