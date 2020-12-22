@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 import {TokenStorageService} from '../../auth/login/_services/token-storage.service';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tender-home',
-
   templateUrl: './tender-home.component.html',
-  styleUrls: ['./tender-home.component.css']
+  styleUrls: ['./tender-home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
