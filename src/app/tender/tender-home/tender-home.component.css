@@ -25,7 +25,9 @@ font-size: 15px;
 .korisnik{
   font-size: 14px;
   margin: 1px;
+  margin-top: auto;
   padding-left: 170px;
+  
 }
 mat-label{
   font-size: 14px;
