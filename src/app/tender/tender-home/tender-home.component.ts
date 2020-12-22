@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {TokenStorageService} from '../../auth/login/_services/token-storage.service';
-import {Router} from '@angular/router';
+import { TokenStorageService } from '../../auth/login/_services/token-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tender-home',
@@ -37,7 +37,7 @@ export class TenderHomeComponent implements OnInit {
     console.log('to je     ' + this.imePonudjaca);
   }
 
-  onClean(){
+  onClean() {
     this.brojTendera = '';
     window.location.reload();
   }

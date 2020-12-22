@@ -1,7 +1,4 @@
 <div fxLayout fxLayoutAlign="center center" *ngIf="dataSource.data.length > 0">
-  <!--  <mat-form-field fxFlex="40%">-->
-  <!--    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">-->
-  <!--  </mat-form-field>-->
   <button mat-raised-button
     (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
 
@@ -12,66 +9,67 @@
   </button>
 
 </div>
-<table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
-  (matSortChange)="customSort($event)" #exporter="matTableExporter">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
+<div class="example-container mat-elevation-z8">
+  <table mat-table id="ExampleTable" matTableExporter [dataSource]="dataSource" matSort matSortStart="desc"
+    (matSortChange)="customSort($event)" #exporter="matTableExporter">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="partija">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
-    <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
-  </ng-container>
+    <ng-container matColumnDef="partija">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Partija</th>
+      <td mat-cell *matCellDef="let element"> {{element.partija}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="atc">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Atc</th>
-    <td mat-cell *matCellDef="let element"> {{element.atc}} </td>
-  </ng-container>
+    <ng-container matColumnDef="atc">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Atc</th>
+      <td mat-cell *matCellDef="let element"> {{element.atc}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="naziv_proizvoda">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziv</th>
-    <td mat-cell *matCellDef="let element"> {{element.naziv_proizvoda}} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="procijenjena_jedinicna_cijena">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Procijenjena Jed.Cijena</th>
-    <td mat-cell *matCellDef="let element">{{element.procijenjena_jedinicna_cijena|currency:'EUR':true}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="ponudjena_jedinicna_cijena">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Jed.Cijena</th>
-    <td mat-cell *matCellDef="let element"> {{element.ponudjena_jedinicna_cijena|currency:'EUR':true}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="procijenjena_ukupna_cijena">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Procijenjena Ukupna Cijena</th>
-    <td mat-cell *matCellDef="let element"> {{element.procijenjena_ukupna_cijena|currency:'EUR':true}} </td>
-    <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="ponudjena_ukupna_cijena">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Ukupna Cijena</th>
-    <td mat-cell *matCellDef="let element"> {{element.ponudjena_ukupna_cijena|currency:'EUR':true}} </td>
-  </ng-container>
+    <ng-container matColumnDef="naziv_proizvoda">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziv</th>
+      <td mat-cell *matCellDef="let element"> {{element.naziv_proizvoda}} </td>
+    </ng-container>
 
 
-  <ng-container matColumnDef="ponudjac">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Ponudjac</th>
-    <td mat-cell *matCellDef="let element"> {{element.ponudjac}} </td>
-  </ng-container>
+    <ng-container matColumnDef="procijenjena_jedinicna_cijena">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Procijenjena Jed.Cijena</th>
+      <td mat-cell *matCellDef="let element">{{element.procijenjena_jedinicna_cijena|currency:'EUR':true}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="broj_tendera">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tender br.</th>
-    <td mat-cell *matCellDef="let element"> {{element.broj_tendera}} </td>
-  </ng-container>
+    <ng-container matColumnDef="ponudjena_jedinicna_cijena">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Jed.Cijena</th>
+      <td mat-cell *matCellDef="let element"> {{element.ponudjena_jedinicna_cijena|currency:'EUR':true}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="procijenjena_ukupna_cijena">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Procijenjena Ukupna Cijena</th>
+      <td mat-cell *matCellDef="let element"> {{element.procijenjena_ukupna_cijena|currency:'EUR':true}} </td>
+      <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ponudjena_ukupna_cijena">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ponudjena Ukupna Cijena</th>
+      <td mat-cell *matCellDef="let element"> {{element.ponudjena_ukupna_cijena|currency:'EUR':true}} </td>
+    </ng-container>
 
 
+    <ng-container matColumnDef="ponudjac">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ponudjac</th>
+      <td mat-cell *matCellDef="let element"> {{element.ponudjac}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="broj_tendera">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tender br.</th>
+      <td mat-cell *matCellDef="let element"> {{element.broj_tendera}} </td>
+    </ng-container>
 
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
 <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]">
 </mat-paginator>
