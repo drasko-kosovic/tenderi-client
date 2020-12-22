@@ -125,10 +125,10 @@ export class PonudeComponent implements OnInit, OnChanges {
     // });
   }
 
-  startEdit(i: number, id: number, partija: string, atc: string, nazivProizvoda: string, zasticeniNaziv: string, proizvodjac:
-    string, jedinicaMjere: string, trazenaKolicina: string, ponudjanaKolicina: number, procijenjenaJedinicnaCijena:
-      number, ponudjenaJedinicnaCijena: number, procijenjenaUkupnaCijena: number, ponudjenaUkupnaCijena: number, rokIsporuke:
-      number, ponudjac: string, brojTendera: string
+  startEdit(i: number, id: number, partija: string, atc: string, naziv_proizvoda: string, zasticeni_naziv: string, proizvodjac:
+    string,farmaceutski_oblik: string,trazena_kolicina: string,ponudjana_kolicina: number,procijenjena_jedinicna_cijena:
+      number, ponudjena_jedinicna_cijena: number, procijenjena_ukupna_cijena: number, ponudjena_ukupna_cijena: number, rok_isporuke:
+      number, ponudjac: string,broj_tendera: string
   ) {
     this.id = id;
     this.index = i;
@@ -138,19 +138,19 @@ export class PonudeComponent implements OnInit, OnChanges {
         id,
         partija,
         atc,
-        nazivProizvoda,
-        zasticeniNaziv,
+        naziv_proizvoda,
+        zasticeni_naziv,
         proizvodjac,
-        jedinicaMjere,
-        trazenaKolicina,
-        ponudjanaKolicina,
-        procijenjenaJedinicnaCijena,
-        ponudjenaJedinicnaCijena,
-        procijenjenaUkupnaCijena,
-        ponudjenaUkupnaCijena,
-        rokIsporuke,
+        farmaceutski_oblik,
+        trazena_kolicina,
+        ponudjana_kolicina,
+        procijenjena_jedinicna_cijena,
+        ponudjena_jedinicna_cijena,
+        procijenjena_ukupna_cijena,
+        ponudjena_ukupna_cijena,
+        rok_isporuke,
         ponudjac,
-        brojTendera
+        broj_tendera
       }
     });
 
@@ -196,7 +196,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(_changes: SimpleChanges): void {
     this.getAllPonude();
     // @ts-ignore
     this.doFilter();
