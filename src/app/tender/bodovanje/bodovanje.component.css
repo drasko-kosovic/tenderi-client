@@ -21,6 +21,10 @@ th {
   background-color:darkblue;
   Color:white;
 }
+th {
+  background-color:red;
+  Color:white;
+}
 th, td {
   width:150px;
   text-align:center;
