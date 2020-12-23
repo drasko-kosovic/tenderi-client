@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.notificationService.success(':: Submitted successfully');
+        this.notificationService.success('Uspesno ste se priavili');
         console.log('Ulogovan');
         this.roles = this.tokenStorage.getUser().roles;
         this.username = this.tokenStorage.getUser().username;
