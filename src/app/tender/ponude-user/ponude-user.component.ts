@@ -34,17 +34,13 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   // brojTendera:string ='1120';
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild('filter', {static: true}) filter: ElementRef;
+  // @ViewChild('filter', {static: true}) filter: ElementRef;
 
 
   constructor(private tenderService: TenderService) {
 
   }
-
-
   ngOnInit() {
-
-
   }
 
 

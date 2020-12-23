@@ -15,7 +15,7 @@ import {TableUtilHvale} from './table-util-hvale';
 })
 export class HvalePartijeComponent implements OnInit {
 
-  public displayedColumns = ['id', 'partija','naziv_proizvoda','farmaceutski_oblik','pakovanje','trazena_kolicina','procijenjena_jedinicna_cijena','procijenjena_ukupna_cijena', 'brojTendera'];
+  public displayedColumns = [ 'partija','naziv_proizvoda','farmaceutski_oblik','pakovanje','trazena_kolicina','procijenjena_jedinicna_cijena','procijenjena_ukupna_cijena', 'brojTendera'];
 
   public dataSource = new MatTableDataSource<HvalePartije>();
 
@@ -60,7 +60,7 @@ export class HvalePartijeComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     this.getAllHvalePartije();
     // @ts-ignore
-    // this.doFilter();
+     this.doFilter();
   }
 
   exportTableHvale() {
