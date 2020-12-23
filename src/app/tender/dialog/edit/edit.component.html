@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 mat-dialog-title>Add new Issue</h3>
+  <h3 mat-dialog-title>Izmjeni</h3>
 
   <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
 
@@ -11,59 +11,83 @@
       <mat-form-field color="accent">
         <input matInput placeholder="partija" [(ngModel)]="data.partija" name="partija">
       </mat-form-field>
-    </div>
-
-    <!--Contains mat-hint for characters count and has maxLengt set-->
-    <div class="form">
+  
       <mat-form-field color="accent">
         <input matInput #inputstate class="form-control" placeholder="atc" [(ngModel)]="data.atc" name="atc"  >
-        <!--        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>-->
-        <!--        <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint>-->
+<!--        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>-->
+<!--        <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint>-->
+      </mat-form-field>
+   
+      <mat-form-field color="accent">
+        <input matInput placeholder="naziv proizvoda" [(ngModel)]="data.naziv_proizvoda" name="naziv_proizvoda">
       </mat-form-field>
     </div>
+
+
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput placeholder="nazivProizvoda" [(ngModel)]="data.nazivProizvoda" name="nazivProizvoda">
+        <input matInput placeholder="zasticeni naziv" [(ngModel)]="data.zasticeni_naziv" name="zasticeni_naziv">
       </mat-form-field>
-    </div>
-    <div class="form">
+    
       <mat-form-field color="accent">
-        <input matInput placeholder="zasticeniNaziv" [(ngModel)]="data.zasticeniNaziv" name="zasticeniNaziv">
-      </mat-form-field>
-    </div>
-    <mat-form-field color="accent">
       <input matInput placeholder="proizvodjac" [(ngModel)]="data.proizvodjac" name="proizvodjac">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="jedinicaMjere" [(ngModel)]="data.jedinicaMjere" name="jedinicaMjere">
+  
+       <mat-form-field color="accent">
+      <input matInput placeholder="farmaceutski oblik" [(ngModel)]="data.farmaceutski_oblik" name="farmaceutski_oblik">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="trazenaKolicina" [(ngModel)]="data.trazenaKolicina" name="trazenaKolicina">
+    </div>
+
+
+    <div class="form">
+       <mat-form-field color="accent">
+      <input matInput placeholder="pakovanje" [(ngModel)]="data.pakovanje" name="pakovanje">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="ponudjanaKolicina" [(ngModel)]="data.ponudjanaKolicina" name="ponudjanaKolicina">
+      
+       <mat-form-field color="accent">
+      <input matInput placeholder="trazena kolicina" [(ngModel)]="data.trazena_kolicina" name="trazena_kolicina">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="procijenjenaJedinicnaCijena" [(ngModel)]="data.procijenjenaJedinicnaCijena" name="procijenjenaJedinicnaCijena">
+    
+       <mat-form-field color="accent">
+      <input matInput placeholder="ponudjana kolicina" [(ngModel)]="data.ponudjana_kolicina" name="ponudjana_kolicina">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="ponudjenaJedinicnaCijena" [(ngModel)]="data.ponudjenaJedinicnaCijena" name="ponudjenaJedinicnaCijena">
+     </div>
+   
+
+
+     <div class="form">
+       <mat-form-field color="accent">
+      <input matInput placeholder="procijenjena jedinicna cijena" [(ngModel)]="data.procijenjena_jedinicna_cijena" name="procijenjena_jedinicna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="procijenjenaUkupnaCijena" [(ngModel)]="data.procijenjenaUkupnaCijena" name="procijenjenaUkupnaCijena">
+   
+       <mat-form-field color="accent">
+      <input matInput placeholder="ponudjena jedinicna cijena" [(ngModel)]="data.ponudjena_jedinicna_cijena" name="ponudjena_jedinicna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="ponudjenaUkupnaCijena" [(ngModel)]="data.ponudjenaUkupnaCijena" name="ponudjenaUkupnaCijena">
+   
+       <mat-form-field color="accent">
+      <input matInput placeholder="procijenjena ukupna cijena" [(ngModel)]="data.procijenjena_ukupna_cijena" name="procijenjena_ukupna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="rokIsporuke" [(ngModel)]="data.rokIsporuke" name="rokIsporuke">
+    </div>
+   
+    <div class="form">
+      <mat-form-field color="accent">
+      <input matInput placeholder="ponudjena ukupna cijena" [(ngModel)]="data.ponudjena_ukupna_cijena" name="ponudjena_ukupna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
+   
+      <mat-form-field color="accent">
+      <input matInput placeholder="rok isporuke" [(ngModel)]="data.rok_isporuke" name="rok_isporuke">
+    </mat-form-field>
+    
+      <mat-form-field color="accent">
       <input matInput placeholder="ponudjac" [(ngModel)]="data.ponudjac" name="ponudjac">
     </mat-form-field>
-    <mat-form-field color="accent">
-      <input matInput placeholder="brojTendera" [(ngModel)]="data.brojTendera" name="brojTendera">
+  </div>
+  <div class="form">
+      <mat-form-field color="accent">
+      <input matInput placeholder="broj tendera" [(ngModel)]="data.broj_tendera" name="broj_tendera">
     </mat-form-field>
+    </div>
+    
 
     <div mat-dialog-actions>
       <button mat-raised-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Sacuvaj</button>
