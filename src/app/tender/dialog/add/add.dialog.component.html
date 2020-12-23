@@ -31,42 +31,67 @@
         <input matInput placeholder="zasticeni naziv" [(ngModel)]="data.zasticeni_naziv" name="zasticeni_naziv">
       </mat-form-field>
     </div>
-    <mat-form-field color="accent">
+    <div class="form">
+      <mat-form-field color="accent">
       <input matInput placeholder="proizvodjac" [(ngModel)]="data.proizvodjac" name="proizvodjac">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="farmaceutski oblik" [(ngModel)]="data.farmaceutski_oblik" name="farmaceutski_oblik">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="pakovanje" [(ngModel)]="data.pakovanje" name="pakovanje">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="trazena kolicina" [(ngModel)]="data.trazena_kolicina" name="trazena_kolicina">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="ponudjana kolicina" [(ngModel)]="data.ponudjana_kolicina" name="ponudjana_kolicina">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="procijenjena jedinicna_cijena" [(ngModel)]="data.procijenjena_jedinicna_cijena" name="procijenjena_jedinicna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="ponudjena jedinicna_cijena" [(ngModel)]="data.ponudjena_jedinicna_cijena" name="ponudjena_jedinicna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+       <mat-form-field color="accent">
       <input matInput placeholder="procijenjena ukupna_cijena" [(ngModel)]="data.procijenjena_ukupna_cijena" name="procijenjena_ukupna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
       <input matInput placeholder="ponudjena_ukupna_cijena" [(ngModel)]="data.ponudjena_ukupna_cijena" name="ponudjena_ukupna_cijena">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
       <input matInput placeholder="rok isporuke" [(ngModel)]="data.rok_isporuke" name="rok_isporuke">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
       <input matInput placeholder="ponudjac" [(ngModel)]="data.ponudjac" name="ponudjac">
     </mat-form-field>
-    <mat-form-field color="accent">
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
       <input matInput placeholder="broj tendera" [(ngModel)]="data.broj_tendera" name="broj_tendera">
     </mat-form-field>
+    </div>
+    
 
     <div mat-dialog-actions>
       <button mat-raised-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Sacuvaj</button>
