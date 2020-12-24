@@ -85,4 +85,10 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
   exportTablePrekoProcijenjene() {
     TableUtilPrekoprocijenjene.exportToPdf('ExampleTable');
   }
+
+  // exportTable() {
+
+  //   TableUtilPrekoprocijenjene.exportToPdf('ExampleTable');
+    
+  // }
 }

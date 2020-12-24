@@ -6,7 +6,7 @@
       (click)="exporter.exportTable('xlsx', {fileName:'Ponude', sheet: 'sheet_name', Props: {Author: 'Talha'}})">
 
       <img src="../../../assets/icons/icons8-microsoft-excel-48.png" /></button>
-    <button mat-raised-button (focus)="hide()" (click)="exportTable()">
+    <button mat-raised-button  (click)="exportTable()">
 
       <img src="../../../assets/icons/icons8-pdf-48.png" /></button>
   </div>
@@ -87,12 +87,12 @@
           <ng-container matColumnDef="ponudjena_ukupna_cijena">
             <th mat-header-cell *matHeaderCellDef> Ukupna Cijena</th>
             <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjena_ukupna_cijena}} </td>
-            <td mat-footer-cell *matFooterCellDef>{{ ukupnaPonudjena }}</td>
+            <td mat-footer-cell *matFooterCellDef>{{ ukupnaPonudjena| number : '1.2-2' }}</td>
           </ng-container>
           <ng-container matColumnDef="procijenjena_ukupna_cijena">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Pr.Ukupna</th>
             <td mat-cell *matCellDef="let element"> {{element.procijenjena_ukupna_cijena}} </td>
-            <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena }}</td>
+            <td mat-footer-cell *matFooterCellDef>{{ ukupnoProcijenjena| number : '1.2-2' }}</td>
           </ng-container>
           <ng-container matColumnDef="rok_isporuke">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Rok Isporuke</th>

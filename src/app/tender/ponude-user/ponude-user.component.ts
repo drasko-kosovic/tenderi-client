@@ -109,6 +109,6 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   exportTable() {
 
     TableUtilPonudeUser.exportToPdf('ExampleTable');
-    this.startTimer();
+   
   }
 }
