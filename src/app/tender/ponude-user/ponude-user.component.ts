@@ -26,15 +26,15 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   show = true;
   broj_tendera=false;
 
-  timeLeft: number = 1;
-  interval;
+  
+ 
   @Input() tender: string;
   @Input() ponnudjac: string;
 
-  // brojTendera:string ='1120';
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  // @ViewChild('filter', {static: true}) filter: ElementRef;
+
 
 
   constructor(private tenderService: TenderService) {
@@ -62,7 +62,7 @@ export class PonudeUserComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  public customSort = (event) => {
+  public customSort = (event:any) => {
     console.log(event);
   };
 
@@ -78,7 +78,9 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   //   return sum;
   // }
 
-
+  // private refreshTable() {
+  //   this.paginator.changePpartijaSize(this.paginator.firstPage);
+  // }
 
   doFilter() {
     this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
@@ -86,29 +88,42 @@ export class PonudeUserComponent implements OnInit, OnChanges {
     this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.getAllPonude();
-    // @ts-ignore
-    this.doFilter();
+      this.doFilter();
   }
 
-
-  hide() {
-    this.show = false;
-  }
-
-  startTimer() {
-    this.interval = setInterval(() => {
-      if(this.timeLeft = 2) {
-        this.show=true;
-      } else {
-        console.log("nije isteklo");
-      }
-    },1000)
-  }
   exportTable() {
 
     TableUtilPonudeUser.exportToPdf('ExampleTable');
    
+  }
+  refresh() {
+    this.getAllPonude();
+  }
+
+  sortData(data: Ponude[]): Ponude[] {
+    if (!this.sort.active || this.sort.direction === '') {
+      return data;
+    }
+
+    return data.sort((a, b) => {
+      let propertyA: number | string = '';
+      let propertyB: number | string = '';
+
+      switch (this.sort.active) {
+        case 'id': [propertyA, propertyB] = [a.id, b.id]; break;
+        case 'partija': [propertyA, propertyB] = [a.partija, b.partija]; break;
+        // case 'country': [propertyA, propertyB] = [a.country, b.country]; break;
+        // case 'firstName': [propertyA, propertyB] = [a.firstName, b.firstName]; break;
+        // case 'lastName': [propertyA, propertyB] = [a.lastName, b.lastName]; break;
+
+      }
+
+      const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
+      const valueB = isNaN(+propertyB) ? propertyB : +propertyB;
+
+      return (valueA < valueB ? -1 : 1) * (this.sort.direction === 'asc' ? 1 : -1);
+    });
   }
 }
