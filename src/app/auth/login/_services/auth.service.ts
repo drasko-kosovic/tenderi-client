@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AbstractControl, ValidationErrors} from '@angular/forms';
 
-const AUTH_API = 'https://tenderi-montefarm.herokuapp.com/api/auth/';
-// const AUTH_API = 'http://localhost:8080/api/auth/';
+// const AUTH_API = 'https://tenderi-montefarm.herokuapp.com/api/auth/';
+const AUTH_API = 'http://localhost:8080/api/auth/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
