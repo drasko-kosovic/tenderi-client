@@ -1,10 +1,10 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {TenderService} from '../tender.service';
-import {Ponude} from '../model/ponude.model';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {TableUtilPonudeUser} from './table-util-ponude-user';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { TenderService } from '../tender.service';
+import { Ponude } from '../model/ponude.model';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { TableUtilPonudeUser } from './table-util-ponude-user';
 
 @Component({
   selector: 'app-ponude-user',
@@ -24,17 +24,17 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
-  broj_tendera=false;
+  broj_tendera = false;
 
-  timeLeft: number = 1;
-  interval;
+
+
   @Input() tender: string;
   @Input() ponnudjac: string;
 
-  // brojTendera:string ='1120';
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  // @ViewChild('filter', {static: true}) filter: ElementRef;
+
 
 
   constructor(private tenderService: TenderService) {
@@ -62,22 +62,9 @@ export class PonudeUserComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  public customSort = (event) => {
+  public customSort = (event: any) => {
     console.log(event);
   };
-
-
-  // calculation() {
-  //   let sum = 0;
-  //   if (this.dataSource) {
-  //     for (const row of this.dataSource.data) {
-  //       // tslint:disable-next-line:triple-equals
-  //       if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
-  //     }
-  //   }
-  //   return sum;
-  // }
-
 
 
   doFilter() {
@@ -86,29 +73,40 @@ export class PonudeUserComponent implements OnInit, OnChanges {
     this.ukupnaPonudjena = this.dataSource.filteredData.map(t => t.ponudjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.getAllPonude();
-    // @ts-ignore
     this.doFilter();
   }
 
-
-  hide() {
-    this.show = false;
-  }
-
-  startTimer() {
-    this.interval = setInterval(() => {
-      if(this.timeLeft = 2) {
-        this.show=true;
-      } else {
-        console.log("nije isteklo");
-      }
-    },1000)
-  }
   exportTable() {
 
     TableUtilPonudeUser.exportToPdf('ExampleTable');
+
+  }
+  refresh() {
+    this.getAllPonude();
+  }
+
+  sortData(data: Ponude[]): Ponude[] {
+    if (!this.sort.active || this.sort.direction === '') {
+      return data;
+    }
+
+    return data.sort((a, b) => {
+      let propertyA: number | string = '';
+      let propertyB: number | string = '';
+
+      switch (this.sort.active) {
+        case 'id': [propertyA, propertyB] = [a.id, b.id]; break;
+        case 'partija': [propertyA, propertyB] = [a.partija, b.partija]; break;
    
+
+      }
+
+      const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
+      const valueB = isNaN(+propertyB) ? propertyB : +propertyB;
+
+      return (valueA < valueB ? -1 : 1) * (this.sort.direction === 'asc' ? 1 : -1);
+    });
   }
 }
