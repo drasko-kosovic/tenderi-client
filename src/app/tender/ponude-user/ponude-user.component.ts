@@ -1,10 +1,10 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {TenderService} from '../tender.service';
-import {Ponude} from '../model/ponude.model';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {TableUtilPonudeUser} from './table-util-ponude-user';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { TenderService } from '../tender.service';
+import { Ponude } from '../model/ponude.model';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { TableUtilPonudeUser } from './table-util-ponude-user';
 
 @Component({
   selector: 'app-ponude-user',
@@ -24,10 +24,10 @@ export class PonudeUserComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
-  broj_tendera=false;
+  broj_tendera = false;
 
-  
- 
+
+
   @Input() tender: string;
   @Input() ponnudjac: string;
 
@@ -62,25 +62,10 @@ export class PonudeUserComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  public customSort = (event:any) => {
+  public customSort = (event: any) => {
     console.log(event);
   };
 
-
-  // calculation() {
-  //   let sum = 0;
-  //   if (this.dataSource) {
-  //     for (const row of this.dataSource.data) {
-  //       // tslint:disable-next-line:triple-equals
-  //       if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
-  //     }
-  //   }
-  //   return sum;
-  // }
-
-  // private refreshTable() {
-  //   this.paginator.changePpartijaSize(this.paginator.firstPage);
-  // }
 
   doFilter() {
     this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
@@ -90,13 +75,13 @@ export class PonudeUserComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.getAllPonude();
-      this.doFilter();
+    this.doFilter();
   }
 
   exportTable() {
 
     TableUtilPonudeUser.exportToPdf('ExampleTable');
-   
+
   }
   refresh() {
     this.getAllPonude();
@@ -114,9 +99,7 @@ export class PonudeUserComponent implements OnInit, OnChanges {
       switch (this.sort.active) {
         case 'id': [propertyA, propertyB] = [a.id, b.id]; break;
         case 'partija': [propertyA, propertyB] = [a.partija, b.partija]; break;
-        // case 'country': [propertyA, propertyB] = [a.country, b.country]; break;
-        // case 'firstName': [propertyA, propertyB] = [a.firstName, b.firstName]; break;
-        // case 'lastName': [propertyA, propertyB] = [a.lastName, b.lastName]; break;
+   
 
       }
 
