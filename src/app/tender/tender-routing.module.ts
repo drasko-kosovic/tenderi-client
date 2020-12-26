@@ -5,7 +5,6 @@ import {PonudeComponent} from './ponude/ponude.component';
 import {BodovanjeComponent} from './bodovanje/bodovanje.component';
 import {TenderHomeComponent} from './tender-home/tender-home.component';
 import {PrvorangiraniComponent} from "./prvorangirani/prvorangirani.component";
-import { PregovarackiHomeComponent } from '../pregovarcki/pregovaracki-home/pregovaracki-home.component';
 
 const routes: Routes = [
   {
