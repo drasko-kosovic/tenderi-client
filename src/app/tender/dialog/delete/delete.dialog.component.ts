@@ -23,5 +23,6 @@ export class DeleteDialogComponent {
   confirmDelete(): void {
     this.tenderService.deletePonuda(this.data.id);
     this.notificationService.success(' Zapis je obrisan');
+    window.location.reload();
   }
 }

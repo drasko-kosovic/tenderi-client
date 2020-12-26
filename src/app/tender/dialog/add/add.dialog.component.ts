@@ -30,7 +30,6 @@ export class AddDialogComponent implements OnInit {
         '';
   }
 
-  // tslint:disable-next-line:typedef
   submit() {
     // emppty stuff
   }
@@ -42,7 +41,7 @@ export class AddDialogComponent implements OnInit {
   public confirmAdd(): void {
     this.tenderService.addPonude(this.data);
     this.notificationService.success('Dodato');
-    // window.location.reload();
+    window.location.reload();
   }
 
   ngOnInit(): void {
