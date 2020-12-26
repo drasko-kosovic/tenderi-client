@@ -21,17 +21,15 @@
   </div>
   
 
-  <mat-tab-group *ngFor="let role of currentUser.roles" mat-align-tabs="start">
-    <mat-tab *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
+  <mat-tab-group  mat-align-tabs="start">
+    <!-- <mat-tab *ngIf="currentUser.username=='drasko'" label="Ponude Admin">
       <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
-    </mat-tab>
-    <!--    <mat-tab  label="Ponude Admin">-->
-    <!--      <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>-->
-    <!--    </mat-tab>-->
+    </mat-tab> -->
+    
     <mat-tab  label="Ponude">
       <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
     </mat-tab>
-    <mat-tab label="Bodovanje">
+     <mat-tab label="Bodovanje">
       <app-bodovanje [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-bodovanje>
     </mat-tab>
     <mat-tab label="Prvorangirani">
@@ -43,6 +41,6 @@
     </mat-tab>
     <mat-tab label="Nema ponuda">
       <app-hvale-partije [tender]="brojTendera"></app-hvale-partije>
-    </mat-tab>
+    </mat-tab> 
   </mat-tab-group>
 </div>

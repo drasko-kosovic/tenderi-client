@@ -41,7 +41,7 @@ export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
 
-  @Input() tender: string;
+  @Input() tender: number;
   @Input() ponnudjac: string;
   // tslint:disable-next-line:typedef
   ngOnInit() {

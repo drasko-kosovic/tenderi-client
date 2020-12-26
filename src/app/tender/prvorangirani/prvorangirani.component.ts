@@ -18,7 +18,7 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
   'farmaceutski_oblik', 'pakovanje', 'trazena_kolicina', 'ponudjana_kolicina', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
   'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
   public dataSource = new MatTableDataSource<Bodovanje>();
-  @Input() tender: string;
+  @Input() tender: number;
   @Input() ponnudjac:string;
 
   ukupnoProcijenjena:number;
@@ -28,12 +28,12 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
 
   constructor(private tenderService: TenderService) { }
 
-  // tslint:disable-next-line:typedef
+ 
   ngOnInit() {
     this.getAllPrvorangirani();
   }
 
-  // tslint:disable-next-line:typedef
+ 
   public getAllPrvorangirani()  {
     this.tenderService.getPrvorangiraniFindByTenderi(this.tender)
       .subscribe(res => {

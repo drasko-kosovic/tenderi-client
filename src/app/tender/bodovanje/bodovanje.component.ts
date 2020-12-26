@@ -15,7 +15,7 @@ import {TableUtilBodovanje} from './table-util-bodovanje';
   styleUrls: ['./bodovanje.component.css']
 })
 export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
-  @Input() tender: string;
+  @Input() tender: number;
   @Input() ponnudjac:string;
 
   ukupnoProcijenjena:number;

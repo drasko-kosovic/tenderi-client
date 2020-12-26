@@ -21,7 +21,7 @@ export class HvalePartijeComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @Input() tender: string;
+  @Input() tender: number;
 
 
   ukupnoProcijenjena:number;
@@ -51,7 +51,7 @@ export class HvalePartijeComponent implements OnInit {
   }
 
   doFilter() {
-    this.dataSource.filter = this.tender.trim().toLocaleLowerCase();
+    // this.dataSource.filter = this.tender.trim().toLocaleLowerCase();
     this.ukupnoProcijenjena = this.dataSource.filteredData.map(t => t.procijenjena_ukupna_cijena).reduce((acc, value) => acc + value, 0);
    
   }
@@ -59,7 +59,7 @@ export class HvalePartijeComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getAllHvalePartije();
-    // @ts-ignore
+    
      this.doFilter();
   }
 

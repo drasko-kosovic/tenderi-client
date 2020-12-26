@@ -28,7 +28,7 @@ export class PonudeUserComponent implements OnInit, OnChanges {
 
 
 
-  @Input() tender: string;
+  @Input() tender: number;
   @Input() ponnudjac: string;
 
 
@@ -41,6 +41,7 @@ export class PonudeUserComponent implements OnInit, OnChanges {
 
   }
   ngOnInit() {
+
   }
 
 

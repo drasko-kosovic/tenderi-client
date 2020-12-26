@@ -22,7 +22,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   public displayedColumns = ['partija', 'atc', 'naziv_proizvoda', 'zasticeni_naziv', 'proizvodjac',
     'farmaceutski_oblik', 'pakovanje', 'trazena_kolicina', 'ponudjana_kolicina', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
-    'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'dodaj', 'delete sve','selected'];
+    'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'dodaj', 'delete sve', 'selected'];
   public dataSource = new MatTableDataSource<Ponude>();
   exampleDatabase: TenderService | null;
   index: number;
@@ -35,7 +35,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   timeLeft: number = 1;
   interval;
-  @Input() tender: string;
+  @Input() tender: number;
   @Input() ponnudjac: string;
 
   // brojTendera:string ='1120';
@@ -48,9 +48,8 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   }
 
-  // tslint:disable-next-line:typedef
+
   ngOnInit() {
-    // this.getAllPonude();
 
   }
 
@@ -61,7 +60,7 @@ export class PonudeComponent implements OnInit, OnChanges {
       .subscribe(res => {
         this.dataSource.data = res as Ponude[];
         console.log('to je   ' + res);
-        // console.log(this.brojTendera);
+
       });
 
 
@@ -78,13 +77,13 @@ export class PonudeComponent implements OnInit, OnChanges {
   };
 
 
-  // tslint:disable-next-line:typedef
+
   // doFilter(fitlervalue: string) {
   //   this.dataSource.filter = fitlervalue.trim().toLocaleLowerCase();
   //   this.ukupno = this.dataSource.filteredData.map(t => t.ponudjenaUkupnaCijena).reduce((acc, value) => acc + value, 0);
   // }
 
-  // tslint:disable-next-line:typedef
+
   // calculation() {
   //   let sum = 0;
   //   if (this.dataSource) {
@@ -96,7 +95,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   //   return sum;
   // }
 
-  // tslint:disable-next-line:typedef
+
   deleteItem(i: number, id: number) {
     this.index = i;
     this.id = id;
@@ -107,7 +106,6 @@ export class PonudeComponent implements OnInit, OnChanges {
   }
 
 
-  // tslint:disable-next-line:typedef
   addNew() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
       data: { Ponude: {} }
@@ -179,16 +177,6 @@ export class PonudeComponent implements OnInit, OnChanges {
     // this.refresh();
   }
 
-  // calculation() {
-  //   let sum = 0;
-  //   if (this.dataSource) {
-  //     for (const row of this.dataSource.data) {
-  //       // tslint:disable-next-line:triple-equals
-  //       if (row.id != 0) { sum += row.ponudjenaUkupnaCijena; }
-  //     }
-  //   }
-  //   return sum;
-  // }
 
   doFilter() {
     this.dataSource.filter = this.ponnudjac.trim().toLocaleLowerCase();
@@ -198,7 +186,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   ngOnChanges(_changes: SimpleChanges): void {
     this.getAllPonude();
-    // @ts-ignore
+
     this.doFilter();
   }
 

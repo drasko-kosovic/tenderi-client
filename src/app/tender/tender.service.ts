@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Ponude } from './model/ponude.model';
-import { Student } from "./model/student.model";
 
 
 @Injectable({
@@ -13,7 +12,7 @@ import { Student } from "./model/student.model";
 export class TenderService {
 
   
-  readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene/';
+  // readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude';
   private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
@@ -53,69 +52,69 @@ export class TenderService {
   constructor(private http: HttpClient) {
   }
 
-  get data(): Ponude[] {
-    return this.dataChange.value;
-  }
+  // get data(): Ponude[] {
+  //   return this.dataChange.value;
+  // }
 
-  // tslint:disable-next-line:typedef
-  public getData() {
-    return this.http.get(this.API_URL);
-  }
+  // // tslint:disable-next-line:typedef
+  // public getData() {
+  //   return this.http.get(this.API_URL);
+  // }
 
-  public getPrekoProcijenjene() {
-    return this.http.get(this.API_URL_PREKO_PROCIJENJE);
-  }
-
-
-
-  public getHvalePartije() {
-    return this.http.get(this.API_URL_HVALE_PARTIJE_BY_TENDER);
-  }
+  // public getPrekoProcijenjene() {
+  //   return this.http.get(this.API_URL_PREKO_PROCIJENJE);
+  // }
 
 
-  // tslint:disable-next-line:typedef
-  public getBodovanje() {
-    return this.http.get(this.API_URL_BODOVANJE);
-  }
 
-  // tslint:disable-next-line:typedef
-  public getPrvorangirani() {
-    return this.http.get(this.API_URL_PRVORANGIRANI);
-  }
+  // public getHvalePartije() {
+  //   return this.http.get(this.API_URL_HVALE_PARTIJE_BY_TENDER);
+  // }
 
 
+  // // tslint:disable-next-line:typedef
+  // public getBodovanje() {
+  //   return this.http.get(this.API_URL_BODOVANJE);
+  // }
+
+  // // tslint:disable-next-line:typedef
+  // public getPrvorangirani() {
+  //   return this.http.get(this.API_URL_PRVORANGIRANI);
+  // }
 
 
 
 
 
-  //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
-  public getFindByTenderi(broj: String) {
+  // //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+  public getFindByTenderi(broj: number) {
     return this.http.get(this.API_URL_FIND_BY_TENDER + broj);
   }
 
-  
+   
 
 
-  public getBodovanjeFindByTenderi(broj: String) {
+  public getBodovanjeFindByTenderi(broj:number) {
     return this.http.get(this.BODOVANJE_URL_FIND_BY_TENDER + broj);
   }
 
-  public getPrvorangiraniFindByTenderi(broj: String) {
+  public getPrvorangiraniFindByTenderi(broj: number) {
     return this.http.get(this.PRVORANIRANI_URL_FIND_BY_TENDER + broj);
   }
 
 
 
-  public getHvalePartijeFindByTenderi(broj: String) {
+  public getHvalePartijeFindByTenderi(broj: number) {
     return this.http.get(this.API_URL_HVALE_PARTIJE_BY_TENDER + broj);
   }
 
 
 
-  public getPrekoProcijenjeneFindByTenderi(broj: String) {
+  public getPrekoProcijenjeneFindByTenderi(broj: number) {
     return this.http.get(this.PREKO_PROCIJENJENE_URL_FIND_BY_TENDER + broj);
   }
 
