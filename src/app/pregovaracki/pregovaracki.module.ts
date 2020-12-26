@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PregovarckiRoutingModule } from './pregovarcki-routing.module';
+import { PregovarackiRoutingModule } from './pregovaracki-routing.module';
 import { PregovarackiHomeComponent } from './pregovaracki-home/pregovaracki-home.component';
 
 
@@ -9,7 +9,7 @@ import { PregovarackiHomeComponent } from './pregovaracki-home/pregovaracki-home
   declarations: [PregovarackiHomeComponent],
   imports: [
     CommonModule,
-    PregovarckiRoutingModule
+    PregovarackiRoutingModule
   ]
 })
-export class PregovarckiModule { }
+export class PregovarackiModule { }

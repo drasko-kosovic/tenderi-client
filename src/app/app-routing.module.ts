@@ -4,11 +4,16 @@ import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
+import { PregovarackiModule } from './pregovaracki/pregovaracki.module';
 
 const routes: Routes = [
   {
     path: 'tender',
     loadChildren: () => import('./tender/tender.module').then(m => m.TenderModule)
+  },
+  {
+    path: 'pregovaracki',
+    loadChildren: () => import('./pregovaracki/pregovaracki.module').then(m => m.PregovarackiModule)
   },
   { path: 'login', component:LoginComponent},
   { path: 'register', component:RegisterComponent},
