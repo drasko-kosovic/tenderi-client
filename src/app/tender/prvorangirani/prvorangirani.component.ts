@@ -16,7 +16,7 @@ export class PrvorangiraniComponent implements OnInit , AfterViewInit {
 
   public displayedColumns = ['partija', 'atc', 'naziv_proizvoda', 'zasticeni_naziv', 'proizvodjac',
   'farmaceutski_oblik', 'pakovanje', 'trazena_kolicina', 'ponudjana_kolicina', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
-  'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
+  'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera'];
   public dataSource = new MatTableDataSource<Bodovanje>();
   @Input() tender: number;
   @Input() ponnudjac:string;
