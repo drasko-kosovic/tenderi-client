@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import { PregovarackiModule } from './pregovaracki/pregovaracki.module';
+import { UsersComponent } from './auth/users/users.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'register', component:RegisterComponent},
   { path: '', redirectTo: '/tender', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
+  { path: 'users', component: UsersComponent},
   { path: '**',
     component: PageNotFoundComponent }
 ];

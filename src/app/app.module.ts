@@ -20,6 +20,7 @@ import {AuthService} from "./auth/login/_services/auth.service";
 import {NotificationService} from "../shared/notification.service";
 import {authInterceptorProviders} from "./auth/login/_helpers/auth.interceptor";
 import {TokenStorageService} from "./auth/login/_services/token-storage.service";
+import { UsersComponent } from './auth/users/users.component';
 
 
 
@@ -32,7 +33,8 @@ import {TokenStorageService} from "./auth/login/_services/token-storage.service"
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutDialogComponent
+    LogoutDialogComponent,
+    UsersComponent
 
 
   ],
