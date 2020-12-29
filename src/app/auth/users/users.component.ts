@@ -19,12 +19,12 @@ export class UsersComponent implements OnInit {
   
   constructor(private userService:UserService) { }
 
-  // tslint:disable-next-line:typedef
+  
   ngOnInit() {
     this.getAllUsers();
   }
 
-  // tslint:disable-next-line:typedef
+  
   public getAllUsers()  {
     this.userService.getUsers()
       .subscribe(res => {
