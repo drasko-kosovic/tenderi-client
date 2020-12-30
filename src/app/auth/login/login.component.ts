@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   hide = true;
   username: string[] = [];
-  private poruka: string;
+
 
 
   // tslint:disable-next-line:max-line-length
@@ -47,19 +47,18 @@ export class LoginComponent implements OnInit {
 
 
 
-  // tslint:disable-next-line:typedef
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.username = this.tokenStorage.getUser().username;
     }
-    // this.onSubmit();
+   
   }
 
-  // tslint:disable-next-line:typedef
+  
   onSubmit() {
-    // this.authService.login(this.form.value.username,this.form.value.password).subscribe(
+   
     this.authService.login(this.form.value).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -83,16 +82,14 @@ export class LoginComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-        this.poruka="{{'login.form.button'|translate}}";
-        // this.toastr.warning('Neuspjesno logovan');
-        console.log('Nije ulogovan');
+         console.log('Nije ulogovan');
       }
     );
   }
 
 
 
-  // tslint:disable-next-line:typedef
+
   reloadPage() {
     window.location.reload();
   }
