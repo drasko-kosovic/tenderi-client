@@ -1,4 +1,4 @@
-<mat-sidenav-container fullscreen>
+<!-- <mat-sidenav-container fullscreen>
 
   <mat-sidenav #start>
     <mat-nav-list>
@@ -12,11 +12,29 @@
   </mat-sidenav>
 
   <mat-toolbar color="primary">
-    <button mat-icon-button (click)="start.open('mouse')">
-      <mat-icon>menu</mat-icon>
+    <div>
+      <button mat-icon-button (click)="start.open('mouse')">
+     Tenderi
     </button>
+    </div>
+    <span></span>
+    <div>
+      <button mat-icon-button (click)="start.open('mouse')">
+      Pregovaracki
+     </button>
+    </div>
+    <!-- <div>
+       <button mat-icon-button (click)="start.open('mouse')">
+      Jednostavne
+     </button>
+    </div> -->
+    
 
-
+    <!-- <span class="filler"></span>
+    <button mat-button routerLink="/users" *ngIf="!isLoggedIn">
+      <mat-icon>person_add</mat-icon>
+      Korisnici
+    </button>
     <span class="filler"></span>
     <button mat-button (click)="openRegisterDialog()" *ngIf="!isLoggedIn">
       <mat-icon>person_add</mat-icon>
@@ -36,4 +54,17 @@
 
   <router-outlet></router-outlet>
 
-</mat-sidenav-container>
+<!-- </mat-sidenav-container>  -->
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a routerLink="/tender">Tenderi</a></li>
+  <li><a href="#contact">Pregovaracki</a></li>
+  <li><a href="#about">Jednostavne</a></li>
+  <li><a (click)="openLoginDialog()" *ngIf="!isLoggedIn">Prijvi se</a></li>
+  <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li>
+  <li><a (click)="openRegisterDialog()" *ngIf="!isLoggedIn">Registruj se</a></li>
+  <li><a routerLink="/users">Korisnici</a></li>
+</ul>
+
+
