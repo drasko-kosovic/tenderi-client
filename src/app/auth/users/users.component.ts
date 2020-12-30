@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Users } from 'src/app/tender/model/users.model';
 import { UserService } from '../login/_services/user.service';
 
@@ -18,7 +19,7 @@ export class UsersComponent implements OnInit {
 
 
   
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router) { }
 
   
   ngOnInit() {
@@ -33,7 +34,8 @@ export class UsersComponent implements OnInit {
       });
   }
 Close(){
-  window.close();
+
+  this.router.navigate(['/home']);
 }
   
 }
