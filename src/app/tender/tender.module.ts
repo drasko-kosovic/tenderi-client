@@ -17,6 +17,8 @@ import { HvalePartijeComponent } from './hvale-partije/hvale-partije.component';
 import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenjene.component';
 import { PonudeUserComponent } from './ponude-user/ponude-user.component';
 import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.component';
+import { UgovorComponent } from './dialog/ugovor/ugovor.component';
+
 
 
 
@@ -27,7 +29,8 @@ import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.co
    HvalePartijeComponent,
    PerkoProcijenjeneComponent,
    PonudeUserComponent,
-   UgovorenePonudeComponent],
+   UgovorenePonudeComponent,
+   UgovorComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,

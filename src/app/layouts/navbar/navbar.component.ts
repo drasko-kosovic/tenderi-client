@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
@@ -10,6 +11,8 @@ import {TokenStorageService} from "../../auth/login/_services/token-storage.serv
 import {LoginComponent} from "../../auth/login/login.component";
 import {RegisterComponent} from "../../auth/register/register.component";
 import {LogoutDialogComponent} from "../../auth/logout-dialog/logout-dialog.component";
+import { UgovorComponent } from 'src/app/tender/dialog/ugovor/ugovor.component';
+
 
 
 
@@ -67,6 +70,14 @@ export class NavbarComponent implements OnInit {
 
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openUgovoriDialog() {
+    const dialogRef = this.dialog.open(UgovorComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

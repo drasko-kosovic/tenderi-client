@@ -56,18 +56,40 @@
 
 <!-- </mat-sidenav-container>  -->
 
-<ul>
+<!-- <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a routerLink="/tender"  routerLinkActive="router-link-active">Tenderi</a></li>
   <li><a routerLink="/pregovaracki">Pregovaracki</a></li>
-  <li><a routerLink="/jednostavne">Jednostavne</a></li>
+  <li><a routerLink="/jednostavne">Jednostavne</a></li> -->
   <!-- <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li> -->
-  <li><a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a></li>
+  <!-- <li><a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a></li>
   <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li>
   <li><a (click)="openRegisterDialog()" *ngIf="!isLoggedIn">Registruj se</a></li>
   <li><a routerLink="/users"  *ngIf="currentUser.username=='drasko'" >Korisnici</a></li>
   <li><a routerLink="/jednostavne" *ngIf="currentUser.username=='drasko'">Admin</a></li>
-  </ul>
+  </ul> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a routerLink="/tender"  routerLinkActive="router-link-active">Tenderi</a>
+    <a routerLink="/pregovaracki" routerLinkActive="router-link-active">Pregovaracki</a>
+    <a routerLink="/jednostavne" routerLinkActive="router-link-active">Jednostavne</a>
+    <a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a>
+    <a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a>
+    <a routerLink="/users"  *ngIf="currentUser.username=='drasko'" >Korisnici</a>
+    <div class="dropdown">
+      <button *ngIf="currentUser.username=='drasko'" class="dropbtn">Admin
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a (click)="openUgovoriDialog()">Ugovor</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+  </div>
   
 
 
