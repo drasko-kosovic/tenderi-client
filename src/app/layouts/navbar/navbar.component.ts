@@ -25,12 +25,11 @@ export class NavbarComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
-  username = '';
-  message = 'aba';
   durationInSeconds = 5;
   navigation: any;
   welcome: string;
   currentUser: any;
+  username='';
 
 
   constructor(private notificationService: NotificationService, private dialog: MatDialog, private tokenStorageService: TokenStorageService, private router: Router) {
@@ -56,17 +55,16 @@ export class NavbarComponent implements OnInit {
     this.tokenStorageService.signOut();
 
     this.router.navigate(['/home']);
-    // window.location.reload();
-
+   
 
   }
 
-  // tslint:disable-next-line:typedef
+ 
   refresh() {
     window.location.reload();
   }
 
-  // tslint:disable-next-line:typedef
+
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
 
