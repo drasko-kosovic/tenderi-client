@@ -8,8 +8,9 @@ import { UserService } from '../login/_services/user.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent implements OnInit {
-  public displayedColumns = [ 'id','username','email','password'];
+  public displayedColumns = [ 'id','username','email'];
 
   public dataSource = new MatTableDataSource<Users>();
 
@@ -31,6 +32,8 @@ export class UsersComponent implements OnInit {
         this.dataSource.data = res as Users[];
       });
   }
-
+Close(){
+  window.close();
+}
   
 }
