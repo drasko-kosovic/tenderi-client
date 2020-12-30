@@ -32,25 +32,24 @@ export class NavbarComponent implements OnInit {
   welcome: string;
   currentUser: any;
 
-// tslint:disable-next-line:max-line-length
+
   constructor(private notificationService: NotificationService, private dialog: MatDialog, private tokenStorageService: TokenStorageService, private router: Router) {
 
   }
 
-  // tslint:disable-next-line:typedef
-  ngOnInit() {
 
+  ngOnInit() {
+    this.currentUser = this.tokenStorageService.getUser();
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
     }
-  }
+
+    }
 
 
   logout() {

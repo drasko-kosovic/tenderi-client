@@ -31,7 +31,7 @@
     border-collapse: collapse;
   }
   th {
-    background-color:red;
+    background-color:green;
     Color:white;
   }
   th, td {
@@ -55,6 +55,12 @@
   @media print {
     #exporter {
       background-color: #999;
+    }
+    .korisnici{
+      width:150px;
+    }
+    mat-raised-button{
+      color-adjust: green;
     }
   }
   

@@ -31,12 +31,6 @@ export class TenderHomeComponent implements OnInit {
 
   }
 
-
-  OnKeyUp() {
-    console.log('to je     ' + this.brojTendera);
-    console.log('to je     ' + this.imePonudjaca);
-  }
-
   onClean() {
     this.brojTendera = '';
     window.location.reload();

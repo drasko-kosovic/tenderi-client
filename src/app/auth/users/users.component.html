@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="korisnici">
   <div>
   <table mat-table matTableExporter [dataSource]="dataSource">
      
@@ -16,17 +16,13 @@
       <th mat-header-cell *matHeaderCellDef > Email</th>
       <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
-    <!-- <ng-container matColumnDef="password">
-      <th mat-header-cell *matHeaderCellDef > Sifra</th>
-      <td mat-cell *matCellDef="let element"> {{element.password}} </td>
-    </ng-container> -->
-    
+     
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   </div>
   <mat-card-actions>
-    <button mat-raised-button color="warn" onclick="Close()">Izadji</button>
+    <button mat-raised-button  onclick="Close()">Izadji</button>
      </mat-card-actions>
 </mat-card>
 
