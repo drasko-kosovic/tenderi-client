@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'pregovaracki',
     loadChildren: () => import('./pregovaracki/pregovaracki.module').then(m => m.PregovarackiModule)
   },
+  {
+    path: 'jednostavne',
+    loadChildren: () => import('./jednostavne/jednostavne.module').then(m => m.JednostavneModule)
+  },
   { path: 'login', component:LoginComponent},
   { path: 'register', component:RegisterComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
