@@ -58,14 +58,15 @@
 
 <ul>
   <li><a class="active" href="#home">Home</a></li>
-  <li><a routerLink="/tender">Tenderi</a></li>
+  <li><a routerLink="/tender"  routerLinkActive="router-link-active">Tenderi</a></li>
   <li><a routerLink="/pregovaracki">Pregovaracki</a></li>
   <li><a routerLink="/jednostavne">Jednostavne</a></li>
-  <li><a class="login" (click)="openLoginDialog()" *ngIf="!isLoggedIn">Prijavi se</a></li>
+  <!-- <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li> -->
+  <li><a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a></li>
   <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li>
   <li><a (click)="openRegisterDialog()" *ngIf="!isLoggedIn">Registruj se</a></li>
-  <li><a routerLink="/users" *ngIf="currentUser.username=='drasko'" >Korisnici</a></li>
-  <li><a routerLink="/jednostavne">Admin</a></li>
+  <li><a routerLink="/users"  *ngIf="currentUser.username=='drasko'" >Korisnici</a></li>
+  <li><a routerLink="/jednostavne" *ngIf="currentUser.username=='drasko'">Admin</a></li>
 </ul>
 
 
