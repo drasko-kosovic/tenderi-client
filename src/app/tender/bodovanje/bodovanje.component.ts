@@ -20,8 +20,8 @@ export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
 
   ukupnoProcijenjena:number;
   ukupnaPonudjena:number;
-  public displayedColumns = ['partija', 'atc', 'naziv_proizvoda', 'zasticeni_naziv', 'proizvodjac',
-  'farmaceutski_oblik', 'pakovanje', 'trazena_kolicina', 'ponudjana_kolicina', 'procijenjena_jedinicna_cijena', 'ponudjena_jedinicna_cijena',
+  public displayedColumns = ['partija', 'atc', 'zasticeni_naziv', 'proizvodjac',
+  'farmaceutski_oblik', 'pakovanje', 'ponudjana_kolicina',  'ponudjena_jedinicna_cijena',
   'procijenjena_ukupna_cijena', 'ponudjena_ukupna_cijena', 'rok_isporuke', 'ponudjac', 'broj_tendera', 'bod_cijena', 'bod_isporuka', 'bod_ukupno'];
   public dataSource = new MatTableDataSource<Bodovanje>();
 
