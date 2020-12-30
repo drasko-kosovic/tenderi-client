@@ -64,7 +64,7 @@
   <li><a class="login" (click)="openLoginDialog()" *ngIf="!isLoggedIn">Prijavi se</a></li>
   <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li>
   <li><a (click)="openRegisterDialog()" *ngIf="!isLoggedIn">Registruj se</a></li>
-  <li><a routerLink="/users">Korisnici</a></li>
+  <li><a routerLink="/users" *ngIf="isLoggedIn">Korisnici</a></li>
 </ul>
 
 
