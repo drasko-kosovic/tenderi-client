@@ -26,7 +26,7 @@ export class TenderService {
   readonly API_URL_HVALE_PARTIJE_BY_TENDER = 'http://localhost:8080/api/ponude/hvali/';
   readonly BODOVANJE_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/bodovanje/';
   readonly PRVORANIRANI_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/prvorangirani/';
-
+   readonly UpdateUgovor='http://localhost:8080/api/ponude/update/ugovor/'
 
   
   // readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
@@ -178,6 +178,11 @@ export class TenderService {
       }
     );
   }
+
+  updateUgovorSelected(ugovor_broj: String, tender_broj:number, ponudjaci:String): void {
+    this.http.put(this.UpdateUgovor + ugovor_broj+ tender_broj+ponudjaci)
+  }
+
 
   deleteSelected(): void {
     this.http.delete(this.API_URL_DELETE_SELECTED).subscribe(data => {
