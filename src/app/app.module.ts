@@ -25,6 +25,7 @@ import { UsersComponent } from './auth/users/users.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { UsersComponent } from './auth/users/users.component';
     LoginComponent,
     RegisterComponent,
     LogoutDialogComponent,
-    UsersComponent
+    UsersComponent,
+  
 
 
   ],
