@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-ugovor',
   templateUrl: './ugovor.component.html',
-  styleUrls: ['./ugovor.component.css'],
+  styleUrls: ['./ugovor.component.scss'],
 })
 export class UgovorComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<UgovorComponent>) {}

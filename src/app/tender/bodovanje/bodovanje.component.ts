@@ -12,7 +12,7 @@ import {TableUtilBodovanje} from './table-util-bodovanje';
 @Component({
   selector: 'app-bodovanje',
   templateUrl: './bodovanje.component.html',
-  styleUrls: ['./bodovanje.component.css']
+  styleUrls: ['./bodovanje.component.scss']
 })
 export class BodovanjeComponent implements OnInit, AfterViewInit,OnChanges {
   @Input() tender: number;

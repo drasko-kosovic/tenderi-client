@@ -16,7 +16,7 @@ import { TableUtilPonude } from './table-util-ponude';
 @Component({
   selector: 'app-ponude',
   templateUrl: './ponude.component.html',
-  styleUrls: ['./ponude.component.css']
+  styleUrls: ['./ponude.component.scss']
 })
 export class PonudeComponent implements OnInit, OnChanges {
 

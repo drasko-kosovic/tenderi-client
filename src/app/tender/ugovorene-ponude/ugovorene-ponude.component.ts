@@ -9,7 +9,7 @@ import { TenderService } from '../tender.service';
 @Component({
   selector: 'app-ugovorene-ponude',
   templateUrl: './ugovorene-ponude.component.html',
-  styleUrls: ['./ugovorene-ponude.component.css']
+  styleUrls: ['./ugovorene-ponude.component.scss']
 })
 export class UgovorenePonudeComponent implements OnInit, OnChanges {
 

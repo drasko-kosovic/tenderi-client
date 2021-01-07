@@ -16,7 +16,7 @@ import { TableUtilPrekoprocijenjene } from './table-util-prekoprocijenjene';
 @Component({
   selector: 'app-perko-procijenjene',
   templateUrl: './perko-procijenjene.component.html',
-  styleUrls: ['./perko-procijenjene.component.css'],
+  styleUrls: ['./perko-procijenjene.component.scss'],
 })
 export class PerkoProcijenjeneComponent implements OnInit, OnChanges {
   public displayedColumns = [

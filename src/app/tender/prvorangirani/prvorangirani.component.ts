@@ -10,7 +10,7 @@ import {TableUtilPrvorangirani} from './table-util-prvorangirani';
 @Component({
   selector: 'app-prvorangirani',
   templateUrl: './prvorangirani.component.html',
-  styleUrls: ['./prvorangirani.component.css']
+  styleUrls: ['./prvorangirani.component.scss']
 })
 export class PrvorangiraniComponent implements OnInit , AfterViewInit {
 

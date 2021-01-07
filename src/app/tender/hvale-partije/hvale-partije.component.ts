@@ -11,7 +11,7 @@ import {TableUtilHvale} from './table-util-hvale';
 @Component({
   selector: 'app-hvale-partije',
   templateUrl: './hvale-partije.component.html',
-  styleUrls: ['./hvale-partije.component.css']
+  styleUrls: ['./hvale-partije.component.scss']
 })
 export class HvalePartijeComponent implements OnInit {
 

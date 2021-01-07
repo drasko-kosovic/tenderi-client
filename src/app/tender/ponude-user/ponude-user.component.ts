@@ -9,7 +9,7 @@ import { TableUtilPonudeUser } from './table-util-ponude-user';
 @Component({
   selector: 'app-ponude-user',
   templateUrl: './ponude-user.component.html',
-  styleUrls: ['./ponude-user.component.css']
+  styleUrls: ['./ponude-user.component.scss']
 })
 export class PonudeUserComponent implements OnInit, OnChanges {
 
