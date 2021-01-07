@@ -179,9 +179,6 @@ export class TenderService {
     );
   }
 
-  updateUgovorSelected(ugovor_broj: String, tender_broj:number, ponudjaci:String): void {
-    this.http.put(this.UpdateUgovor + ugovor_broj+ tender_broj+ponudjaci)
-  }
 
 
   deleteSelected(): void {
