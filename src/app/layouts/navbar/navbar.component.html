@@ -1,95 +1,23 @@
-<!-- <mat-sidenav-container fullscreen>
-
-  <mat-sidenav #start>
-    <mat-nav-list>
-
-      <a mat-list-item routerLink="/users">
-        <mat-icon>person_add</mat-icon>
-        <span>Korisnici</span>
-      </a>
-    </mat-nav-list>
-
-  </mat-sidenav>
-
-  <mat-toolbar color="primary">
-    <div>
-      <button mat-icon-button (click)="start.open('mouse')">
-     Tenderi
-    </button>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+    routerLink="/student/list">
+    <div class="font-velicina">
+      Lista
     </div>
-    <span></span>
-    <div>
-      <button mat-icon-button (click)="start.open('mouse')">
-      Pregovaracki
-     </button>
-    </div>
-    <!-- <div>
-       <button mat-icon-button (click)="start.open('mouse')">
-      Jednostavne
-     </button>
-    </div> -->
-    
+  </button>
 
-    <!-- <span class="filler"></span>
-    <button mat-button routerLink="/users" *ngIf="!isLoggedIn">
-      <mat-icon>person_add</mat-icon>
-      Korisnici
-    </button>
-    <span class="filler"></span>
-    <button mat-button (click)="openRegisterDialog()" *ngIf="!isLoggedIn">
-      <mat-icon>person_add</mat-icon>
-      Registruj se
-    </button>
+  <span class="example-spacer"></span>
 
-    <button mat-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
-      <mat-icon>power_settings_new</mat-icon>
-      Prijavi se
-    </button>
-    <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()">
-      <mat-icon>exit_to_app</mat-icon>
-      Izalaz
-    </button>
-
-  </mat-toolbar>
-
-  <router-outlet></router-outlet>
-
-<!-- </mat-sidenav-container>  -->
-
-<!-- <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a routerLink="/tender"  routerLinkActive="router-link-active">Tenderi</a></li>
-  <li><a routerLink="/pregovaracki">Pregovaracki</a></li>
-  <li><a routerLink="/jednostavne">Jednostavne</a></li> -->
-  <!-- <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li> -->
-  <!-- <li><a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a></li>
-  <li><a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a></li>
-  <li><a (click)="openRegisterDialog()" *ngIf="!isLoggedIn">Registruj se</a></li>
-  <li><a routerLink="/users"  *ngIf="currentUser.username=='drasko'" >Korisnici</a></li>
-  <li><a routerLink="/jednostavne" *ngIf="currentUser.username=='drasko'">Admin</a></li>
-  </ul> -->
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <a routerLink="/tender"  routerLinkActive="router-link-active">Tenderi</a>
-    <a routerLink="/pregovaracki" routerLinkActive="router-link-active">Pregovaracki</a>
-    <a routerLink="/jednostavne" routerLinkActive="router-link-active">Jednostavne</a>
-    <a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="router-link-active" >Prijavi se</a>
-    <a *ngIf="isLoggedIn" (click)="openLogoutDialog()">Odjavi se</a>
-    <a routerLink="/users"  *ngIf="currentUser.username=='drasko'" >Korisnici</a>
-    <div class="dropdown">
-      <button *ngIf="currentUser.username=='drasko'" class="dropbtn">Admin
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a (click)="openUgovoriDialog()">Ugovor</a>
-       
-      </div>
-    </div> 
-  </div>
-  
-
-
-
+  <button mat-icon-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+  <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+  <button mat-button (click)="openRegisterDialog()" *ngIf="!isLoggedIn">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</mat-toolbar>

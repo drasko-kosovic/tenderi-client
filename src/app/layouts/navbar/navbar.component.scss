@@ -1,139 +1,44 @@
-// mat-button-toggle {
-//   //border: 1px solid #f28628;
-//   //border-radius: 4px;
-//   //margin-left: 3px;
-//   //margin-right:3px;
-//   width: 30px;
-//   height: 30px;
-//   font-family: 'Nunito Semibold', sans-serif;
-//   font-size: 12px;
-
-// }
-// mat-button-toggle-group{
-//   margin-left: 3px;
-//   margin-right:3px;
-// }
-// .filler {
-//   flex: 1 1 auto;
-// }
-// .gap {
-//   margin-right: 10px;
-// }
-// img {
-
-//   cursor: pointer;
-
-// }
-// p {
-//   font-family: Lato;
-// }
-// .position-fixed{
-//   position: fixed
-// }
-
-// .mat-spacer{
-//   flex: 1 1 auto;
-// }
-
-// .content {
-//   margin-top: 58px
-// }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+.example-spacer {
+  flex: 1 1 auto;
 }
-
-li {
-  float: left;
+.font-velicina{
+  font-size: large;
 }
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.login{
-  float: right
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: green;
-}
-routerLinkActive{
-  background-color: green;
-}
-
-
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+margin: 0;
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
+main {
+margin: 30px;
 }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.user-avatar {
+max-height: 35px;
+border-radius: 4px;
+
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
+.toolbar-tools {
+display: flex;
 }
 
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+
+.filler {
+flex: 1 1 auto;
+width: 100%;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: green;
+.menu-item {
+text-transform: uppercase;
+cursor:pointer;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.menu-item.menu-item-active {
+text-decoration: underline;
 }
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.profile-picture {
+max-height: 40px;
 }
