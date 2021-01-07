@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Ponude } from './model/ponude.model';
 
 
@@ -11,7 +11,7 @@ import { Ponude } from './model/ponude.model';
 })
 export class TenderService {
 
-  
+  readonly API_UGOVOR='http://localhost:8080/api/ponude/update/ugovor/'
   readonly API_URL_PREKO_PROCIJENJE = 'http://localhost:8080/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED = 'http://localhost:8080/api/ponude/delete/selected';
   private readonly API_URL = 'http://localhost:8080/api/ponude';
@@ -192,5 +192,16 @@ export class TenderService {
     );
   }
 
+  
 
-}
+  putUgovor(broj_ugovora: any,broj_tendera:any, ponudjac:any): Observable<Ponude[]> {
+    let params = new HttpParams();
+    params.set('broj_ugovora', broj_ugovora);
+    params.set('broj_tendera', broj_tendera);
+    params.set('ponudjac', ponudjac);
+    return this.http.get<Ponude[]>(this.API_UGOVOR + '?broj_ugovora=' + broj_ugovora + '&broj_tendera=' + broj_tendera +'&broj_tendera=' + broj_tendera,{params:params});
+  }
+  }
+
+
+
