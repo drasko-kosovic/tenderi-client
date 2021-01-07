@@ -1,26 +1,20 @@
-
 import { Component, OnInit } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MatDialog} from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-
-import {NotificationService} from '../../../shared/notification.service';
-import {TokenStorageService} from "../../auth/login/_services/token-storage.service";
-import {LoginComponent} from "../../auth/login/login.component";
-import {RegisterComponent} from "../../auth/register/register.component";
-import {LogoutDialogComponent} from "../../auth/logout-dialog/logout-dialog.component";
+import { NotificationService } from '../../../shared/notification.service';
+import { TokenStorageService } from '../../auth/login/_services/token-storage.service';
+import { LoginComponent } from '../../auth/login/login.component';
+import { RegisterComponent } from '../../auth/register/register.component';
+import { LogoutDialogComponent } from '../../auth/logout-dialog/logout-dialog.component';
 import { UgovorComponent } from 'src/app/tender/dialog/ugovor/ugovor.component';
-
-
-
-
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   private subscription: Subscription;
@@ -32,13 +26,14 @@ export class NavbarComponent implements OnInit {
   navigation: any;
   welcome: string;
   currentUser: any;
-  username='';
+  username = '';
 
-
-  constructor(private notificationService: NotificationService, private dialog: MatDialog, private tokenStorageService: TokenStorageService, private router: Router) {
-
-  }
-
+  constructor(
+    private notificationService: NotificationService,
+    private dialog: MatDialog,
+    private tokenStorageService: TokenStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.currentUser = this.tokenStorageService.getUser();
@@ -47,31 +42,23 @@ export class NavbarComponent implements OnInit {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
-
     }
-
-    }
-
+  }
 
   logout() {
     this.tokenStorageService.signOut();
 
     this.router.navigate(['/home']);
-   
-
   }
 
- 
   refresh() {
     window.location.reload();
   }
 
-
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -79,7 +66,7 @@ export class NavbarComponent implements OnInit {
   openUgovoriDialog() {
     const dialogRef = this.dialog.open(UgovorComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -87,7 +74,7 @@ export class NavbarComponent implements OnInit {
   openRegisterDialog() {
     const dialogRef = this.dialog.open(RegisterComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -95,14 +82,9 @@ export class NavbarComponent implements OnInit {
   openLogoutDialog() {
     const dialogRef = this.dialog.open(LogoutDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
       this.logout();
     });
   }
-
-
-
 }
-
-

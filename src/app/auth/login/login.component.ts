@@ -1,17 +1,14 @@
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {Component, OnInit} from "@angular/core";
-import {NotificationService} from "../../../shared/notification.service";
-import {AuthService} from "./_services/auth.service";
-import {TokenStorageService} from "./_services/token-storage.service";
-
-
-
+import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../../../shared/notification.service';
+import { AuthService } from './_services/auth.service';
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
@@ -22,18 +19,18 @@ export class LoginComponent implements OnInit {
   hide = true;
   username: string[] = [];
 
-
-
   // tslint:disable-next-line:max-line-length
-  constructor( private notificationService: NotificationService, private fb: FormBuilder, private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router)
-  {
+  constructor(
+    private notificationService: NotificationService,
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService,
+    private router: Router
+  ) {
     this.form = fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
-
-
+      password: ['', [Validators.required]],
     });
-
   }
 
   submit() {
@@ -45,22 +42,17 @@ export class LoginComponent implements OnInit {
     console.log(this.form.value);
   }
 
-
-
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.username = this.tokenStorage.getUser().username;
     }
-   
   }
 
-  
   onSubmit() {
-   
     this.authService.login(this.form.value).subscribe(
-      data => {
+      (data) => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
@@ -77,22 +69,16 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
 
         // this.router.navigate(['/']);
-
       },
-      err => {
+      (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-         console.log('Nije ulogovan');
+        console.log('Nije ulogovan');
       }
     );
   }
-
-
-
 
   reloadPage() {
     window.location.reload();
   }
 }
-
-
