@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
   welcome: string;
   currentUser: any;
   username = '';
+ 
 
   constructor(
     private notificationService: NotificationService,
