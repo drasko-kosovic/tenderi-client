@@ -33,10 +33,11 @@ export class RegisterComponent implements OnInit {
       (data) => {
         console.log(data);
         this.isSuccessful = true;
-        this.notificationService.success(':: Submitted successfully');
+        this.notificationService.success(':: Uspjesno ste se registrovali');
         this.isSignUpFailed = false;
       },
       (err) => {
+        this.notificationService.warn(':: Pokusajte ponovo, nije uspjela registracija');
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
