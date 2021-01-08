@@ -1,8 +1,7 @@
 import {
+  AfterViewInit,
   Component,
-  ElementRef,
   OnInit,
-  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,14 +11,17 @@ import { TenderService } from '../tender.service';
 import { Ponude } from '../model/ponude.model';
 import { DeleteDialogComponent } from '../dialog/delete/delete.dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { AddDialogComponent } from '../dialog/add/add.dialog.component';
+import { EditComponent } from '../dialog/edit/edit.component';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements AfterViewInit, OnInit {
   public displayedColumns = [
+   
     'partija',
     'atc',
     'naziv_proizvoda',
@@ -36,47 +38,31 @@ export class AdminComponent implements OnInit {
     'rok_isporuke',
     'ponudjac',
     'broj_tendera',
-    'dodaj',
-    'delete sve',
-    'selected',
+     
   ];
   public dataSource = new MatTableDataSource<Ponude>();
-  exampleDatabase: TenderService | null;
-  index: number;
-  id: number;
-  ukupnoProcijenjena: number;
-  ukupnaPonudjena: number;
- 
-  
- 
-  @ViewChild(MatSort) sort: MatSort;
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild('filter', { static: true }) filter: ElementRef;
+  @ViewChild(MatSort) sort: MatSort;
+  id: number;
 
-  constructor(private tenderService: TenderService, public dialog: MatDialog) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
+  constructor(
+    private tenderService: TenderService,
+    private dialog: MatDialog
+  ) {}
+  ngOnInit(): void {
+    this.getAllPonude();
   }
-
-  ngOnInit() {
-   this.getAllPonude();
-  }
-
   public getAllPonude() {
     this.tenderService.getFindByTenderi(1620).subscribe((res) => {
       this.dataSource.data = res as Ponude[];
-      console.log('to je   ' + res);
     });
   }
-
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
-  public customSort = (event) => {
-    console.log(event);
-  };
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -85,11 +71,64 @@ export class AdminComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  deleteItem(i: number, id: number) {
-    this.index = i;
+
+  deleteItem(id: number) {
     this.id = id;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       data: { id },
+    });
+  }
+
+  addNew() {
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      data: { Ponude: {} },
+    });
+  }
+
+  startEdit(
+    partija: string,
+    atc: string,
+    naziv_proizvoda: string,
+    zasticeni_naziv: string,
+    proizvodjac: string,
+    farmaceutski_oblik: string,
+    trazena_kolicina: string,
+    ponudjana_kolicina: number,
+    procijenjena_jedinicna_cijena: number,
+    ponudjena_jedinicna_cijena: number,
+    procijenjena_ukupna_cijena: number,
+    ponudjena_ukupna_cijena: number,
+    rok_isporuke: number,
+    ponudjac: string,
+    broj_tendera: string
+  ) {
+    
+
+    const dialogRef = this.dialog.open(EditComponent, {
+      data: {
+       
+        partija,
+        atc,
+        naziv_proizvoda,
+        zasticeni_naziv,
+        proizvodjac,
+        farmaceutski_oblik,
+        trazena_kolicina,
+        ponudjana_kolicina,
+        procijenjena_jedinicna_cijena,
+        ponudjena_jedinicna_cijena,
+        procijenjena_ukupna_cijena,
+        ponudjena_ukupna_cijena,
+        rok_isporuke,
+        ponudjac,
+        broj_tendera,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 1) {
+        console.log('Updated podaci');
+      }
     });
   }
 }

@@ -2,12 +2,12 @@
   <button mat-icon-button  class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <button mat-icon-button class="razmak" routerLink="/tender"
+  <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="/tender"
     routerLinkActive="router-link-active">Tenderi</button>
-  <button mat-icon-button class="razmak"  routerLink="/pregovaracki"
+  <button *ngIf="isLoggedIn" mat-icon-button class="razmak"  routerLink="/pregovaracki"
     routerLinkActive="router-link-active">Pregovaracki</button>
    
-  <button mat-icon-button class="razmak" routerLink="jednostavne"
+  <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="jednostavne"
     routerLinkActive="router-link-active">Jednostavne</button>
 
   <span class="example-spacer"></span>
