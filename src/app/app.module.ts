@@ -42,6 +42,7 @@ import { UsersComponent } from './auth/users/users.component';
     HttpClientModule,
     MatTableExporterModule,
     ReactiveFormsModule,
+   
   ],
   providers: [
     AuthService,

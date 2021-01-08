@@ -4,7 +4,6 @@ import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
-import { PregovarackiModule } from './pregovaracki/pregovaracki.module';
 import { UsersComponent } from './auth/users/users.component';
 
 const routes: Routes = [

@@ -6,6 +6,7 @@ import {BodovanjeComponent} from './bodovanje/bodovanje.component';
 import {TenderHomeComponent} from './tender-home/tender-home.component';
 import {PrvorangiraniComponent} from "./prvorangirani/prvorangirani.component";
 import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'ugovori',
     component: UgovorenePonudeComponent
+  }
+  ,
+  {
+    path: 'admin',
+    component: AdminComponent
   }
   
 ];
