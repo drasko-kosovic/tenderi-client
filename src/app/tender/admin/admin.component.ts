@@ -38,7 +38,7 @@ export class AdminComponent implements AfterViewInit, OnInit {
     'rok_isporuke',
     'ponudjac',
     'broj_tendera',
-     
+    'actions'
   ];
   public dataSource = new MatTableDataSource<Ponude>();
 
@@ -72,7 +72,7 @@ export class AdminComponent implements AfterViewInit, OnInit {
     }
   }
 
-  deleteItem(id: number) {
+  delete(id: number) {
     this.id = id;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       data: { id },
@@ -85,7 +85,7 @@ export class AdminComponent implements AfterViewInit, OnInit {
     });
   }
 
-  startEdit(
+  updateEdit(
     partija: string,
     atc: string,
     naziv_proizvoda: string,
