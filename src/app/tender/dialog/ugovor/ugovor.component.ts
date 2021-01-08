@@ -9,7 +9,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   templateUrl: './ugovor.component.html',
   styleUrls: ['./ugovor.component.scss'],
 })
-export class UgovorComponent {
+export class UgovorComponent implements OnInit {
   form: any;
   constructor(
     public dialogRef: MatDialogRef<UgovorComponent>,
@@ -23,6 +23,9 @@ export class UgovorComponent {
       ponudjac: ['', [Validators.required]]
     });
   }
+  ngOnInit(): void {
+    this.putUgovor();
+  }
 
   submit() {}
 
@@ -32,7 +35,7 @@ export class UgovorComponent {
 
   
   putUgovor() {
-    this.tenderService.putUgovor('900', 1620, 'glosarij').subscribe(
+    this.tenderService.putUgovor('777', 1620, 'glosarij').subscribe(
       () => {
         console.log('uspjesno dodat zapis');
         this.notificationService.success('Uspjesno dodat');
