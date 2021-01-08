@@ -15,7 +15,6 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  // tslint:disable-next-line:ban-types
   login(credentials): Observable<any> {
     return this.http.post(
       AUTH_API + 'signin',
@@ -27,7 +26,7 @@ export class AuthService {
     );
   }
 
-  // tslint:disable-next-line:ban-types
+  
   register(user): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',

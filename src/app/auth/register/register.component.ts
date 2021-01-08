@@ -26,10 +26,8 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  // tslint:disable-next-line:typedef
   ngOnInit() {}
 
-  // tslint:disable-next-line:typedef
   onSubmit() {
     this.authService.register(this.form.value).subscribe(
       (data) => {
