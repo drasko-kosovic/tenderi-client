@@ -15,17 +15,7 @@ export class EditComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<EditComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any, public tenderService:TenderService,private notificationService: NotificationService) { }
 
-  formControl = new FormControl('', [
-    Validators.required
-    // Validators.email,
-  ]);
-
-  getErrorMessage() {
-    return this.formControl.hasError('required') ? 'Required field' :
-      this.formControl.hasError('email') ? 'Not a valid email' :
-        '';
-  }
-
+  
   submit() {
     // emppty stuff
   }
@@ -36,7 +26,7 @@ export class EditComponent implements OnInit {
 
   stopEdit(): void {
     this.tenderService.updatePonude(this.data);
-    // window.location.reload();
+    window.location.reload();
     this.notificationService.success(' Zapis je promjenjen uspjesno');
   }
 

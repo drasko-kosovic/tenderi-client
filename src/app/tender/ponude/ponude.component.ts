@@ -64,7 +64,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   constructor(private tenderService: TenderService, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.putUgovor();
+   
   }
 
   public getAllPonude() {

@@ -11,14 +11,13 @@ import {MatTableExporterModule} from 'mat-table-exporter';
 import { PrvorangiraniComponent } from './prvorangirani/prvorangirani.component';
 import {DeleteDialogComponent} from './dialog/delete/delete.dialog.component';
 import {AddDialogComponent} from './dialog/add/add.dialog.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {EditComponent} from "./dialog/edit/edit.component";
 import { HvalePartijeComponent } from './hvale-partije/hvale-partije.component';
 import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenjene.component';
 import { PonudeUserComponent } from './ponude-user/ponude-user.component';
 import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.component';
 import { UgovorComponent } from './dialog/ugovor/ugovor.component';
-import { UnesiUgovorComponent } from './unesi-ugovor/unesi-ugovor.component';
 
 
 
@@ -31,14 +30,14 @@ import { UnesiUgovorComponent } from './unesi-ugovor/unesi-ugovor.component';
    PerkoProcijenjeneComponent,
    PonudeUserComponent,
    UgovorenePonudeComponent,
-   UgovorComponent,
-   UnesiUgovorComponent],
+   UgovorComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,
     MaterialModule,
     MatTableExporterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class TenderModule { }

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-tender-home',
 
   templateUrl: './tender-home.component.html',
-  styleUrls: ['./tender-home.component.scss']
+  styleUrls: ['./tender-home.component.scss'],
 })
 export class TenderHomeComponent implements OnInit {
   isLoggedIn = false;
@@ -15,9 +15,10 @@ export class TenderHomeComponent implements OnInit {
   public brojTendera = '1620';
   public imePonudjaca = '';
   currentUser: any;
-  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
-
-  }
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.currentUser = this.tokenStorageService.getUser();
@@ -26,9 +27,7 @@ export class TenderHomeComponent implements OnInit {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
     }
-
   }
 
   onClean() {

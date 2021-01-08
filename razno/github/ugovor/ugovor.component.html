@@ -1,0 +1,32 @@
+<div class="container">
+  <h3 mat-dialog-title>Izmjeni</h3>
+
+  <form [formGroup]="form" class="mat-dialog-content" (ngSubmit)="putUgovor()" #formControl="ngForm">
+    <h2>Dodaj</h2>
+    <div>
+      <mat-form-field class="full-width-input">
+        <label>
+          <input matInput placeholder="broj ugovora" formControlName="broj_ugovora" required />
+        </label>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="broj tendera" formControlName="broj_tendera" required />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="ponudjac" formControlName="ponudjac" required />
+      </mat-form-field>
+    </div>
+
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color=" primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1"
+        (click)="stopEdit()">Dodaj</button>
+      <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Odlozi</button>
+    </div>
+  </form>
+</div>

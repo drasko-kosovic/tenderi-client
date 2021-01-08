@@ -62,6 +62,7 @@ export class NavbarComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  
 
   openUgovoriDialog() {
     const dialogRef = this.dialog.open(UgovorComponent);
