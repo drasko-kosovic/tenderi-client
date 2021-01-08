@@ -1,9 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -21,7 +16,6 @@ import { EditComponent } from '../dialog/edit/edit.component';
 })
 export class AdminComponent implements AfterViewInit, OnInit {
   public displayedColumns = [
-   
     'partija',
     'atc',
     'naziv_proizvoda',
@@ -38,7 +32,7 @@ export class AdminComponent implements AfterViewInit, OnInit {
     'rok_isporuke',
     'ponudjac',
     'broj_tendera',
-    'actions'
+    'actions',
   ];
   public dataSource = new MatTableDataSource<Ponude>();
 
@@ -102,11 +96,8 @@ export class AdminComponent implements AfterViewInit, OnInit {
     ponudjac: string,
     broj_tendera: string
   ) {
-    
-
     const dialogRef = this.dialog.open(EditComponent, {
       data: {
-       
         partija,
         atc,
         naziv_proizvoda,
