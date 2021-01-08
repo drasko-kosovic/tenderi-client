@@ -9,7 +9,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   templateUrl: './ugovor.component.html',
   styleUrls: ['./ugovor.component.scss'],
 })
-export class UgovorComponent implements OnInit {
+export class UgovorComponent {
   form: any;
   constructor(
     public dialogRef: MatDialogRef<UgovorComponent>,
@@ -30,10 +30,7 @@ export class UgovorComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  stopEdit(): void {}
-
-  ngOnInit(): void {}
-
+  
   putUgovor() {
     this.tenderService.putUgovor('900', 1620, 'glosarij').subscribe(
       () => {
