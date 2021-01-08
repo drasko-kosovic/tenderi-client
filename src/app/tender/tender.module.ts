@@ -18,6 +18,7 @@ import { PerkoProcijenjeneComponent } from './perko-procijenjene/perko-procijenj
 import { PonudeUserComponent } from './ponude-user/ponude-user.component';
 import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.component';
 import { UgovorComponent } from './dialog/ugovor/ugovor.component';
+import { UnesiUgovorComponent } from './unesi-ugovor/unesi-ugovor.component';
 
 
 
@@ -30,7 +31,8 @@ import { UgovorComponent } from './dialog/ugovor/ugovor.component';
    PerkoProcijenjeneComponent,
    PonudeUserComponent,
    UgovorenePonudeComponent,
-   UgovorComponent],
+   UgovorComponent,
+   UnesiUgovorComponent],
   imports: [
     CommonModule,
     TenderRoutingModule,
