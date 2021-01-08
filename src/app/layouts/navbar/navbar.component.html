@@ -1,12 +1,18 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
+  <button mat-icon-button  class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" routerLink="/tender"
+  <button mat-icon-button class="razmak" routerLink="/tender"
     routerLinkActive="router-link-active">Tenderi</button>
+  <button mat-icon-button class="razmak"  routerLink="/pregovaracki"
+    routerLinkActive="router-link-active">Pregovaracki</button>
+  <button mat-icon-button class="razmak" routerLink="/jednostavne"
+    routerLinkActive="router-link-active">Jednostavne</button>
 
   <span class="example-spacer"></span>
 
+  <button mat-icon-button *ngIf="isLoggedIn"
+    routerLinkActive="router-link-active">Admin</button>
   <button mat-icon-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
     <mat-icon>power_settings_new</mat-icon>
   </button>
