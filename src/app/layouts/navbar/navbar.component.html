@@ -6,18 +6,17 @@
     routerLinkActive="router-link-active">Tenderi</button>
   <button mat-icon-button class="razmak"  routerLink="/pregovaracki"
     routerLinkActive="router-link-active">Pregovaracki</button>
-    <button mat-icon-button class="razmak"  routerLink="/pregovaracki/list"
-    routerLinkActive="router-link-active">Pregovaracki List</button>
+   
   <button mat-icon-button class="razmak" routerLink="jednostavne"
     routerLinkActive="router-link-active">Jednostavne</button>
 
   <span class="example-spacer"></span>
 
-  <button mat-button [matMenuTriggerFor]="menu">Admin</button>
+  <button *ngIf="isLoggedIn" mat-button [matMenuTriggerFor]="menu">Admin</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="openUgovoriDialog()" >Ugovor</button>
 
-  <button mat-menu-item  routerLink="/tender/admin">Admin Ponude</button>
+  <button mat-menu-item *ngIf="isLoggedIn" routerLink="/tender/admin">Admin Ponude</button>
 </mat-menu>
   <button mat-icon-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
     <mat-icon>power_settings_new</mat-icon>

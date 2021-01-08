@@ -16,7 +16,7 @@ import { DeleteDialogComponent } from '../dialog/delete/delete.dialog.component'
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from '../dialog/add/add.dialog.component';
 import { EditComponent } from '../dialog/edit/edit.component';
-import { TableUtilPonude } from './table-util-ponude';
+
 
 @Component({
   selector: 'app-ponude',
@@ -68,7 +68,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   }
 
   public getAllPonude() {
-    this.tenderService.getFindByTenderi(this.tender).subscribe((res) => {
+    this.tenderService.getFindByTenderi(1620).subscribe((res) => {
       this.dataSource.data = res as Ponude[];
       console.log('to je   ' + res);
     });
@@ -171,22 +171,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.doFilter();
   }
 
-  hide() {
-    this.show = false;
+  
+  
   }
 
-  exportTable() {
-    TableUtilPonude.exportToPdf('ExampleTable');
-  }
-
-  putUgovor() {
-    this.tenderService.putUgovor('900', 1620, 'glosarij').subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-}
