@@ -80,6 +80,7 @@ export class AdminComponent implements AfterViewInit, OnInit {
   }
 
   updateEdit(
+    id:number,
     partija: string,
     atc: string,
     naziv_proizvoda: string,
@@ -96,8 +97,10 @@ export class AdminComponent implements AfterViewInit, OnInit {
     ponudjac: string,
     broj_tendera: string
   ) {
+    this.id = id;
     const dialogRef = this.dialog.open(EditComponent, {
       data: {
+        id,
         partija,
         atc,
         naziv_proizvoda,

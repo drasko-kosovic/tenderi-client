@@ -1,3 +1,4 @@
+import { NotificationService } from './../../shared/notification.service';
 import { Injectable } from '@angular/core';
 
 import {
@@ -27,6 +28,8 @@ export class TenderService {
     'http://localhost:8080/api/ponude/prvorangirani/';
   readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
   readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
+  
+  
   readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
  
   readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER =
@@ -55,8 +58,9 @@ export class TenderService {
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
+ 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private notificationService:NotificationService) {}
 
   public getFindByTenderi(broj: number) {
     return this.http.get(this.API_URL_FIND_BY_TENDER + broj);
@@ -80,7 +84,7 @@ export class TenderService {
 
   deletePonuda(id: number): void {
     this.http.delete(this.API_URL_DELETE + id).subscribe(
-      (data) => {
+      (_data) => {
         console.log('obrisano');
       },
       (err: HttpErrorResponse) => {}
@@ -103,16 +107,18 @@ export class TenderService {
       }
     );
   }
+  
 
   updatePonude(ponude: Ponude): void {
     this.http.put(this.API_URL_UPDATE, ponude).subscribe(
-      (data) => {
+      (_data) => {
         this.dialogData = ponude;
-
+        this.notificationService.success('Sacuvan je zapis' );
         console.log('updated');
       },
-      (err: HttpErrorResponse) => {
+      (_err: HttpErrorResponse) => {
         console.log(' no updated');
+        this.notificationService.warn('Nije sacuvan je zapis' );
       }
     );
   }
