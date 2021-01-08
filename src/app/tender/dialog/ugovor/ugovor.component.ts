@@ -24,7 +24,7 @@ export class UgovorComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.putUgovor();
+   
   }
 
   submit() {}
@@ -35,7 +35,7 @@ export class UgovorComponent implements OnInit {
 
   
   putUgovor() {
-    this.tenderService.putUgovor('777', 1620, 'glosarij').subscribe(
+    this.tenderService.putUgovor(this.form.value.broj_ugovora, this.form.value.broj_tendera, this.form.value.ponudjac).subscribe(
       () => {
         console.log('uspjesno dodat zapis');
         this.notificationService.success('Uspjesno dodat');
