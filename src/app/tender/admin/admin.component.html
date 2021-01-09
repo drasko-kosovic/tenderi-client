@@ -11,7 +11,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="dataSource" matSort class="styled-table" >
 
 
     <ng-container matColumnDef="partija">
@@ -80,7 +80,7 @@
       <td mat-cell *matCellDef="let element"> {{element.ponudjena_jedinicna_cijena}} </td>
       <td mat-footer-cell *matFooterCellDef></td>
     </ng-container>
-    <!-- Cost Column -->
+
     <ng-container matColumnDef="ponudjena_ukupna_cijena">
       <th mat-header-cell *matHeaderCellDef> Ukupna Cijena</th>
       <td mat-cell *matCellDef="let transaction"> {{transaction.ponudjena_ukupna_cijena}} </td>
@@ -116,7 +116,7 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let row">
-      
+
         <button mat-icon-button color="primary">
           <mat-icon aria-label="Example icon-button with a heart icon"
             (click)="updateEdit( row.partija,row.atc,row.naziv_proizvoda, row.zasticeni_naziv,row.proizvodjac

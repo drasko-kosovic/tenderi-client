@@ -15,7 +15,7 @@ export class UgovorenePonudeComponent implements OnInit, OnChanges {
 
   public displayedColumns = ['partija', 'atc', 'naziv_proizvoda', 'zasticeni_naziv', 'proizvodjac',
     'ponudjana_kolicina', 'ponudjena_jedinicna_cijena',
-    'ponudjena_ukupna_cijena', 'ponudjac', 'broj_tendera','broj_ugovora','datum_ugovora'];
+    'ponudjena_ukupna_cijena', 'ponudjac', 'broj_tendera','broj_ugovora'];
 
 
   public dataSource = new MatTableDataSource<Ponude>();
@@ -90,6 +90,6 @@ export class UgovorenePonudeComponent implements OnInit, OnChanges {
     this.getAllPonude();
   }
 
-  
+
   }
 
