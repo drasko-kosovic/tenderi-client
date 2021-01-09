@@ -21,3 +21,4 @@ https://angular.io/start/start-forms
     this.paginator.changePpartijaSize(this.paginator.firstPage);
   }
 
+*ngIf="currentUser.username=='drasko'"

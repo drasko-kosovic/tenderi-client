@@ -17,15 +17,15 @@
       </button>
     </mat-form-field>
     <p class="korisnik"> Prijavljeni ste kao korisnik : {{ currentUser.username }}</p>
-    
-  </div>
-  
 
-  <mat-tab-group  mat-align-tabs="start">
-    <!-- <mat-tab  *ngIf="currentUser.username=='drasko'"label="Ponude Admin">
+  </div>
+
+
+  <mat-tab-group  mat-align-tabs="start">*ngIf="currentUser.username=='drasko'"
+    <!-- <mat-tab  label="Ponude Admin">
       <app-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude>
     </mat-tab> -->
-    
+
     <mat-tab  label="Ponude">
       <app-ponude-user [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ponude-user>
     </mat-tab>
@@ -41,7 +41,7 @@
     </mat-tab>
     <mat-tab label="Nema ponuda">
       <app-hvale-partije [tender]="brojTendera"></app-hvale-partije>
-    </mat-tab> 
+    </mat-tab>
     <mat-tab label="Ugovori">
       <app-ugovorene-ponude [tender]="brojTendera" [ponnudjac]="imePonudjaca"></app-ugovorene-ponude>
     </mat-tab>
