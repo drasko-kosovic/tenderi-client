@@ -1,30 +1,25 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import {Ponude} from '../../model/ponude.model';
-import {NotificationService} from '../../../../shared/notification.service';
-import {TenderService} from '../../tender.service';
+import { Ponude } from '../../model/ponude.model';
+import { NotificationService } from '../../../../shared/notification.service';
+import { TenderService } from '../../tender.service';
 
 @Component({
   selector: 'app-add.dialog',
 
   templateUrl: './add.dialog.component.html',
-  styleUrls: ['./add.dialog.component.scss']
+  styleUrls: ['./add.dialog.component.scss'],
 })
 export class AddDialogComponent implements OnInit {
-  constructor( public dialogRef: MatDialogRef<AddDialogComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: Ponude,
-               public tenderService: TenderService, private notificationService: NotificationService) {
-                 
-                }
-
- 
-
-  submit() {
-    // emppty stuff
-  }
+  constructor(
+    public dialogRef: MatDialogRef<AddDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Ponude,
+    public tenderService: TenderService,
+    private notificationService: NotificationService
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -36,6 +31,5 @@ export class AddDialogComponent implements OnInit {
     window.location.reload();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
