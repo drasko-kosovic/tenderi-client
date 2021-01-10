@@ -1,30 +1,28 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button  class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="/tender"
-    routerLinkActive="router-link-active">Tenderi</button>
-  <button *ngIf="isLoggedIn" mat-icon-button class="razmak"  routerLink="/pregovaracki"
-    routerLinkActive="router-link-active">Pregovaracki</button>
-   
-  <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="jednostavne"
-    routerLinkActive="router-link-active">Jednostavne</button>
+    <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="/tender" routerLinkActive="router-link-active">Tenderi</button>
+    <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="/pregovaracki" routerLinkActive="router-link-active">Pregovaracki</button>
 
-  <span class="example-spacer"></span>
+    <button *ngIf="isLoggedIn" mat-icon-button class="razmak" routerLink="jednostavne" routerLinkActive="router-link-active">Jednostavne</button>
 
-  <button *ngIf="isLoggedIn" mat-button [matMenuTriggerFor]="menu">Admin</button>
-<mat-menu #menu="matMenu">
-  <button  mat-menu-item (click)="openUgovoriDialog()" >Ugovor</button>
+    <span class="example-spacer"></span>
 
-  <button mat-menu-item *ngIf="isLoggedIn" routerLink="/tender/admin">Admin Ponude</button>
-</mat-menu>
-  <button mat-icon-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
+    <button *ngIf="isLoggedIn" mat-button [matMenuTriggerFor]="menu">Admin</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openUgovoriDialog()">Ugovor</button>
+
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/tender/admin">Admin Ponude</button>
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/users">Korisnici</button>
+    </mat-menu>
+    <button mat-icon-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
     <mat-icon>power_settings_new</mat-icon>
   </button>
-  <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()">
+    <button mat-button *ngIf="isLoggedIn" (click)="openLogoutDialog()">
     <mat-icon>exit_to_app</mat-icon>
   </button>
-  <button mat-button (click)="openRegisterDialog()" *ngIf="!isLoggedIn">
+    <button mat-button (click)="openRegisterDialog()" *ngIf="!isLoggedIn">
     <mat-icon>person_add</mat-icon>
   </button>
 </mat-toolbar>
