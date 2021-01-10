@@ -1,18 +1,36 @@
-// table {
-//     border-collapse: collapse;
-//   }
-
-//   tr , th , td  {
-//     border: 1px solid rgb(255, 235, 235);
-//     padding: 5%;
-//     text-align: center;
-// }
 .styled-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
 }
+
 .styled-table th,
 .styled-table td {
     padding: 8px 6px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+td.mat-footer-row {
+    font-weight: bold;
+}
+
+.mat-table-sticky {
+    border-top: 1px solid #e0e0e0;
 }
