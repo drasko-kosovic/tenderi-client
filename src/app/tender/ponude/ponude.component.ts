@@ -3,7 +3,6 @@ import {
   ElementRef,
   Input,
   OnChanges,
-  OnInit,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -23,7 +22,7 @@ import { EditComponent } from '../dialog/edit/edit.component';
   templateUrl: './ponude.component.html',
   styleUrls: ['./ponude.component.scss'],
 })
-export class PonudeComponent implements OnInit, OnChanges {
+export class PonudeComponent implements OnChanges {
   public displayedColumns = [
     'partija',
     'atc',
@@ -53,6 +52,7 @@ export class PonudeComponent implements OnInit, OnChanges {
   ukupnoProcijenjena: number;
   ukupnaPonudjena: number;
   show = true;
+  // tslint:disable-next-line:variable-name
   broj_tendera = false;
 
   @Input() tender: number;
@@ -63,17 +63,16 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   constructor(private tenderService: TenderService, public dialog: MatDialog) {}
 
-  ngOnInit() {
-   
-  }
 
-  public getAllPonude() {
-    this.tenderService.getFindByTenderi(1620).subscribe((res) => {
+
+  public getAllPonude(): void {
+    this.tenderService.getFindByTenderi(this.tender).subscribe((res) => {
       this.dataSource.data = res as Ponude[];
       console.log('to je   ' + res);
     });
   }
 
+  // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -81,7 +80,7 @@ export class PonudeComponent implements OnInit, OnChanges {
 
   public customSort = (event) => {
     console.log(event);
-  };
+  }
 
   deleteItem(i: number, id: number) {
     this.index = i;
@@ -171,7 +170,7 @@ export class PonudeComponent implements OnInit, OnChanges {
     this.doFilter();
   }
 
-  
-  
+
+
   }
 

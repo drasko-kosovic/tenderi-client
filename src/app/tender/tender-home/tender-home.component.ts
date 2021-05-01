@@ -38,4 +38,8 @@ export class TenderHomeComponent implements OnInit {
   onCleanPonudjaci() {
     this.imePonudjaca = '';
   }
+
+  OnKeyUp() {
+
+  }
 }

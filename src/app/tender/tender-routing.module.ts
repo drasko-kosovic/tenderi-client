@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {PonudeComponent} from './ponude/ponude.component';
 import {BodovanjeComponent} from './bodovanje/bodovanje.component';
 import {TenderHomeComponent} from './tender-home/tender-home.component';
-import {PrvorangiraniComponent} from "./prvorangirani/prvorangirani.component";
+import {PrvorangiraniComponent} from './prvorangirani/prvorangirani.component';
 import { UgovorenePonudeComponent } from './ugovorene-ponude/ugovorene-ponude.component';
 import { AdminComponent } from './admin/admin.component';
 
@@ -36,7 +36,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent
   }
-  
+
 ];
 
 @NgModule({

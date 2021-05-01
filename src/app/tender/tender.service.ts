@@ -13,33 +13,33 @@ import { Ponude } from './model/ponude.model';
   providedIn: 'root',
 })
 export class TenderService {
-  readonly API_UGOVOR = 'http://localhost:8080/api/ponude/update/ugovor';
+  readonly API_UGOVOR = 'http://localhost:8081/api/ponude/update/ugovor';
   readonly API_URL_PREKO_PROCIJENJE =
-    'http://localhost:8080/api/ponude/preko_procijenjene/';
+    'http://localhost:8081/api/ponude/preko_procijenjene/';
   private readonly API_URL_DELETE_SELECTED =
-    'http://localhost:8080/api/ponude/delete/selected';
-  private readonly API_URL = 'http://localhost:8080/api/ponude';
-  private readonly API_URL_DELETE = 'http://localhost:8080/api/ponude/delete/';
+    'http://localhost:8081/api/ponude/delete/selected';
+  private readonly API_URL = 'http://localhost:8081/api/ponude';
+  private readonly API_URL_DELETE = 'http://localhost:8081/api/ponude/delete/';
   private readonly API_URL_UPDATE_SELECTED =
-    'http://localhost:8080/api/ponude/update/selected/';
+    'http://localhost:8081/api/ponude/update/selected/';
   private readonly API_URL_BODOVANJE =
-    'http://localhost:8080/api/ponude/bodovanje/';
+    'http://localhost:8081/api/ponude/bodovanje/';
   private readonly API_URL_PRVORANGIRANI =
-    'http://localhost:8080/api/ponude/prvorangirani/';
-  readonly API_URL_ADD = 'http://localhost:8080/api/ponude/add';
-  readonly API_URL_UPDATE = 'http://localhost:8080/api/ponude/update';
-  
-  
-  readonly API_URL_FIND_BY_TENDER = 'http://localhost:8080/api/ponude/tender/';
- 
+    'http://localhost:8081/api/ponude/prvorangirani/';
+  readonly API_URL_ADD = 'http://localhost:8081/api/ponude/add';
+  readonly API_URL_UPDATE = 'http://localhost:8081/api/ponude/update';
+
+
+  readonly API_URL_FIND_BY_TENDER = 'http://localhost:8081/api/ponude/tender/';
+
   readonly PREKO_PROCIJENJENE_URL_FIND_BY_TENDER =
-    'http://localhost:8080/api/ponude/tender/preko_procijenjene/';
+    'http://localhost:8081/api/ponude/tender/preko_procijenjene/';
   readonly API_URL_HVALE_PARTIJE_BY_TENDER =
-    'http://localhost:8080/api/ponude/hvali/';
+    'http://localhost:8081/api/ponude/hvali/';
   readonly BODOVANJE_URL_FIND_BY_TENDER =
-    'http://localhost:8080/api/ponude/bodovanje/';
+    'http://localhost:8081/api/ponude/bodovanje/';
   readonly PRVORANIRANI_URL_FIND_BY_TENDER =
-    'http://localhost:8080/api/ponude/tender/prvorangirani/';
+    'http://localhost:8081/api/ponude/tender/prvorangirani/';
 
   // readonly API_URL_PREKO_PROCIJENJE = 'https://tenderi-montefarm.herokuapp.com/api/ponude/preko_procijenjene/';
   // private readonly API_URL_DELETE_SELECTED = 'https://tenderi-montefarm.herokuapp.com/api/ponude/delete/selected';
@@ -58,7 +58,7 @@ export class TenderService {
 
   dataChange: BehaviorSubject<Ponude[]> = new BehaviorSubject<Ponude[]>([]);
   dialogData: any;
- 
+
 
   constructor(private http: HttpClient,private notificationService:NotificationService) {}
 
@@ -107,7 +107,7 @@ export class TenderService {
       }
     );
   }
-  
+
 
   updatePonude(ponude: Ponude): void {
     this.http.put(this.API_URL_UPDATE, ponude).subscribe(
